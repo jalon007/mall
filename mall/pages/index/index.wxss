@@ -51,15 +51,21 @@
 
 .m-menu {
   background: #fff;
+  position: relative;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   padding-bottom: 0rpx;
   padding-top: 25rpx;
+  margin-top: -15rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
 }
 
 .m-menu .item {
-  width: 150rpx;
+  width: 140rpx;
   height: 126rpx;
 }
 
@@ -86,7 +92,10 @@
   overflow: hidden;
   background: #fff;
   color: #333;
-  margin-top: 5rpx;
+  margin-top: 10rpx;
+  padding: 0 10px;
+  border-top-left-radius: 30rpx;
+  box-shadow: 0 4px 15px 0 rgba(136, 110, 110, 0.89);
 }
 
 .a-section .h {

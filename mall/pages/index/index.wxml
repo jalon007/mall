@@ -54,7 +54,7 @@
     </view>
   </view>
 
-  <view class="a-section a-brand">
+  <view class="a-section a-brand" wx:if="{{brands.length > 0}}">
     <view class="h">
       <navigator url="../brand/brand">
         <text class="txt">品牌制造商直供</text>
@@ -118,7 +118,7 @@
     </view>
   </view>
 
-  <view class="a-section a-topic" wx:if="topics.length > 0">
+  <view class="a-section a-topic" wx:if="{{topics.length > 0}}">
     <view class="h">
       <view>
         <navigator url="/pages/topic/topic">
