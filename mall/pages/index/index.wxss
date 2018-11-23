@@ -55,8 +55,8 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding-bottom: 0rpx;
-  padding-top: 25rpx;
+  padding-bottom: 10rpx;
+  padding-left: 1rpx;
   margin-top: -15rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
@@ -67,6 +67,10 @@
 .m-menu .item {
   width: 140rpx;
   height: 126rpx;
+  padding-top: 25rpx;
+  margin-right: 2rpx;
+  padding-bottom: 5rpx;
+  /* border:1rpx solid rgba(241, 241, 241, 0.836); */
 }
 
 .m-menu image {
