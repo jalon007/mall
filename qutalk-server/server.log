@@ -1,0 +1,1194 @@
+2018-11-22 11:22:17.164  INFO 5080 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 5080 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 11:22:17.165  INFO 5080 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 11:22:23.951  INFO 5080 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 7.957 seconds (JVM running for 14.433)
+2018-11-22 11:22:23.976  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 11:52:24.025  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 12:22:24.035  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 12:52:24.038  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 13:22:24.043  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 13:52:24.049  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 14:22:24.051  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 14:52:24.067  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:22:24.126  INFO 5080 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:34:43.584  INFO 9360 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 9360 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:34:43.584  INFO 9360 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:34:51.978  INFO 9360 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 9.522 seconds (JVM running for 15.06)
+2018-11-22 15:34:51.995  INFO 9360 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:36:34.259  INFO 14876 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 14876 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:36:34.260  INFO 14876 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:36:38.351  INFO 14876 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 4.528 seconds (JVM running for 5.166)
+2018-11-22 15:36:38.369  INFO 14876 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:37:12.265  INFO 15600 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 15600 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:37:12.266  INFO 15600 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:37:17.265  INFO 15600 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 5.759 seconds (JVM running for 6.774)
+2018-11-22 15:37:17.287  INFO 15600 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:38:06.122 ERROR 15600 --- [http-nio-8080-exec-2] c.b.wx.miniapp.api.impl.WxMaServiceImpl  : 
+【请求地址】: https://api.weixin.qq.com/sns/jscode2session?access_token=15_t8w7PUG9nMtTxkMDhxPS3LgyiOTXpJHP-IvJYgIRDW3UWJi7frB8HIFSC94f3ni4vP2covnSXCz87Mn1k5GZpRc8k3ia-2PsYIAkEDMWitthKK3vIXXR2lgnstbXNXRfIeicL_X5HGcHWga0AOHbACAUIB
+【请求参数】：js_code=061RHof81g5uZR1Z7he81QeCf81RHofk&secret=******&grant_type=authorization_code&appid=wxa5b486c6b918ecfb
+【错误信息】：{"errcode":40029,"errmsg":"invalid code, hints: [ req_id: aME2PA00742161 ]"}
+2018-11-22 15:46:56.924  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:46:56.925  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:47:03.958  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 7.869 seconds (JVM running for 10.79)
+2018-11-22 15:47:03.982  INFO 2164 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:48:19.130  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:48:19.130  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:48:19.993  WARN 2164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.qutalk.mall.db.dao]' package. Please check your configuration.
+2018-11-22 15:48:20.052  WARN 2164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.qutalk.mall]' package. Please check your configuration.
+2018-11-22 15:48:20.374 ERROR 2164 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'QCodeService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.core.qcode.QCodeService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@64dfd239]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:261) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1120) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.core.qcode.QCodeService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@64dfd239]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:659) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:556) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:541) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:244) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/qutalk/mall/db/domain/LitemallGroupon
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_141]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_141]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_141]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:641) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.qutalk.mall.db.domain.LitemallGroupon
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_141]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	... 30 common frames omitted
+
+2018-11-22 15:48:23.654  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:48:23.654  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:48:25.699  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 2.115 seconds (JVM running for 92.532)
+2018-11-22 15:48:25.705  INFO 2164 --- [pool-2-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:48:39.114  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:48:39.114  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:48:40.515 ERROR 2164 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'wxAuthController' defined in file [D:\git\others\qutalk-mall\qutalk-server\qutalkmall-wx-api\target\classes\com\qutalk\mall\wx\web\WxAuthController.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.wx.web.WxAuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@773b6dba]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:550) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.wx.web.WxAuthController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@773b6dba]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:758) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:690) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:354) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:339) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:298) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1013) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: Lcom/qutalk/mall/core/notify/NotifyService;
+	at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_141]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_141]
+	at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_141]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:753) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.qutalk.mall.core.notify.NotifyService
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_141]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	... 30 common frames omitted
+
+2018-11-22 15:48:42.225  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:48:42.225  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:48:46.714  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 4.613 seconds (JVM running for 113.547)
+2018-11-22 15:48:46.891  INFO 2164 --- [pool-3-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 15:49:28.823  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 15:49:28.823  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 15:49:35.682  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 7.307 seconds (JVM running for 162.515)
+2018-11-22 15:49:35.692  INFO 2164 --- [pool-4-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 16:19:35.769  INFO 2164 --- [pool-4-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 16:49:36.002  INFO 2164 --- [pool-4-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:15:46.399  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:15:46.414  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:15:50.709  INFO 10528 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 10528 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:15:50.709  INFO 10528 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:15:55.350  INFO 2164 --- [pool-5-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:15:55.394  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 9.269 seconds (JVM running for 5342.226)
+2018-11-22 17:15:59.489 ERROR 10528 --- [restartedMain] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_141]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 19 common frames omitted
+
+2018-11-22 17:15:59.536 ERROR 10528 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-11-22 17:15:59.546  INFO 10528 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:15:59.566 ERROR 10528 --- [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:15:59 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:15:59 CST 2018
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy97.selectByExample(Unknown Source) ~[na:na]
+	at com.qutalk.mall.db.service.LitemallOrderService.queryUnpaid(LitemallOrderService.java:152) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController.checkOrderUnpaid(AdminOrderController.java:281) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController$$FastClassBySpringCGLIB$$fd7761fd.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:112) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at com.qutalk.mall.admin.web.AdminOrderController$$EnhancerBySpringCGLIB$$66061fc1.checkOrderUnpaid(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_141]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_141]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_141]
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:15:59 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:15:59 CST 2018
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 29 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:15:59 CST 2018
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143) ~[pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy128.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	... 35 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:15:59 CST 2018
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1358) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1255) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5007) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2745) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:680) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1233) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1225) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90) ~[druid-1.1.10.jar:1.1.10]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 47 common frames omitted
+
+2018-11-22 17:16:30.184  INFO 9364 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 9364 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:16:30.184  INFO 9364 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:16:34.376 ERROR 9364 --- [restartedMain] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_141]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 19 common frames omitted
+
+2018-11-22 17:16:34.392 ERROR 9364 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-11-22 17:16:34.417  INFO 9364 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:16:34.439 ERROR 9364 --- [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:16:34 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:16:34 CST 2018
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy97.selectByExample(Unknown Source) ~[na:na]
+	at com.qutalk.mall.db.service.LitemallOrderService.queryUnpaid(LitemallOrderService.java:152) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController.checkOrderUnpaid(AdminOrderController.java:281) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController$$FastClassBySpringCGLIB$$fd7761fd.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:112) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at com.qutalk.mall.admin.web.AdminOrderController$$EnhancerBySpringCGLIB$$81acf9b7.checkOrderUnpaid(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_141]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_141]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_141]
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:16:34 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:16:34 CST 2018
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 29 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:16:34 CST 2018
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143) ~[pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy128.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	... 35 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:16:34 CST 2018
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1358) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1255) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5007) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2745) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:680) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1233) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1225) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90) ~[druid-1.1.10.jar:1.1.10]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 47 common frames omitted
+
+2018-11-22 17:16:51.850  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:16:51.850  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:16:52.452  WARN 2164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.qutalk.mall.db.dao]' package. Please check your configuration.
+2018-11-22 17:16:52.501  WARN 2164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.qutalk.mall]' package. Please check your configuration.
+2018-11-22 17:16:52.920 ERROR 2164 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'QCodeService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.core.qcode.QCodeService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2fbc5b6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:261) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1120) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.core.qcode.QCodeService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2fbc5b6]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:659) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:556) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:541) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:244) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/qutalk/mall/db/domain/LitemallGroupon
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_141]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_141]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_141]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:641) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.qutalk.mall.db.domain.LitemallGroupon
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_141]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	... 30 common frames omitted
+
+2018-11-22 17:16:56.284  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:16:56.284  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:16:58.438  INFO 2164 --- [pool-6-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:16:58.489  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 2.314 seconds (JVM running for 5405.322)
+2018-11-22 17:17:03.463  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:17:03.463  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:17:05.905  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 2.528 seconds (JVM running for 5412.738)
+2018-11-22 17:17:06.072  INFO 2164 --- [pool-7-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:17:17.798  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:17:17.798  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:17:23.182  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 5.444 seconds (JVM running for 5430.0)
+2018-11-22 17:17:23.180  INFO 2164 --- [pool-8-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:17:25.453  INFO 12208 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 12208 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:17:25.454  INFO 12208 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:17:29.892 ERROR 12208 --- [restartedMain] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_141]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 19 common frames omitted
+
+2018-11-22 17:17:29.912 ERROR 12208 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-11-22 17:17:29.931  INFO 12208 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:17:29.951 ERROR 12208 --- [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:17:29 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:17:29 CST 2018
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy97.selectByExample(Unknown Source) ~[na:na]
+	at com.qutalk.mall.db.service.LitemallOrderService.queryUnpaid(LitemallOrderService.java:152) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController.checkOrderUnpaid(AdminOrderController.java:281) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController$$FastClassBySpringCGLIB$$fd7761fd.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:112) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at com.qutalk.mall.admin.web.AdminOrderController$$EnhancerBySpringCGLIB$$582b97fc.checkOrderUnpaid(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_141]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_141]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_141]
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:17:29 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:17:29 CST 2018
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 29 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:17:29 CST 2018
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143) ~[pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy128.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	... 35 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:17:29 CST 2018
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1358) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1255) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5007) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2745) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:680) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1233) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1225) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90) ~[druid-1.1.10.jar:1.1.10]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 47 common frames omitted
+
+2018-11-22 17:21:04.676  INFO 10632 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 10632 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:21:04.677  INFO 10632 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:21:28.810 ERROR 10632 --- [restartedMain] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_141]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 19 common frames omitted
+
+2018-11-22 17:21:28.910 ERROR 10632 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-11-22 17:21:28.920  INFO 10632 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:21:28.945 ERROR 10632 --- [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:21:28 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:21:28 CST 2018
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy97.selectByExample(Unknown Source) ~[na:na]
+	at com.qutalk.mall.db.service.LitemallOrderService.queryUnpaid(LitemallOrderService.java:152) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController.checkOrderUnpaid(AdminOrderController.java:281) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController$$FastClassBySpringCGLIB$$fd7761fd.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:112) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at com.qutalk.mall.admin.web.AdminOrderController$$EnhancerBySpringCGLIB$$cf676465.checkOrderUnpaid(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_141]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_141]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_141]
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:21:28 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:21:28 CST 2018
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 29 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:21:28 CST 2018
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143) ~[pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy128.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	... 35 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:21:28 CST 2018
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1358) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1255) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5007) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2745) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:680) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1233) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1225) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90) ~[druid-1.1.10.jar:1.1.10]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 47 common frames omitted
+
+2018-11-22 17:22:04.556  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:22:04.557  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:22:10.597  INFO 16284 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 16284 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:22:10.598  INFO 16284 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:22:21.393  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 16.864 seconds (JVM running for 5728.21)
+2018-11-22 17:22:21.759  INFO 2164 --- [pool-9-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:22:37.989 ERROR 16284 --- [restartedMain] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_141]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 19 common frames omitted
+
+2018-11-22 17:22:38.287 ERROR 16284 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-11-22 17:22:38.323  INFO 16284 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:22:38.370 ERROR 16284 --- [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:22:38 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:22:38 CST 2018
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy97.selectByExample(Unknown Source) ~[na:na]
+	at com.qutalk.mall.db.service.LitemallOrderService.queryUnpaid(LitemallOrderService.java:152) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController.checkOrderUnpaid(AdminOrderController.java:281) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController$$FastClassBySpringCGLIB$$fd7761fd.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:112) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at com.qutalk.mall.admin.web.AdminOrderController$$EnhancerBySpringCGLIB$$39d51e32.checkOrderUnpaid(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_141]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_141]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_141]
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:22:38 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:22:38 CST 2018
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 29 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:22:38 CST 2018
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143) ~[pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy128.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	... 35 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:22:38 CST 2018
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1358) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1255) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5007) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2745) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:680) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1233) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1225) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90) ~[druid-1.1.10.jar:1.1.10]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 47 common frames omitted
+
+2018-11-22 17:27:41.161  INFO 4868 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 4868 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:27:41.162  INFO 4868 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:27:45.285  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 2164 (D:\git\others\qutalk-mall\qutalk-server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\qutalk-server)
+2018-11-22 17:27:45.285  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-22 17:27:54.597  INFO 2164 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 9.51 seconds (JVM running for 6061.43)
+2018-11-22 17:27:54.603  INFO 2164 --- [pool-10-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:27:56.891  INFO 2164 --- [pool-10-thread-1] c.q.mall.admin.web.AdminOrderController  : 订单 ID=1 已经超期自动取消订单
+2018-11-22 17:28:44.626 ERROR 4868 --- [restartedMain] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553) [spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 18 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_141]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_141]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_141]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	... 19 common frames omitted
+
+2018-11-22 17:28:44.780 ERROR 4868 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
+2018-11-22 17:28:44.815  INFO 4868 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-22 17:28:44.845 ERROR 4868 --- [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:28:44 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:28:44 CST 2018
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy97.selectByExample(Unknown Source) ~[na:na]
+	at com.qutalk.mall.db.service.LitemallOrderService.queryUnpaid(LitemallOrderService.java:152) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController.checkOrderUnpaid(AdminOrderController.java:281) ~[classes/:na]
+	at com.qutalk.mall.admin.web.AdminOrderController$$FastClassBySpringCGLIB$$fd7761fd.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:112) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at com.qutalk.mall.admin.web.AdminOrderController$$EnhancerBySpringCGLIB$$5eff647f.checkOrderUnpaid(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_141]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_141]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_141]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_141]
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:28:44 CST 2018
+### The error may exist in com/qutalk/mall/db/dao/LitemallOrderMapper.xml
+### The error may involve com.qutalk.mall.db.dao.LitemallOrderMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:28:44 CST 2018
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 29 common frames omitted
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:28:44 CST 2018
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:338) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143) ~[pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy128.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	... 35 common frames omitted
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Thu Nov 22 17:28:44 CST 2018
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1358) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1255) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5007) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterAdapter.dataSource_getConnection(FilterAdapter.java:2745) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.stat.StatFilter.dataSource_getConnection(StatFilter.java:680) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.dataSource_connect(FilterChainImpl.java:5003) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1233) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1225) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:90) ~[druid-1.1.10.jar:1.1.10]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:151) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78) ~[spring-jdbc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 47 common frames omitted
+
+2018-11-22 17:29:15.660 ERROR 2164 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidPooledStatement      : CommunicationsException, druid version 1.1.10, jdbcUrl : jdbc:mysql://116.85.40.253:3306/litemall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false, testWhileIdle true, idle millis 17894, minIdle 10, poolingCount 9, timeBetweenEvictionRunsMillis 60000, lastValidIdleMillis 17894, driver com.mysql.jdbc.Driver, exceptionSorter com.alibaba.druid.pool.vendor.MySqlExceptionSorter
+2018-11-22 17:29:15.679 ERROR 2164 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : discard connection
+
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 17,885 milliseconds ago.  The last packet sent successfully to the server was 4,933 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_141]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_141]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3562) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3462) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3903) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1197) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:619) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167) ~[druid-1.1.10.jar:1.1.10]
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498) ~[druid-1.1.10.jar:1.1.10]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) [mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:143) [pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) [mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy128.query(Unknown Source) [na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77) [mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.GeneratedMethodAccessor210.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) [mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy72.selectOne(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166) [mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83) [mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) [mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy434.selectOneByExample(Unknown Source) [na:na]
+	at com.qutalk.mall.db.service.LitemallStorageService.findByKey(LitemallStorageService.java:34) [classes/:na]
+	at com.qutalk.mall.wx.web.WxStorageController.fetch(WxStorageController.java:62) [classes/:na]
+	at com.qutalk.mall.wx.web.WxStorageController$$FastClassBySpringCGLIB$$d899e9d8.invoke(<generated>) [classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) [spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:746) [spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:112) [spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) [spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) [spring-aop-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at com.qutalk.mall.wx.web.WxStorageController$$EnhancerBySpringCGLIB$$b1283bec.fetch(<generated>) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:83) [druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_141]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_141]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_141]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[na:1.8.0_141]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_141]
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3472) ~[mysql-connector-java-5.1.46.jar:5.1.46]
+	... 106 common frames omitted
+

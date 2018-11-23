@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: db, core, admin, wx
+  message:
+    encoding: UTF-8
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root:  ERROR
+    org.springframework:  ERROR
+    org.mybatis:  info
+    com.qutalk.mall.core:  info
+    com.qutalk.mall.db:  info
+    com.qutalk.mall.admin:  info
+    com.qutalk.mall.wx:  info
+    com.qutalk.mall:  info
+  path: /opt/qutalkmall
+  file: server.log

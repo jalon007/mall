@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: db
+  message:
+    encoding: UTF-8
+
+logging:
+  level:
+    root:  info
+    org.springframework:  ERROR
+    org.mybatis:  info
+    com.qutalk.mall.db:  info
+  path: /opt/qutalkmall
+  file: server.log
