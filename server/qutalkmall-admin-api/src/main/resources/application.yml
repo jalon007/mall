@@ -14,5 +14,5 @@ logging:
     org.mybatis:  info
     com.qutalk.mall.admin:  DEBUG
     com.qutalk.mall:  info
-  path: /opt/qutalkmall
-  file: server.log
+  path: /opt/logs
+  file: qutalkmall.log

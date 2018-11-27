@@ -10,5 +10,5 @@ logging:
     org.springframework:  ERROR
     org.mybatis:  info
     com.qutalk.mall.core:  info
-  path: /opt/qutalkmall
-  file: server.log
+  path: /opt/logs
+  file: qutalkmall.log

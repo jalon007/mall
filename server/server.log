@@ -46,3 +46,7 @@
 2018-11-27 17:17:26.368  INFO 7592 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
 2018-11-27 17:17:33.738  INFO 7592 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 8.44 seconds (JVM running for 10.565)
 2018-11-27 17:17:33.763  INFO 7592 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-27 17:26:23.706  INFO 11580 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 11580 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-27 17:26:23.707  INFO 11580 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-27 17:26:29.732  INFO 11580 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 6.681 seconds (JVM running for 8.268)
+2018-11-27 17:26:29.751  INFO 11580 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单

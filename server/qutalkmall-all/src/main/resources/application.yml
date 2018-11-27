@@ -17,5 +17,5 @@ logging:
     com.qutalk.mall.admin:  info
     com.qutalk.mall.wx:  info
     com.qutalk.mall:  info
-  path: /opt/qutalkmall
-  file: server.log
+  path: /opt/logs
+  file: qutalkmall.log
