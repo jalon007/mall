@@ -202,7 +202,8 @@ public class WxAuthController {
         if (!notifyService.isSmsEnable()) {
             return ResponseUtil.fail(404, "小程序后台验证码服务不支持");
         }
-        String code = CharUtil.getRandomNum(6);
+        //String code = CharUtil.getRandomNum(6);
+        String code = "1234";
         notifyService.notifySmsTemplate(phoneNumber, NotifyType.CAPTCHA, new String[]{code});
 
         boolean successful = CaptchaCodeManager.addToCache(phoneNumber, code);
@@ -252,6 +253,10 @@ public class WxAuthController {
             return ResponseUtil.badArgument();
         }
 
+        if (!RegexUtil.isMobileExact(mobile)) {
+            return ResponseUtil.fail(403, "手机号格式不正确");
+        }
+
         List<LitemallUser> userList = userService.queryByUsername(username);
         if (userList.size() > 0) {
             return ResponseUtil.fail(403, "用户名已注册");
@@ -261,14 +266,12 @@ public class WxAuthController {
         if (userList.size() > 0) {
             return ResponseUtil.fail(403, "手机号已注册");
         }
-        if (!RegexUtil.isMobileExact(mobile)) {
-            return ResponseUtil.fail(403, "手机号格式不正确");
-        }
+
         //判断验证码是否正确
-        String cacheCode = CaptchaCodeManager.getCachedCaptcha(mobile);
-        if (cacheCode == null || cacheCode.isEmpty() || !cacheCode.equals(code)) {
-            return ResponseUtil.fail(403, "验证码错误");
-        }
+//        String cacheCode = CaptchaCodeManager.getCachedCaptcha(mobile);
+//        if (cacheCode == null || cacheCode.isEmpty() || !cacheCode.equals(code)) {
+//            return ResponseUtil.fail(403, "验证码错误");
+//        }
 
         String openId = null;
         try {

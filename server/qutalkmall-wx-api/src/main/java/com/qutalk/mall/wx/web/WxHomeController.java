@@ -133,4 +133,21 @@ public class WxHomeController {
         HomeCacheManager.loadData(HomeCacheManager.INDEX, data);
         return ResponseUtil.ok(data);
     }
+
+    @GetMapping("/navList")
+    public Object navList() {
+        //优先从缓存中读取
+        if (HomeCacheManager.hasData(HomeCacheManager.NAVLIST)) {
+            return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.INDEX));
+        }
+
+
+        Map<String, Object> data = new HashMap<>();
+        List<LitemallCategory> channel = categoryService.queryChannel();
+
+        data.put("channel", channel);
+        //缓存数据
+        HomeCacheManager.loadData(HomeCacheManager.NAVLIST, data);
+        return ResponseUtil.ok(data);
+    }
 }

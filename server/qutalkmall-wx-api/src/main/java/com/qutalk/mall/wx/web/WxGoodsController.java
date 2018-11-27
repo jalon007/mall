@@ -101,7 +101,7 @@ public class WxGoodsController {
         // 商品规格对应的数量和价格
         List<LitemallGoodsProduct> productList = productService.queryByGid(id);
 
-        // 商品问题，这里是一些通用问题
+        // 商品问题，这里是一些通用问题 挪走
         List<LitemallIssue> issue = goodsIssueService.query();
 
         // 商品品牌商
