@@ -129,7 +129,7 @@
           <div class="nav-sub-wrapper" :class="{fixed:st}">
             <div class="w">
               <ul class="nav-list2">
-                <li>
+                <li class="home">
                   <router-link to="/"><a @click="changGoods(-1)" :class="{active:choosePage===-1}">首页</a></router-link>
                 </li>
                 <li>
@@ -234,14 +234,13 @@
             path: '/refreshgoods'
           })
         } else {
-          window.location.href = window.location.host + '/#/goods?cid=' + item.id
+          // window.open('//' + window.location.host + '/#/goods?cid=' + item.id)
+          // window.location.href = window.location.host + '/#/goods?cid=' + item.id
           // 站内跳转 todo 调用接口跳转
-          if (item.type === 1) {
-            window.location.href = item.fullUrl
-          } else {
-            // 站外跳转
-            window.open(item.fullUrl)
-          }
+          window.location.href = item.fullUrl
+          // 站外跳转
+            // window.open(item.fullUrl)
+         //   window.location.href = item.fullUrl
         }
       },
       // 搜索框提示
@@ -1065,9 +1064,13 @@
         height: 2px;
         background: #bdbdbd;
       }
+
     }
   }
-
+  .nav-list2 .home a a{
+    color: #c81623;
+    font-weight: bold;
+  }
   @media (min-width: 1px) {
     .nav-sub .nav-sub-wrapper:after {
       display: block;

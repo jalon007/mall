@@ -1,0 +1,4 @@
+2018-11-27 18:00:19.778  INFO 14648 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 14648 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-27 18:00:19.780  INFO 14648 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-27 18:00:31.275  INFO 14648 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 14.036 seconds (JVM running for 19.155)
+2018-11-27 18:00:31.319  INFO 14648 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
