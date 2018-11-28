@@ -40,8 +40,10 @@
       <section class="w mt30 clearfix">
         <y-shelf :title="item.name">
           <div slot="content" class="floors" >
-            <div class="imgbanner" v-for="(iitem,j) in item.newGoodsList" :key="j"  @click="linkTo(iitem)">
+            <div class="imgbanner" v-for="(iitem,j) in item.newGoodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
               <img v-lazy="iitem.picUrl">
+              <h6 class="good-title" v-html="iitem.name">{{iitem.name}}</h6>
+              <h3 class="sub-title ellipsis">{{iitem.brief}}</h3>
               <a class="cover-link"></a>
             </div>
             <mall-goods :msg="iitem" v-for="(iitem,j) in item.newGoodsList" :key="j+'key'"></mall-goods>
@@ -64,7 +66,7 @@
       :visible.sync="dialogVisible"
       width="30%"
       style="width:70%;margin:0 auto">
-      <span>首页已升级！XPay个人支付收款系统已上线，赶快去支付体验吧！</span>
+      <span>本网站只做商品推荐展示，不向外出售任何商品！！</span>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="dialogVisible = false">知道了</el-button>
       </span>
@@ -268,6 +270,12 @@
       width: 25%;
       height: 200px;
       text-align: center;
+      border-radius: 10px;
+      padding: 0 2px;
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 1px 1px 20px #999;
+      }
     }
     .content ::before{
       position: absolute;
@@ -493,6 +501,11 @@
         z-index: 4;
         background: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEHAAEALAAAAAABAAEAAAICTAEAOw==) repeat;
       }
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 1px 1px 20px #999;
+        border-radius: 18px;
+      }
       .cover-link:hover {
         box-shadow: inset 0 0 38px rgba(0,0,0,.08);
         transition: all .15s ease;
@@ -501,8 +514,24 @@
     img {
       display: block;
       width: 100%;
-      height: 100%;
+      height: 70%;
     }
   }
+  .good-title {
+    line-height: 1.2;
+    font-size: 16px;
+    color: #424242;
+    margin: 0 auto;
+    padding: 0 14px;
+    text-align: center;
+    overflow: hidden;
 
+  }
+  .sub-title {
+    text-align: center;
+    line-height: 1.2;
+    font-size: 12px;
+    color: #d0d0d0;
+    padding: 10px;
+  }
 </style>

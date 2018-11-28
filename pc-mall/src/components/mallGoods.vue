@@ -1,25 +1,36 @@
 <template>
   <div class="good-item">
+    <!--<div class="good-so">-->
+      <!--<img src="/static/images/so-red.png">-->
+    <!--</div>-->
     <div style="">
       <div class="good-img">
         <a @click="openProduct(msg.id)">
           <img v-lazy="msg.picUrl" :alt="msg.name" :key="msg.picUrl">
         </a>
       </div>
-      <h6 class="good-title" v-html="msg.name">{{msg.name}}</h6>
-      <h3 class="sub-title ellipsis">{{msg.brief}}</h3>
-      <div class="good-price pr">
-        <div class="ds pa">
+      <div class="good-content">
+        <h6 class="good-title" v-html="msg.name">{{msg.name}}</h6>
+        <h3 class="sub-title">{{msg.brief}}</h3>
+        <div class="good-price pr">
+          <p><span style="font-size:14px;color:#000">原价：￥</span><span class="yj">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
+          <p><span style="font-size:14px;color:#000">券后价格：￥</span><span class="jhjg">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
+        </div>
+        <div class="good-button">
           <a @click="openProduct(msg.id)">
-            <y-button text="查看详情" style="margin: 0 5px"></y-button>
+            <y-button text="查看详情" style="margin: 0 5px" class="detailbutton"></y-button>
           </a>
           <!-- <y-button text="加入购物车"
                     style="margin: 0 5px"
                     @btnClick="addCart(msg.id,msg.retailPrice,msg.name,msg.picUrl)"
                     classStyle="main-btn"
           ></y-button> -->
+          <y-button text="领取优惠券"
+                    style="margin: 0 5px"
+                    @btnClick="addCart(msg.id,msg.retailPrice,msg.name,msg.picUrl)"
+                    classStyle="main-btn"main-btn
+          ></y-button>
         </div>
-        <p><span style="font-size:14px">￥</span>{{Number(msg.retailPrice).toFixed(2)}}</p>
       </div>
     </div>
   </div>
@@ -88,45 +99,65 @@
     width: 25%;
     transition: all .5s;
     height: 430px;
+    padding: 2px;
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 1px 1px 20px #999;
-      .good-price p {
-        display: none;
-      }
-      .ds {
-        display: flex;
-      }
-    }
-    .ds {
-      @extend %block-center;
-      width: 100%;
-      display: none;
+      transform: translateY(-5px);
+      box-shadow: 1px 6px 20px #5c81e3;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
     }
 
+    .good-button{
+      @extend %block-center;
+      display: flex;
+      padding-bottom: 17px;
+      a{
+        padding: 0 27px;
+      }
+      .detailbutton{
+        &:hover{
+          border: 1px solid #5c81e3;
+        }
+      }
+    }
     .good-img {
       img {
-        margin: 50px auto 10px;
+        margin: 20px auto 10px;
         @include wh(206px);
         display: block;
       }
+    }
+    .good-content {
+        @include wh(100%,50%);
+        display: block;
+        background: #dcdcdc;
+      padding-top: 10px;
     }
     .good-price {
       margin: 15px 0;
       height: 30px;
       text-align: center;
       line-height: 30px;
-      color: #d44d44;
       font-family: Arial;
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 300;
+      .yj{
+        text-decoration:line-through
+      }
+      p{
+        color: #d44d44;
+        display: inline;
+        padding: 0 10px;
+      }
     }
     .good-title {
       line-height: 1.2;
-      font-size: 16px;
+      font-size: 18px;
       color: #424242;
       margin: 0 auto;
-      padding: 0 14px;
+      padding: 10px 10px;
       text-align: center;
       overflow: hidden;
     }
@@ -134,7 +165,7 @@
       text-align: center;
       line-height: 1.2;
       font-size: 12px;
-      color: #d0d0d0;
+      color: #696969;
       padding: 10px;
     }
 

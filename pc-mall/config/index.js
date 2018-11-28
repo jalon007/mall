@@ -7,8 +7,13 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
     productionSourceMap: true,
+    proxyTable: {
+      '/wx': {
+        target: 'https://www.qutalk.cn'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777
+      }
+    },
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:

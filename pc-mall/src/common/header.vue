@@ -1104,8 +1104,11 @@
 <style lang="scss" rel="stylesheet/scss">
   .nav-list {
     .el-input__icon {
-      background: #c81623;
+      background: #c82a24;
       width: 100px;
+      &:hover{
+        background: #c8000e;
+      }
     }
   }
 </style>

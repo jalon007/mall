@@ -91,6 +91,17 @@
     }
   }
 
+  .main-btn {
+    @include color(#c81623, #fff, #c86566);
+    background-image: -webkit-linear-gradient(top, #c86566, #c82a24);
+    background-image: linear-gradient(180deg, #c86566, #c82a24);
+    @extend %style;
+    &:hover {
+      background-color: #c84a48;
+      background-image: -webkit-linear-gradient(top, #c84a48, #c8000e);
+      background-image: linear-gradient(180deg, #c84a48, #c8000e);
+    }
+  }
   // 禁用
   .disabled-btn {
     cursor: not-allowed;
