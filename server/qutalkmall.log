@@ -1,4 +1,24 @@
-2018-11-27 18:00:19.778  INFO 14648 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 14648 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
-2018-11-27 18:00:19.780  INFO 14648 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
-2018-11-27 18:00:31.275  INFO 14648 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 14.036 seconds (JVM running for 19.155)
-2018-11-27 18:00:31.319  INFO 14648 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 04:33:28.443  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 04:33:28.861  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动确认收货
+2018-11-29 04:33:28.955  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期未评价
+2018-11-29 05:03:28.696  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 05:41:13.631  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 06:11:13.639  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 08:49:55.684  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 09:19:55.688  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 09:49:55.694  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 10:19:55.700  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 10:49:55.707  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 11:19:55.714  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 11:49:55.720  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 12:19:55.728  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 12:49:55.807  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 13:42:01.769  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 14:12:01.779  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 14:42:01.783  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
+2018-11-29 15:25:59.240  INFO 21832 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 21832 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 15:25:59.256  INFO 21832 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 15:26:14.217  INFO 21832 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 15.851 seconds (JVM running for 21.988)
+2018-11-29 15:34:51.543  INFO 28808 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 28808 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 15:34:51.553  INFO 28808 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 15:34:58.964  INFO 28808 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 8.825 seconds (JVM running for 10.638)

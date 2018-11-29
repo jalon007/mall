@@ -274,7 +274,7 @@ public class AdminOrderController {
      * TODO
      * 这里可以进一步地配合用户订单查询时订单未付款检查，如果订单超时半小时则取消。
      */
-    @Scheduled(fixedDelay = 30 * 60 * 1000)
+    // @Scheduled(fixedDelay = 30 * 60 * 1000)
     public void checkOrderUnpaid() {
         logger.info("系统开启任务检查订单是否已经超期自动取消订单");
 

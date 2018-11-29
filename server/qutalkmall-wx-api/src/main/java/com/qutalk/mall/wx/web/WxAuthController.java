@@ -5,6 +5,7 @@ import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.binarywang.wx.miniapp.bean.WxMaPhoneNumberInfo;
 import com.qutalk.mall.core.notify.NotifyService;
 import com.qutalk.mall.core.notify.NotifyType;
+import com.qutalk.mall.core.system.SystemConfig;
 import com.qutalk.mall.core.util.CharUtil;
 import com.qutalk.mall.core.util.JacksonUtil;
 import com.qutalk.mall.core.util.bcrypt.BCryptPasswordEncoder;
@@ -24,10 +25,7 @@ import com.qutalk.mall.wx.util.IpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
@@ -325,6 +323,88 @@ public class WxAuthController {
         result.put("userInfo", userInfo);
         return ResponseUtil.ok(result);
     }
+    @PostMapping("pregister")
+    public Object pregister(@RequestBody String body, HttpServletRequest request) {
+        String username = JacksonUtil.parseString(body, "username");
+        String password = JacksonUtil.parseString(body, "password");
+        String mobile = JacksonUtil.parseString(body, "mobile");
+        String code = JacksonUtil.parseString(body, "code");
+        //String wxCode = JacksonUtil.parseString(body, "wxCode");
+
+        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password) || StringUtils.isEmpty(mobile)
+                || StringUtils.isEmpty(code)) {
+            return ResponseUtil.badArgument();
+        }
+
+        if (!RegexUtil.isMobileExact(mobile)) {
+            return ResponseUtil.fail(403, "手机号格式不正确");
+        }
+
+        List<LitemallUser> userList = userService.queryByUsername(username);
+        if (userList.size() > 0) {
+            return ResponseUtil.fail(403, "用户名已注册");
+        }
+//微信绑定todo
+        userList = userService.queryByMobile(mobile);
+
+        //判断验证码是否正确 todo
+        String cacheCode = CaptchaCodeManager.getCachedCaptcha(mobile);
+//        if (cacheCode == null || cacheCode.isEmpty() || !cacheCode.equals(code)) {
+//            return ResponseUtil.fail(403, "验证码错误");
+//        }
+
+        String openId = "pc_register_defult_openid";
+//        try {
+//            WxMaJscode2SessionResult result = this.wxService.getUserService().getSessionInfo(wxCode);
+//            openId = result.getOpenid();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return ResponseUtil.fail(403, "openid 获取失败");
+//        }
+//        userList = userService.queryByOpenid(openId);
+//        if (userList.size() > 1) {
+//            return ResponseUtil.fail(403, "openid 存在多个");
+//        }
+        if (userList.size() == 1) {
+            LitemallUser checkUser = userList.get(0);
+            String checkUsername = checkUser.getUsername();
+            String checkPassword = checkUser.getPassword();
+            if (!checkUsername.equals(openId) || !checkPassword.equals(openId)) {
+                return ResponseUtil.fail(403, "openid已绑定账号");
+            }
+        }
+
+        LitemallUser user = null;
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encodedPassword = encoder.encode(password);
+        user = new LitemallUser();
+        user.setUsername(username);
+        user.setPassword(encodedPassword);
+        user.setMobile(mobile);
+        user.setWeixinOpenid(openId);
+        user.setAvatar("https://yanxuan.nosdn.127.net/80841d741d7fa3073e0ae27bf487339f.jpg?imageView&quality=90&thumbnail=64x64");
+        user.setNickname(username);
+        user.setGender((byte) 0);
+        user.setUserLevel((byte) 0);
+        user.setStatus((byte) 0);
+        user.setLastLoginTime(LocalDateTime.now());
+        user.setLastLoginIp(IpUtil.client(request));
+        userService.add(user);
+
+        // userInfo
+        UserInfo userInfo = new UserInfo();
+        userInfo.setNickName(username);
+        userInfo.setAvatarUrl(user.getAvatar());
+
+        // token
+        UserToken userToken = UserTokenManager.generateToken(user.getId());
+
+        Map<Object, Object> result = new HashMap<Object, Object>();
+        result.put("token", userToken.getToken());
+        result.put("tokenExpire", userToken.getExpireTime().toString());
+        result.put("userInfo", userInfo);
+        return ResponseUtil.ok(result);
+    }
 
     /**
      * 账号密码重置
@@ -399,5 +479,14 @@ public class WxAuthController {
         }
         UserTokenManager.removeToken(userId);
         return ResponseUtil.ok();
+    }
+    @GetMapping("checkLogin")
+    public Object checkLogin() {
+        Map<String, Object> data = new HashMap<>();
+        data.put("state", 1);
+        data.put("id","id123456");
+        data.put("username","id123456");
+        data.put("token","id123456");
+        return ResponseUtil.ok(data);
     }
 }
