@@ -61,7 +61,7 @@
   <view class="a-section a-brand" wx:if="{{brands.length > 0}}">
     <view class="h">
       <navigator url="../brand/brand">
-        <text class="txt">品牌制造商直供</text>
+        <text class="txt">有品生活</text>
       </navigator>
     </view>
     <view class="b">
@@ -83,7 +83,7 @@
     <view class="h">
       <view>
         <navigator url="../newGoods/newGoods">
-          <text class="txt">周一周四 · 新品首发</text>
+          <text class="txt">每日推荐</text>
         </navigator>
       </view>
     </view>
@@ -102,7 +102,7 @@
     <view class="h">
       <view>
         <navigator url="../hotGoods/hotGoods">
-          <text class="txt">人气推荐</text>
+          <text class="txt">人气爆款</text>
         </navigator>
       </view>
     </view>

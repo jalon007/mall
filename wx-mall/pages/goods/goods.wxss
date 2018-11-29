@@ -4,12 +4,12 @@
 
 .goodsimgs {
   width: 750rpx;
-  height: 750rpx;
+  height: 550rpx;
 }
 
 .goodsimgs image {
   width: 750rpx;
-  height: 750rpx;
+  height: 550rpx;
 }
 
 .commodity_screen {
