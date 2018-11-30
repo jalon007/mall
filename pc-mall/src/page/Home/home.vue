@@ -2,6 +2,26 @@
   <div class="home">
 
   <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
+
+    <div class="category-con">
+      <div class="category-inner-con w1200">
+        <div class="category-type">
+          <h3>全部分类</h3>
+        </div>
+        <div class="category-tab-content">
+          <div class="nav-con">
+            <ul class="normal-nav layui-clear">
+              <li class="nav-item">
+                <div class="title">奶粉辅食</div>
+                <p><a href="#">奶粉</a><a href="#">捕食</a><a href="#">营养品</a></p>
+                <i class="layui-icon layui-icon-right"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="banner" >
       <div class="bg" ref="bg"
         @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
