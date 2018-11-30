@@ -5,9 +5,9 @@ import store from './store/'
 import VueLazyload from 'vue-lazyload'
 import infiniteScroll from 'vue-infinite-scroll'
 import VueCookie from 'vue-cookie'
-// import { userInfo } from './api'
+import { userInfo } from './api'
 import { Button, Pagination, Checkbox, Icon, Autocomplete, Loading, Message, Notification, Steps, Step, Table, TableColumn, Input, Dialog, Select, Option } from 'element-ui'
-// import { getStore } from '/utils/storage'
+import { getStore } from '/utils/storage'
 import VueContentPlaceholders from 'vue-content-placeholders'
 Vue.use(VueContentPlaceholders)
 Vue.use(Button)
@@ -36,7 +36,7 @@ Vue.use(VueLazyload, {
   // attempt: 1
 })
 Vue.config.productionTip = false
-/*
+
 const whiteList = ['/home', '/goods', '/login', '/register', '/goodsDetails', '/thanks', '/search', '/refreshsearch', '/refreshgoods'] // 不需要登陆的页面
 router.beforeEach(function (to, from, next) {
   let params = {
@@ -45,17 +45,18 @@ router.beforeEach(function (to, from, next) {
     }
   }
   userInfo(params).then(res => {
-    // test
-    next()
-
-    if (res.result.state !== 1) { // 没登录
+    if (to.path) {
+      window._hmt.push(['_trackPageview', '/#' + to.fullPath])
+    }
+    console.error(to.path)
+    if (res.data.state !== 1) { // 没登录
       if (whiteList.indexOf(to.path) !== -1) { // 白名单
         next()
       } else {
         next('/login')
       }
     } else {
-      store.commit('RECORD_USERINFO', {info: res.result})
+      store.commit('RECORD_USERINFO', {info: res.data})
       if (to.path === '/login') { //  跳转到
         next({path: '/'})
       }
@@ -63,7 +64,7 @@ router.beforeEach(function (to, from, next) {
     }
   })
 })
-*/
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

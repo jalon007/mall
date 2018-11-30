@@ -33,11 +33,14 @@
           <buy-num @edit-num="editNum" :limit="Number(100)"></buy-num>
         </div>
         <div class="buy">
-          <y-button text="加入购物车"
+          <y-button text="加入收藏"
                     @btnClick="addCart(product.info.id,product.info.retailPrice,product.info.name,product.info.picUrl)"
                     classStyle="main-btn"
                     style="width: 145px;height: 50px;line-height: 48px"></y-button>
-          <y-button text="现在购买"
+          <!--<y-button text="现在购买"-->
+                    <!--@btnClick="checkout(product.info.id)"-->
+                    <!--style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>-->
+          <y-button text="立即领券"
                     @btnClick="checkout(product.info.id)"
                     style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>
         </div>

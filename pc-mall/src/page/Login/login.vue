@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="dialog dialog-shadow" style="display: block; margin-top: -362px;">
         <div class="title">
-          <h4>使用 XMall 账号 登录官网</h4>
+          <!--<h4>使用 XMall 账号 登录官网</h4>-->
         </div>
         <div v-if="loginPage" class="content">
           <ul class="common-form">
@@ -25,7 +25,7 @@
             <li style="text-align: right" class="pr">
               <el-checkbox class="auto-login" v-model="autoLogin">记住密码</el-checkbox>
               <!-- <span class="pa" style="top: 0;left: 0;color: #d44d44">{{ruleForm.errMsg}}</span> -->
-              <a href="javascript:;" class="register" @click="toRegister">注册 XMall 账号</a>
+              <a href="javascript:;" class="register" @click="toRegister">免费注册</a>
               <a style="padding: 1px 0 0 10px" @click="open('找回密码','请联系作者邮箱找回密码或使用测试账号登录：test | test')">忘记密码 ?</a>
             </li>
           </ul>
@@ -45,7 +45,7 @@
           <div class="border"></div>
           <div class="footer">
             <div class="other">其它账号登录：</div>
-            <a><img @click="open('待开发','此功能开发中...')" style="height: 15px; margin-top: 22px;" src="/static/images/other-login.png"></a>
+            <a><img @click="open('待开发','微信扫码登陆...')" style="height: 15px; margin-top: 22px;" src="/static/images/other-login.png"></a>
           </div>
         </div>
       </div>
@@ -275,7 +275,7 @@ export default {
     overflow: visible;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     position: relative;
-    background-image: url(/static/images/smartisan_4ada7fecea.png);
+    background-image: url(/static/images/Q64-2.png);
     background-size: 140px;
     background-position: top center;
     background-repeat: no-repeat;

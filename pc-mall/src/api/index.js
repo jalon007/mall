@@ -9,7 +9,7 @@ export const loginOut = (params) => {
 }
 // 用户信息
 export const userInfo = (params) => {
-  return http.fetchGet('/member/checkLogin', params)
+  return http.fetchGet('/wx/auth/checkLogin', params)
 }
 // 注册账号
 export const register = (params) => {

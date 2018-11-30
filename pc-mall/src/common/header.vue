@@ -492,7 +492,7 @@
       display: flex;
       align-items: center;
       > a {
-        background: url(/static/images/tblogo.png) no-repeat 50%;
+        background: url(/static/images/qlogo.png) no-repeat 50%;
         background-size: cover;
         display: block;
         @include wh(240px, 130px);

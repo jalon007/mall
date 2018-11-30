@@ -22,3 +22,140 @@
 2018-11-29 15:34:51.543  INFO 28808 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 28808 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
 2018-11-29 15:34:51.553  INFO 28808 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
 2018-11-29 15:34:58.964  INFO 28808 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 8.825 seconds (JVM running for 10.638)
+2018-11-29 16:04:22.223  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 16:04:22.224  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 16:04:29.318  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 8.608 seconds (JVM running for 12.249)
+2018-11-29 17:25:48.991  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:25:48.992  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:25:56.010  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 7.581 seconds (JVM running for 4898.941)
+2018-11-29 17:26:17.729  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:26:17.729  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:26:21.542 ERROR 8560 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field wxService in com.qutalk.mall.wx.web.WxAuthController required a bean of type 'cn.binarywang.wx.miniapp.api.WxMaService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'cn.binarywang.wx.miniapp.api.WxMaService' in your configuration.
+
+2018-11-29 17:26:23.158  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:26:23.159  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:26:26.500  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 3.426 seconds (JVM running for 4929.43)
+2018-11-29 17:26:57.017  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:26:57.017  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:27:05.058  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 8.713 seconds (JVM running for 4967.988)
+2018-11-29 17:37:22.772  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:37:22.772  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:37:24.860  WARN 8560 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.qutalk.mall.db.dao]' package. Please check your configuration.
+2018-11-29 17:37:24.935  WARN 8560 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.qutalk.mall]' package. Please check your configuration.
+2018-11-29 17:37:26.917 ERROR 8560 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'QCodeService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.core.qcode.QCodeService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5935b011]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:261) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1120) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.core.qcode.QCodeService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5935b011]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:659) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:556) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:541) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:244) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/qutalk/mall/db/domain/LitemallGroupon
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_141]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_141]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_141]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:641) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.qutalk.mall.db.domain.LitemallGroupon
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_141]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	... 30 common frames omitted
+
+2018-11-29 17:37:58.428  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:37:58.428  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:38:04.936 ERROR 8560 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userInfoService': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.wx.service.UserInfoService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@543df819]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:261) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1120) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) [spring-boot-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at com.qutalk.mall.Application.main(Application.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_141]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_141]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_141]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.qutalk.mall.wx.service.UserInfoService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@543df819]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:659) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:556) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:541) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:244) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/qutalk/mall/wx/dao/UserInfo
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_141]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_141]
+	at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_141]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:641) ~[spring-core-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.qutalk.mall.wx.dao.UserInfo
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[na:1.8.0_141]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335) ~[na:1.8.0_141]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:148) ~[spring-boot-devtools-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[na:1.8.0_141]
+	... 30 common frames omitted
+
+2018-11-29 17:38:07.953  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:38:07.953  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:38:12.397  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 4.6 seconds (JVM running for 5635.327)
+2018-11-29 17:38:23.408  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 8560 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-11-29 17:38:23.408  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-11-29 17:38:41.632  INFO 8560 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 18.344 seconds (JVM running for 5664.563)

@@ -52,7 +52,7 @@
         </ul>
 
         <ul class="c4">
-          <li class="tel"><a class="c5" href="http://wpa.qq.com/msgrd?v=3&uin=1012139570&site=qq&menu=yes" target="_blank">1012139570</a></li>
+          <li class="tel"><a class="c5" href="http://wpa.qq.com/msgrd?v=3&uin=1012139570&site=qq&menu=yes" target="_blank">11111111</a></li>
           <li class="time">周一至周日 10:00-23:00（限Starrer或捐赠人联系）</li>
           <li class="online">
             <y-button text="在线帮助" class="button" @btnClick="open3"></y-button>
@@ -70,8 +70,7 @@
       </div>
       <div class="cop">
         <a class="content-c3" href="http://www.miibeian.gov.cn/" target="_blank">
-          <span class="content-c3">蜀ICP备16030308号-1</span>
-          <span class="content-c3">蜀ICP证16030308号</span>
+          <span class="content-c3">冀ICP备18034680号</span>
         </a>
       </div>
     </div>
@@ -100,7 +99,7 @@
       open3 () {
         this.$notify({
           title: '离线帮助',
-          message: '没人会帮助你，请自己靠自己',
+          message: '领取优惠券，尽情去购买就OK啦！',
           type: 'warning'
         })
       },
@@ -113,7 +112,7 @@
       open5 () {
         this.$notify({
           title: '送货政策',
-          message: '本网站所有商品购买后不会发货，将用作捐赠',
+          message: '本网站只推荐购买优惠券、请到对应平台购买商品、本网站不对商品负',
           type: 'warning'
         })
       }
