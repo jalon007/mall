@@ -21,7 +21,7 @@
                 :on-icon-click="handleIconClick"
                 @keydown.enter.native="handleIconClick">
               </el-autocomplete>
-              <router-link to="/goods"><a @click="changePage(2)">全部商品</a></router-link>
+              <!--<router-link to="/goods"><a @click="changePage(2)">全部商品</a></router-link>-->
               <!--<router-link to="/thanks"><a @click="changePage(4)">捐赠</a></router-link>-->
               <!-- <router-link to="/">Smartisan M1 / M1L</router-link>
               <router-link to="/">Smartisan OS</router-link>
@@ -505,7 +505,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 22px;
+      padding-left: 100px;
       .el-autocomplete{
         width: 500px;
         border: 2px solid #c81623;
@@ -529,7 +529,7 @@
         position: fixed;
         justify-content: center;
         align-items: center;
-        margin-right: 62px;
+        /*margin-right: 62px;*/
         left: 50%;
         z-index: 32;
         top: -55px;
@@ -538,7 +538,7 @@
         -webkit-transition: -webkit-transform .3s cubic-bezier(.165, .84, .44, 1);
         transition: transform .3s cubic-bezier(.165, .84, .44, 1);
         .el-autocomplete{
-          width: 300px;
+          width: 330px;
           border: 1px solid #c81623;
         }
       }
@@ -591,6 +591,7 @@
       display: flex;
       margin-right: 80px;
       margin-top: 70px;
+      width: 1000px;
     }
     .nav-aside {
       display: flex;

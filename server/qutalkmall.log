@@ -1,3 +1,14 @@
-2018-12-03 18:15:04.482  INFO 15328 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 15328 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
-2018-12-03 18:15:04.486  INFO 15328 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
-2018-12-03 18:15:13.515  INFO 15328 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 10.489 seconds (JVM running for 13.778)
+2018-12-04 03:00:00.045  INFO 15328 --- [pool-2-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动确认收货
+2018-12-04 04:00:00.000  INFO 15328 --- [pool-2-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期未评价
+2018-12-04 15:30:04.727  INFO 9132 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 9132 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-12-04 15:30:04.728  INFO 9132 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-12-04 15:30:21.846  INFO 9132 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 20.29 seconds (JVM running for 24.823)
+2018-12-04 17:18:35.604  INFO 17824 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 17824 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-12-04 17:18:35.605  INFO 17824 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-12-04 17:18:42.823  INFO 17824 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 7.949 seconds (JVM running for 9.418)
+2018-12-04 17:30:15.268  INFO 18556 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 18556 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-12-04 17:30:15.269  INFO 18556 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-12-04 17:30:24.334  INFO 18556 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 10.911 seconds (JVM running for 13.218)
+2018-12-04 17:45:20.276  INFO 18492 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 18492 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
+2018-12-04 17:45:20.278  INFO 18492 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
+2018-12-04 17:45:26.722  INFO 18492 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 7.559 seconds (JVM running for 9.052)

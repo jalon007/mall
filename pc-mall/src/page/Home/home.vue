@@ -41,7 +41,9 @@
 
       <div class="activity-panel">
         <ul class="box">
-          <li class="content" v-for="(iitem,j) in newGoodsList" :key="j" @click="linkTo(iitem)">
+
+          <li class="content" v-for="(iitem,j) in brandList" :key="j" @click="linkTo(iitem)">
+            <div class="title">{{iitem.name}}</div>
             <img class="i" :src="iitem.picUrl" :alt="iitem.name">
             <a class="cover-link"></a>
           </li>
@@ -56,17 +58,19 @@
           </div>
         </y-shelf>
       </section>
+    </div>
 
+    <div v-for="(item ,i) in floorGoodsList" >
       <section class="w mt30 clearfix">
         <y-shelf :title="item.name">
           <div slot="content" class="floors" >
-            <div class="imgbanner" v-for="(iitem,j) in item.newGoodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
+            <div class="imgbanner" v-for="(iitem,j) in item.goodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
               <img v-lazy="iitem.picUrl">
               <h6 class="good-title" v-html="iitem.name">{{iitem.name}}</h6>
               <h3 class="sub-title ellipsis">{{iitem.brief}}</h3>
               <a class="cover-link"></a>
             </div>
-            <mall-goods :msg="iitem" v-for="(iitem,j) in item.newGoodsList" :key="j+'key'"></mall-goods>
+            <mall-goods :msg="iitem" v-for="(iitem,j) in item.goodsList" v-if="j>0" :key="j+'key'"></mall-goods>
           </div>
         </y-shelf>
       </section>
@@ -105,6 +109,8 @@
         error: false,
         banner: [],
         newGoodsList: [],
+        brandList: [],
+        floorGoodsList: [],
         mark: 0,
         bgOpt: {
           px: 0,
@@ -207,6 +213,8 @@
         this.loading = false
         this.banner = data.banner
         this.newGoodsList = data.newGoodsList
+        this.brandList = data.brandList
+        this.floorGoodsList = data.floorGoodsList
       })
       this.showNotify()
     },
@@ -283,12 +291,22 @@
       background: #fff;
       box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
     }
+    .title{
+      height: 54px;
+      font-weight: bold;
+      line-height: 1.8;
+      font-size: 20px;
+      color: #424242;
+      padding: 10px;
+      text-align: left;
+      overflow: hidden;
+    }
     .content {
       float: left;
       position: relative;
       box-sizing: border-box;
       width: 25%;
-      height: 200px;
+      height: 316px;
       text-align: center;
       border-radius: 10px;
       padding: 0 2px;
@@ -312,7 +330,7 @@
     }
     .i {
       width: 305px;
-      height: 200px;
+      height: 316px;
     }
     .cover-link {
       cursor: pointer;
@@ -471,7 +489,7 @@
     z-index: 0;
     margin-top: 29px;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, .14);
+    /*border: 1px solid rgba(0, 0, 0, .14);*/
     border-radius: 8px;
     background: #fff;
     box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);

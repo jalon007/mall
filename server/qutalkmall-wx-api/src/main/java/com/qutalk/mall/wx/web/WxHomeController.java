@@ -118,7 +118,7 @@ public class WxHomeController {
             if (l2List.size() == 0) {
                 categoryGoods = new ArrayList<>();
             } else {
-                categoryGoods = goodsService.queryByCategory(l2List, 0, SystemConfig.getCatlogMoreLimit());
+                categoryGoods = goodsService.queryByCategory(l2List, 0, 11);//4,SystemConfig.getCatlogMoreLimit()
             }
 
             Map<String, Object> catGoods = new HashMap<String, Object>();
