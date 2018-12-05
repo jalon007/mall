@@ -134,6 +134,9 @@
                 <li>
                   <a @click="changGoods(-2)" :class="{active:choosePage===-2}">全部</a>
                 </li>
+                <li>
+                  <a @click="changGoods(-3)" :class="{active:choosePage===-3}">品牌馆</a>
+                </li>
                 <li v-for="(item,i) in navList" :key="i">
                   <a @click="changGoods(i, item)" :class="{active:i===choosePage}">{{item.name}}</a>
                 </li>
@@ -229,6 +232,10 @@
         } else if (v === -2) {
           this.$router.push({
             path: '/refreshgoods'
+          })
+        } else if (v === -3) {
+          this.$router.push({
+            path: '/refreshbrands'
           })
         } else {
           // window.open('//' + window.location.host + '/#/goods?cid=' + item.id)
