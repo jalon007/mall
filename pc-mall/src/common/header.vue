@@ -1,7 +1,6 @@
 <template>
   <div class="header-box">
-    <div>
-      <header class="w">
+    <header class="w">
         <div class="w-box">
           <div class="nav-logo">
             <h1 @click="changePage(-1)">
@@ -139,13 +138,11 @@
                   <a @click="changGoods(i, item)" :class="{active:i===choosePage}">{{item.name}}</a>
                 </li>
               </ul>
-              <div></div>
             </div>
           </div>
         </div>
       </slot>
     </div>
-  </div>
 </template>
 <script>
   import YButton from '/components/YButton'
@@ -1104,12 +1101,26 @@
 </style>
 <style lang="scss" rel="stylesheet/scss">
   .nav-list {
-    .el-input__icon {
+    .el-autocomplete{
+      border-radius: 30px;
+      .el-input__inner{
+        border-radius: 30px;
+        border-color: #c82a24;
+      }
+    }
+
+    .el-input__icon{
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
       background: #c82a24;
       width: 100px;
       &:hover{
         background: #c8000e;
       }
+    }
+    .el-icon-search:before{
+      content: "搜 索";
+      color: #ffffff;
     }
   }
 </style>

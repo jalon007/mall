@@ -29,7 +29,7 @@ export const thanksList = (params) => {
 }
 // 首页接口
 export const productHome = (params) => {
-  return http.fetchGet('/wx/home/index', params)
+  return http.fetchGet('/wx/home/pindex', params)
 }
 // 首页接口
 export const navList = (params) => {

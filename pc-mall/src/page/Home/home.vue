@@ -62,7 +62,7 @@
 
     <div v-for="(item ,i) in floorGoodsList" >
       <section class="w mt30 clearfix">
-        <y-shelf :title="item.name">
+        <y-shelf :title="item.name" :child="item.childCategory" :class="getColor(i)">
           <div slot="content" class="floors" >
             <div class="imgbanner" v-for="(iitem,j) in item.goodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
               <img v-lazy="iitem.picUrl">
@@ -200,6 +200,9 @@
           this.dialogVisible = true
           setStore('notify', this.notify)
         }
+      },
+      getColor (i) {
+        return 'color' + parseInt(i % 4)
       }
     },
     mounted () {
