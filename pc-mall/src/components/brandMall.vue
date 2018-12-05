@@ -1,13 +1,15 @@
 <template>
   <div class="brand-mall">
       <div class="brand-img">
-        <img v-lazy="msg.picUrl" @click="openBrand(msg.id)" :alt="msg.name" :key="msg.picUrl">
+        <a @click="openBrand(msg.id)">
+        <img v-lazy="msg.picUrl" :alt="msg.name" :key="msg.picUrl">
+        </a>
       </div>
       <div class="brand-content">
         <h6 class="brand-title" v-html="msg.name">{{msg.name}}|{{msg.floorPrice}}元起</h6>
         <h3 class="sub-title">{{msg.desc}}</h3>
         <div class="good-button">
-          <a @click="openProduct(msg.id)">
+          <a @click="openBrand(msg.id)">
             <y-button text="查看详情" style="margin: 0 5px" class="detailbutton"></y-button>
           </a>
         </div>
@@ -16,9 +18,7 @@
 </template>
 <script>
   import YButton from '/components/YButton'
-  import { addCart } from '/api/goods.js'
   import { mapMutations, mapState } from 'vuex'
-  import { getStore } from '/utils/storage'
   export default {
     props: {
       msg: {
@@ -35,28 +35,6 @@
       },
       openBrand (id) {
         window.open('//' + window.location.host + '/#/brandsDetails?id=' + id)
-      },
-      addCart (id, price, name, img) {
-        if (!this.showMoveImg) {     // 动画是否在运动
-          if (this.login) { // 登录了 直接存在用户名下
-            addCart({userId: getStore('userId'), productId: id, productNum: 1}).then(res => {
-              // 并不重新请求数据
-              this.ADD_CART({productId: id, salePrice: price, productName: name, productImg: img})
-            })
-          } else { // 未登录 vuex
-            this.ADD_CART({productId: id, salePrice: price, productName: name, productImg: img})
-          }
-          // 加入购物车动画
-          var dom = event.target
-          // 获取点击的坐标
-          let elLeft = dom.getBoundingClientRect().left + (dom.offsetWidth / 2)
-          let elTop = dom.getBoundingClientRect().top + (dom.offsetHeight / 2)
-          // 需要触发
-          this.ADD_ANIMATION({moveShow: true, elLeft: elLeft, elTop: elTop, img: img})
-          if (!this.showCart) {
-            this.SHOW_CART({showCart: true})
-          }
-        }
       }
     },
     computed: {
@@ -125,14 +103,12 @@
         vertical-align: middle;
         text-align: center;
         height: 63px;
-        line-height: 100px;
-      }
-      .brand-title {
-        font-size: 18px;
-        color: #424242;
+        line-height: 63px;
+        font-size: 20px;
+        color: #ffffff;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.32);
         margin: 0 auto;
         padding: 10px 10px;
-        text-align: center;
         overflow: hidden;
       }
       h3 {

@@ -989,6 +989,7 @@
     background: rgba(175, 175, 175, 0.34);
     box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
     border-bottom: 2px solid #c81623;
+    background: linear-gradient(#fbfbfb, #ececec);
     &.fixed {
       position: fixed;
       z-index: 21;
