@@ -133,7 +133,63 @@ public class WxHomeController {
         HomeCacheManager.loadData(HomeCacheManager.INDEX, data);
         return ResponseUtil.ok(data);
     }
+    @GetMapping("/pindex")
+    public Object pindex() {
+        //优先从缓存中读取
+        if (HomeCacheManager.hasData(HomeCacheManager.INDEX)) {
+            return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.INDEX));
+        }
 
+
+        Map<String, Object> data = new HashMap<>();
+
+        List<LitemallAd> banner = adService.queryIndex();
+        data.put("banner", banner);
+
+        List<LitemallCategory> channel = categoryService.queryChannel();
+        data.put("channel", channel);
+
+        List<LitemallGoods> newGoods = goodsService.queryByNew(0, SystemConfig.getNewLimit());
+        data.put("newGoodsList", newGoods);
+
+        List<LitemallGoods> hotGoods = goodsService.queryByHot(0, SystemConfig.getHotLimit());
+        data.put("hotGoodsList", hotGoods);
+
+        List<LitemallBrand> brandList = brandService.queryVO(0, SystemConfig.getBrandLimit());
+        data.put("brandList", brandList);
+
+        List<LitemallTopic> topicList = topicService.queryList(0, SystemConfig.getTopicLimit());
+        data.put("topicList", topicList);
+
+        //团购专区
+        List<Map<String, Object>> grouponList = grouponRulesService.queryList(0, 5);
+        data.put("grouponList", grouponList);
+
+        List<Map> categoryList = new ArrayList<>();
+        List<LitemallCategory> catL1List = categoryService.queryL1WithoutRecommend(0, 8);//SystemConfig.getCatlogListLimit()
+        for (LitemallCategory catL1 : catL1List) {
+            List<LitemallCategory> catL2List = categoryService.queryByPid(catL1.getId());
+            List<LitemallGoods> categoryGoods = null;
+            for (LitemallCategory catL2 : catL2List) {
+                categoryGoods = goodsService.queryByCategory(catL2.getId(), 0, 11);//4,SystemConfig.getCatlogMoreLimit()
+                if(!categoryGoods.isEmpty()){
+                    break;
+                }
+            }
+
+            Map<String, Object> catGoods = new HashMap<String, Object>();
+            catGoods.put("id", catL1.getId());
+            catGoods.put("name", catL1.getName());
+            catGoods.put("goodsList", categoryGoods);
+            catGoods.put("childCategory",catL2List);
+            categoryList.add(catGoods);
+        }
+        data.put("floorGoodsList", categoryList);
+
+        //缓存数据
+        HomeCacheManager.loadData(HomeCacheManager.INDEX, data);
+        return ResponseUtil.ok(data);
+    }
     @GetMapping("/navList")
     public Object navList() {
         //优先从缓存中读取
