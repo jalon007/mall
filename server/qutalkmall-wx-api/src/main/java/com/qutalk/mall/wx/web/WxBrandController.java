@@ -46,7 +46,7 @@ public class WxBrandController {
      */
     @GetMapping("list")
     public Object list(@RequestParam(defaultValue = "1") Integer page,
-                       @RequestParam(defaultValue = "10") Integer size) {
+                       @RequestParam(defaultValue = "20") Integer size) {
 
         List<LitemallBrand> brandList = brandService.queryVO(page, size);
         int total = brandService.queryTotalCount();
@@ -54,6 +54,7 @@ public class WxBrandController {
 
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("brandList", brandList);
+        data.put("count",total);
         data.put("totalPages", totalPages);
         return ResponseUtil.ok(data);
     }

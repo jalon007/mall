@@ -1,11 +1,2 @@
-2018-12-05 03:00:00.030  INFO 7732 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动确认收货
-2018-12-05 04:00:00.000  INFO 7732 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期未评价
-2018-12-05 10:14:18.423  INFO 9244 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 9244 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
-2018-12-05 10:14:18.424  INFO 9244 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
-2018-12-05 10:14:26.309  INFO 9244 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 9.45 seconds (JVM running for 11.492)
-2018-12-05 10:44:55.973  INFO 12336 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 12336 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
-2018-12-05 10:44:55.973  INFO 12336 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
-2018-12-05 10:45:01.138  INFO 12336 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 5.769 seconds (JVM running for 6.572)
-2018-12-05 14:38:11.871  INFO 10436 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on js180625zx with PID 10436 (D:\git\others\qutalk-mall\server\qutalkmall-all\target\classes started by js in D:\git\others\qutalk-mall\server)
-2018-12-05 14:38:11.872  INFO 10436 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
-2018-12-05 14:38:20.898  INFO 10436 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 10.936 seconds (JVM running for 15.826)
+2018-12-07 03:00:00.069  INFO 18200 --- [pool-2-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动确认收货
+2018-12-07 04:00:00.001  INFO 18200 --- [pool-2-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期未评价

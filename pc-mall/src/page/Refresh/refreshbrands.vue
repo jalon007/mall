@@ -7,7 +7,7 @@ export default {
     this.$router.push({
       path: '/brands',
       query: {
-        cid: this.$route.query.cid
+        cid: this.$route.query.id
       }
     })
     return {

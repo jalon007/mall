@@ -134,7 +134,7 @@
                 <li>
                   <a @click="changGoods(-2)" :class="{active:choosePage===-2}">全部</a>
                 </li>
-                <li>
+                <li class="brand">
                   <a @click="changGoods(-3)" :class="{active:choosePage===-3}">品牌馆</a>
                 </li>
                 <li v-for="(item,i) in navList" :key="i">
@@ -1071,12 +1071,23 @@
         background: #bdbdbd;
       }
 
+      .home{
+        a{
+          a{
+            color: #c81623;
+            font-weight: bold;
+          }
+        }
+      }
+      .brand{
+        a{
+          color: #9547c8;
+          font-weight: bold;
+        }
+      }
     }
   }
-  .nav-list2 .home a a{
-    color: #c81623;
-    font-weight: bold;
-  }
+
   @media (min-width: 1px) {
     .nav-sub .nav-sub-wrapper:after {
       display: block;
