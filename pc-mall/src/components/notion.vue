@@ -1,24 +1,30 @@
 <template>
-  <div class="notion-box">
+  <div class="notion-box" :class="getColor(index)">
     <div class="title">
-      <h2>{{title}} Top10</h2>
+      <h2>{{title}}</h2>
     </div>
     <div class="notion-content">
-      <ul class="notion-img" v-for="(item,i) in notions" v-if="i<2" :key="i">
+      <ul class="notion-img" v-for="(item,i) in notions" v-if="i<index+1" :key="i">
         <a @click="openProduct(item.id)">
           <img class="notion-image" v-lazy="item.picUrl" :alt="item.name" :key="item.picUrl">
         </a>
       </ul>
     </div>
-    <div class="more"><h6>more>></h6></div>
+    <div class="more">more>></div>
   </div>
 </template>
 <script>
   export default {
     props: [
       'title',
-      'notions'
-    ]
+      'notions',
+      'index'
+    ],
+    methods: {
+      getColor (i) {
+        return 'color' + parseInt(i % 6)
+      }
+    }
   }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
@@ -26,13 +32,13 @@
   .notion-box {
 
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     overflow: hidden;
     background: #fff;
     border-radius: 8px;
-    border: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
     border-color: rgba(0, 0, 0, .14);
-    box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
+    box-shadow: 0 3px 8px -6px rgba(85, 85, 85, 0.24);
     .title {
       padding-left: 30px;
       position: relative;
@@ -81,6 +87,7 @@
       }
     }
     .more{
+      float: right;
       display: flex;
       width: 100%;
       height: 30px;
@@ -103,6 +110,9 @@
         }
       }
     }
+    .more{
+      border-bottom: 2px solid #c81623;
+    }
   }
   .color1{
     .title{
@@ -112,6 +122,9 @@
           background: #1756c8;
         }
       }
+    }
+    .more{
+      border-bottom: 2px solid #1756c8;
     }
   }
   .color2{
@@ -123,6 +136,9 @@
         }
       }
     }
+    .more{
+      border-bottom: 2px solid #c81cc3;
+    }
   }
   .color3{
     .title{
@@ -132,6 +148,9 @@
           background: #c87f2a;
         }
       }
+    }
+    .more{
+      border-bottom: 2px solid #c87f2a;
     }
   }
 </style>

@@ -2,7 +2,9 @@
   <div class="brands w">
     <div class="brands-center" v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;">
       <div class="brand-left">
-      <notion :title="a" :notions="brands"></notion>
+        <notion :title="notions[0]" :notions="brands" :index="0"></notion>
+        <notion :title="notions[1]" :notions="brands" :index="1"></notion>
+        <notion :title="notions[2]" :notions="brands" :index="2"></notion>
       </div>
       <div class="brand-item" v-if="!noResult">
         <!--商品-->
@@ -60,6 +62,7 @@
   export default {
     data () {
       return {
+        notions: ['top', 'hot', 'recommend'],
         brands: [],
         noResult: false,
         error: false,
@@ -163,6 +166,7 @@
     .brands-center{
       width: 1220px;
       margin: 0 auto;
+      overflow: hidden;
       .brand-left{
         float: left;
         width: 210px;
@@ -177,7 +181,7 @@
         width: 1000px;
         left: 10px;
         .brands-box {
-          width: 1000px;
+          width: 1011px;
           > div {
             float: left;
             border: 1px solid #efefef;
@@ -186,8 +190,6 @@
       }
     }
   }
-
-
 
   .no-info {
     padding: 100px 0;
@@ -199,8 +201,6 @@
       align-self: center;
     }
   }
-
-
 
   .el-pagination{
     align-self: flex-end;

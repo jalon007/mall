@@ -57,7 +57,7 @@
     width: 333px;
     height: 185px;
     position: relative;
-    margin-bottom: 4px;
+    margin: 4px 2px;
     &:hover {
       transform: translateY(-1px);
       box-shadow: 1px 1px 20px #f8edf1;
