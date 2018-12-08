@@ -87,3 +87,7 @@ export const getSearch = (params) => {
 export const getQuickSearch = (params) => {
   return http.fetchGet('/goods/quickSearch', params)
 }
+// 商品分类
+export const catagory = (params) => {
+  return http.fetchGet('/wx/catalog/index', params)
+}
