@@ -10,8 +10,10 @@ import java.util.Map;
 public class HomeCacheManager {
     public static final boolean ENABLE = false;
     public static final String INDEX = "index";
+    public static final String NOTION = "notion";
     public static final String NAVLIST = "navlist";
     public static final String CATALOG = "catalog";
+    public static final String CATALOG_PC = "catalog_pc";
     public static final String GOODS = "goods";
 
     private static Map<String, Map<String, Object>> cacheDataList = new HashMap<>();

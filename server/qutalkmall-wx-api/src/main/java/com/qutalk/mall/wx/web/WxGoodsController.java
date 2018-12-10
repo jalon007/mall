@@ -166,6 +166,18 @@ public class WxGoodsController {
     }
 
     /**
+     * 商品通用注意事项
+     * @param userId
+     * @return
+     */
+    public Object issue(@LoginUser Integer userId){
+
+        List<LitemallIssue> issue = goodsIssueService.query();
+        Map<String, Object> data = new HashMap<>();
+        data.put("issue", issue);
+        return ResponseUtil.ok(data);
+    }
+    /**
      * 商品分类类目
      * <p>
      * TODO 可能应该合并到WxCatalogController中

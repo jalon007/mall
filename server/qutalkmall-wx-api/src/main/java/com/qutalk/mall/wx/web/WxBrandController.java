@@ -84,6 +84,7 @@ public class WxBrandController {
 
         Map<String, Object> data = new HashMap<String, Object>();
         data.put("brand", entity);
+        data.put("categorys",null);//缺少品牌分类关系表
         return ResponseUtil.ok(data);
     }
 }

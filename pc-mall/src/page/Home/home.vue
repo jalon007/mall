@@ -42,9 +42,8 @@
 
       <div class="activity-panel">
         <ul class="box">
-
-          <li class="content" v-for="(iitem,j) in brandList" :key="j" @click="linkTo(iitem)">
-            <div class="title">{{iitem.name}}<a class="more">more</a></div>
+          <li class="content" v-for="(iitem,j) in brandList" :key="j" @click="openBrand(iitem.id) ">
+            <div class="title">{{iitem.name}}</div>
             <img class="i" :src="iitem.picUrl" :alt="iitem.name">
             <a class="cover-link"></a>
           </li>
@@ -148,6 +147,9 @@
       },
       stopTimer () {
         clearInterval(this.timer)
+      },
+      openBrand (id) {
+        window.open('//' + window.location.host + '/#/brandsDetails?id=' + id)
       },
       linkTo (item) {
         if (item.type === 0 || item.type === 2) {
