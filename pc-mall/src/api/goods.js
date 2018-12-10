@@ -91,3 +91,11 @@ export const getQuickSearch = (params) => {
 export const catagory = (params) => {
   return http.fetchGet('/wx/catalog/index', params)
 }
+// 品牌列表
+export const getBrandList = (params) => {
+  return http.fetchGet('/wx/brand/list', params)
+}
+// 品牌详情
+export const getBrandDetail = (params) => {
+  return http.fetchGet('/wx/brand/detail', params)
+}

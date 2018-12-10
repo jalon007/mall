@@ -6,6 +6,8 @@ const Register = () => import('/page/Login/register.vue')
 const Home = () => import('/page/Home/home.vue')
 const GoodS = () => import('/page/Goods/goods.vue')
 const goodsDetails = () => import('/page/Goods/goodsDetails.vue')
+const BrandS = () => import('/page/Brands/brands.vue')
+const brandsDetails = () => import('/page/Brands/brandsDetails.vue')
 const Cart = () => import('/page/Cart/cart.vue')
 const order = () => import('/page/Order/order.vue')
 const user = () => import('/page/User/user.vue')
@@ -22,6 +24,7 @@ const Thanks = () => import('/page/Thanks/thanks.vue')
 const Search = () => import('/page/Search/search.vue')
 const RefreshSearch = () => import('/page/Refresh/refreshsearch.vue')
 const RefreshGoods = () => import('/page/Refresh/refreshgoods.vue')
+const RefreshBrands = () => import('/page/Refresh/refreshbrands.vue')
 const orderDetail = () => import('/page/User/children/orderDetail.vue')
 const Alipay = () => import('/page/Order/alipay.vue')
 const Wechat = () => import('/page/Order/wechat.vue')
@@ -39,7 +42,10 @@ export default new Router({
         {path: 'goods', component: GoodS},
         {path: 'goodsDetails', name: 'goodsDetails', component: goodsDetails},
         {path: 'thanks', name: 'thanks', component: Thanks},
-        {path: '/refreshgoods', name: 'refreshgoods', component: RefreshGoods}
+        {path: '/refreshgoods', name: 'refreshgoods', component: RefreshGoods},
+        {path: 'brands', component: BrandS},
+        {path: 'brandsDetails', name: 'brandsDetails', component: brandsDetails},
+        {path: '/refreshbrands', name: 'refreshbrands', component: RefreshBrands}
       ]
     },
     {path: '/login', name: 'login', component: Login},

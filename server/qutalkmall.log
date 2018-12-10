@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2018-11-29 04:33:28.443  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动取消订单
 2018-11-29 04:33:28.861  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动确认收货
 2018-11-29 04:33:28.955  INFO 23436 --- [pool-1-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期未评价
@@ -614,3 +615,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-11-30 21:36:42.691  INFO 19348 --- [restartedMain] com.qutalk.mall.Application              : Starting Application on DESKTOP-1V7DR5U with PID 19348 (D:\git\mall\server\qutalkmall-all\target\classes started by 76109 in D:\git\mall\server)
 2018-11-30 21:36:42.692  INFO 19348 --- [restartedMain] com.qutalk.mall.Application              : The following profiles are active: db,core,admin,wx
 2018-11-30 21:38:12.223  INFO 19348 --- [restartedMain] com.qutalk.mall.Application              : Started Application in 90.073 seconds (JVM running for 91.204)
+=======
+2018-12-07 03:00:00.069  INFO 18200 --- [pool-2-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期自动确认收货
+2018-12-07 04:00:00.001  INFO 18200 --- [pool-2-thread-1] c.q.mall.admin.web.AdminOrderController  : 系统开启任务检查订单是否已经超期未评价
+>>>>>>> 007c5528eacd76a280c1a35009f18301f7b4fc3f

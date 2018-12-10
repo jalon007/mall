@@ -42,7 +42,9 @@
 
       <div class="activity-panel">
         <ul class="box">
-          <li class="content" v-for="(iitem,j) in newGoodsList" :key="j" @click="linkTo(iitem)">
+
+          <li class="content" v-for="(iitem,j) in brandList" :key="j" @click="linkTo(iitem)">
+            <div class="title">{{iitem.name}}<a class="more">more</a></div>
             <img class="i" :src="iitem.picUrl" :alt="iitem.name">
             <a class="cover-link"></a>
           </li>
@@ -57,17 +59,19 @@
           </div>
         </y-shelf>
       </section>
+    </div>
 
+    <div v-for="(item ,i) in floorGoodsList" >
       <section class="w mt30 clearfix">
-        <y-shelf :title="item.name">
+        <y-shelf :title="item.name" :child="item.childCategory" :class="getColor(i)">
           <div slot="content" class="floors" >
-            <div class="imgbanner" v-for="(iitem,j) in item.newGoodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
+            <div class="imgbanner" v-for="(iitem,j) in item.goodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
               <img v-lazy="iitem.picUrl">
               <h6 class="good-title" v-html="iitem.name">{{iitem.name}}</h6>
               <h3 class="sub-title ellipsis">{{iitem.brief}}</h3>
               <a class="cover-link"></a>
             </div>
-            <mall-goods :msg="iitem" v-for="(iitem,j) in item.newGoodsList" :key="j+'key'"></mall-goods>
+            <mall-goods :msg="iitem" v-for="(iitem,j) in item.goodsList" v-if="j>0" :key="j+'key'"></mall-goods>
           </div>
         </y-shelf>
       </section>
@@ -107,6 +111,8 @@
         error: false,
         banner: [],
         newGoodsList: [],
+        brandList: [],
+        floorGoodsList: [],
         mark: 0,
         bgOpt: {
           px: 0,
@@ -202,6 +208,9 @@
         category().then(res => {
           this.categoryList = res.data.categoryList
         })
+      },
+      getColor (i) {
+        return 'color' + parseInt(i % 4)
       }
     },
     mounted () {
@@ -216,6 +225,8 @@
         this.banner = data.banner
         this.newGoodsList = data.newGoodsList
         this.categoryList = data.channel
+        this.brandList = data.brandList
+        this.floorGoodsList = data.floorGoodsList
       })
       this._getCategory()
       this.showNotify()
@@ -293,12 +304,34 @@
       background: #fff;
       box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
     }
+    .title{
+      height: 54px;
+      font-weight: bold;
+      line-height: 1.8;
+      font-size: 20px;
+      color: #424242;
+      padding: 10px;
+      text-align: left;
+      overflow: hidden;
+      a {
+        width: 32px;
+        height: 32px;
+        float: right;
+        right: 5px;
+        background-color: #fff;
+        background: url(/static/images/more.png) no-repeat center;
+        &:hover{
+          background: url(/static/images/more-hover.png) no-repeat center;
+          background-color: #1e88e5;
+        }
+      }
+    }
     .content {
       float: left;
       position: relative;
       box-sizing: border-box;
       width: 25%;
-      height: 200px;
+      height: 316px;
       text-align: center;
       border-radius: 10px;
       padding: 0 2px;
@@ -322,7 +355,7 @@
     }
     .i {
       width: 305px;
-      height: 200px;
+      height: 316px;
     }
     .cover-link {
       cursor: pointer;
@@ -481,7 +514,7 @@
     z-index: 0;
     margin-top: 29px;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, .14);
+    /*border: 1px solid rgba(0, 0, 0, .14);*/
     border-radius: 8px;
     background: #fff;
     box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
@@ -571,7 +604,7 @@
     height:50px;
     line-height: 50px;
     font-size: 14px;
-    background: #cfb2f6;
+    background: #8b93f6;
     text-align: center;
     color: #fff;
     cursor: pointer;
@@ -581,15 +614,33 @@
     border-bottom: 2px solid #a00006;
   }
   .home .category-con .category-type h3{font-size: 14px;}
-  .home .category-tab-content .nav-con{width: 200px; height: 0;}
+  .home .category-tab-content .nav-con{width: 200px; height: 0;
+  }
   .home .category-tab-content .nav-con .normal-nav{
-    z-index:100;height: 500px; padding: 13px 0px 17px 5px;
+    z-index:100;height: 500px; padding: 1px 0px;
     box-sizing: border-box; position: relative; background: rgba(0,0,0,.55);
     border-bottom: 1px solid #e9e9e9; box-sizing: border-box;}
-  .home .category-tab-content .nav-con .nav-item{border-bottom: 1px solid #e7e7e7; padding-bottom: 4px; position: relative;}
-  .home .category-tab-content .nav-con .nav-item .title{font-size: 14px; color: #fff; padding-left: 10px; line-height: 24px; font-weight: bold; cursor: pointer;}
-  .home .category-tab-content .nav-con .nav-item  p a{font-size: 12px; color: #fff; margin-left: 4px; line-height: 18px; padding-left: 3px;}
+  .home .category-tab-content .nav-con .nav-item{
+    padding-left: 10px;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 4px;
+    position: relative;
+    &:hover{
+      background: #ffffff;
+      .title{
+        color: rgba(216, 0, 32, 0.93);
+      }
+      p a{
+        color: rgba(216, 0, 32, 0.93);;
+      }
+    }
+  }
+  .home .category-tab-content .nav-con .nav-item .title{font-size: 14px; color: #fff; line-height: 24px; font-weight: bold; cursor: pointer;}
+  .home .category-tab-content .nav-con .nav-item  p a{
+    font-size: 12px; color: #fff; margin-left: 4px; line-height: 18px;}
   .home .category-tab-content .nav-con .nav-item i{position: absolute; right: 2px; top: 16px; font-size: 12px; }
-  .home .category-tab-content .nav-con .nav-item  p a:hover{color:#c8000e;font-weight: bold}
+  .home .category-tab-content .nav-con .nav-item  p a:hover{
+    font-weight: bold
+  }
   .home .category-banner{background:#ffc6dd;}
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="header-box">
-    <div>
-      <header class="w">
+    <header class="w">
         <div class="w-box">
           <div class="nav-logo">
             <h1 @click="changePage(-1)">
@@ -21,7 +20,7 @@
                 :on-icon-click="handleIconClick"
                 @keydown.enter.native="handleIconClick">
               </el-autocomplete>
-              <router-link to="/goods"><a @click="changePage(2)">全部商品</a></router-link>
+              <!--<router-link to="/goods"><a @click="changePage(2)">全部商品</a></router-link>-->
               <!--<router-link to="/thanks"><a @click="changePage(4)">捐赠</a></router-link>-->
               <!-- <router-link to="/">Smartisan M1 / M1L</router-link>
               <router-link to="/">Smartisan OS</router-link>
@@ -135,17 +134,18 @@
                 <li>
                   <a @click="changGoods(-2)" :class="{active:choosePage===-2}">全部</a>
                 </li>
+                <li class="brand">
+                  <a @click="changGoods(-3)" :class="{active:choosePage===-3}">品牌馆</a>
+                </li>
                 <li v-for="(item,i) in navList" :key="i">
                   <a @click="changGoods(i, item)" :class="{active:i===choosePage}">{{item.name}}</a>
                 </li>
               </ul>
-              <div></div>
             </div>
           </div>
         </div>
       </slot>
     </div>
-  </div>
 </template>
 <script>
   import YButton from '/components/YButton'
@@ -232,6 +232,10 @@
         } else if (v === -2) {
           this.$router.push({
             path: '/refreshgoods'
+          })
+        } else if (v === -3) {
+          this.$router.push({
+            path: '/refreshbrands'
           })
         } else {
           // window.open('//' + window.location.host + '/#/goods?cid=' + item.id)
@@ -492,7 +496,7 @@
       display: flex;
       align-items: center;
       > a {
-        background: url(/static/images/qlogo.png) no-repeat 50%;
+        background: url(/static/images/logo-big.png) no-repeat 50%;
         background-size: cover;
         display: block;
         @include wh(240px, 130px);
@@ -505,7 +509,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 22px;
+      padding-left: 100px;
       .el-autocomplete{
         width: 500px;
         border: 2px solid #c81623;
@@ -529,7 +533,7 @@
         position: fixed;
         justify-content: center;
         align-items: center;
-        margin-right: 62px;
+        /*margin-right: 62px;*/
         left: 50%;
         z-index: 32;
         top: -55px;
@@ -538,7 +542,7 @@
         -webkit-transition: -webkit-transform .3s cubic-bezier(.165, .84, .44, 1);
         transition: transform .3s cubic-bezier(.165, .84, .44, 1);
         .el-autocomplete{
-          width: 300px;
+          width: 330px;
           border: 1px solid #c81623;
         }
       }
@@ -591,6 +595,7 @@
       display: flex;
       margin-right: 80px;
       margin-top: 70px;
+      width: 1000px;
     }
     .nav-aside {
       display: flex;
@@ -984,6 +989,7 @@
     background: rgba(175, 175, 175, 0.34);
     box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
     border-bottom: 2px solid #c81623;
+    background: linear-gradient(#fbfbfb, #ececec);
     &.fixed {
       position: fixed;
       z-index: 21;
@@ -1065,12 +1071,23 @@
         background: #bdbdbd;
       }
 
+      .home{
+        a{
+          a{
+            color: #c81623;
+            font-weight: bold;
+          }
+        }
+      }
+      .brand{
+        a{
+          color: #9547c8;
+          font-weight: bold;
+        }
+      }
     }
   }
-  .nav-list2 .home a a{
-    color: #c81623;
-    font-weight: bold;
-  }
+
   @media (min-width: 1px) {
     .nav-sub .nav-sub-wrapper:after {
       display: block;
@@ -1103,12 +1120,26 @@
 </style>
 <style lang="scss" rel="stylesheet/scss">
   .nav-list {
-    .el-input__icon {
+    .el-autocomplete{
+      border-radius: 30px;
+      .el-input__inner{
+        border-radius: 30px;
+        border-color: #c82a24;
+      }
+    }
+
+    .el-input__icon{
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
       background: #c82a24;
       width: 100px;
       &:hover{
         background: #c8000e;
       }
+    }
+    .el-icon-search:before{
+      content: "搜 索";
+      color: #ffffff;
     }
   }
 </style>

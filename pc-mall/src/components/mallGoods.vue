@@ -13,8 +13,8 @@
         <h6 class="good-title" v-html="msg.name">{{msg.name}}</h6>
         <h3 class="sub-title">{{msg.brief}}</h3>
         <div class="good-price pr">
-          <p><span style="font-size:14px;color:#000">原价：￥</span><span class="yj">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
-          <p><span style="font-size:14px;color:#000">券后价格：￥</span><span class="jhjg">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
+          <p><span style="font-size:14px;color:#000">原价:￥</span><span class="yj">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
+          <p><span style="font-size:14px;color:#000">券后价格:￥</span><span class="jhjg">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
         </div>
         <div class="good-button">
           <a @click="openProduct(msg.id)">
@@ -107,6 +107,10 @@
       border-top-right-radius: 18px;
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
+      .good-content{
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
     }
 
     .good-button{
@@ -118,7 +122,7 @@
       }
       .detailbutton{
         &:hover{
-          border: 1px solid #5c81e3;
+          border: 1px solid #af0527;
         }
       }
     }
