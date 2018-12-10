@@ -3,6 +3,7 @@ package com.qutalk.mall.db.domain;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class LitemallCategory {
     /**
@@ -23,14 +24,15 @@ public class LitemallCategory {
      */
     public static final Boolean IS_DELETED = true;
 
-    private String fullUrl="http://localhost:9999/#/goods?cid=1008002";
 
-    public String getFullUrl() {
-        return fullUrl;
+    public List<LitemallCategory> subCategory;
+
+    public List<LitemallCategory> getSubCategory() {
+        return subCategory;
     }
 
-    public void setFullUrl(String fullUrl) {
-        this.fullUrl = fullUrl;
+    public void setSubCategory(List<LitemallCategory> subCategory) {
+        this.subCategory = subCategory;
     }
 
     /**

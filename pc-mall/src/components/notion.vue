@@ -66,7 +66,7 @@
           position: absolute;
           width: 4px;
           height: 24px;
-          top: 18px;
+          top: 12px;
           left: 15px;
           background-repeat: repeat-x;
           background: #28ABFF;
@@ -104,53 +104,53 @@
   .color0{
     .title{
       h2{
-        color: #c81623;
+        color: #0d6586;
         &:before{
-          background: #c81623;
+          background: #0d6586;
         }
       }
     }
     .more{
-      border-bottom: 2px solid #c81623;
+      border-bottom: 2px solid #0d6586;
     }
   }
   .color1{
     .title{
       h2{
-        color: #1756c8;
+        color: #1ac859;
         &:before{
-          background: #1756c8;
+          background: #1ac859;
         }
       }
     }
     .more{
-      border-bottom: 2px solid #1756c8;
+      border-bottom: 2px solid #1ac859;
     }
   }
   .color2{
     .title{
       h2{
-        color: #c81cc3;
+        color: #b3623b;
         &:before{
-          background: #c81cc3;
+          background: #b3623b;
         }
       }
     }
     .more{
-      border-bottom: 2px solid #c81cc3;
+      border-bottom: 2px solid #b3623b;
     }
   }
   .color3{
     .title{
       h2{
-        color: #c87f2a;
+        color: #c84680;
         &:before{
-          background: #c87f2a;
+          background: #c84680;
         }
       }
     }
     .more{
-      border-bottom: 2px solid #c87f2a;
+      border-bottom: 2px solid #c84680;
     }
   }
 </style>

@@ -190,6 +190,41 @@ public class WxHomeController {
         HomeCacheManager.loadData(HomeCacheManager.INDEX, data);
         return ResponseUtil.ok(data);
     }
+
+    /**
+     * 挂件数据
+     * @return
+     */
+    @GetMapping("/pnotions")
+    public Object notions() {
+        //优先从缓存中读取
+        if (HomeCacheManager.hasData(HomeCacheManager.NOTION)) {
+            return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.NOTION));
+        }
+
+        Map<String, Object> data = new HashMap<>();
+
+        List<LitemallGoods> newGoods = goodsService.queryByNew(0, SystemConfig.getNewLimit());
+        data.put("newGoods", newGoods);
+
+        List<LitemallGoods> hotGoods = goodsService.queryByHot(0, SystemConfig.getHotLimit());
+        data.put("hotGoods", hotGoods);
+
+        List<LitemallBrand> brandList = brandService.queryVO(0, SystemConfig.getBrandLimit());
+        data.put("hotBrands", brandList);
+
+        List<LitemallTopic> topicList = topicService.queryList(0, SystemConfig.getTopicLimit());
+        data.put("hotTopics", topicList);
+
+        //团购专区
+        List<Map<String, Object>> grouponList = grouponRulesService.queryList(0, 5);
+        data.put("hotGroupons", grouponList);
+
+        //缓存数据
+        HomeCacheManager.loadData(HomeCacheManager.NOTION, data);
+        return ResponseUtil.ok(data);
+    }
+
     @GetMapping("/navList")
     public Object navList() {
         //优先从缓存中读取

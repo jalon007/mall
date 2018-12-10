@@ -59,7 +59,7 @@ public class WxTopicController {
         List<LitemallTopic> topicList = topicService.queryList(page, size, sort, order);
         int total = topicService.queryTotal();
         Map<String, Object> data = new HashMap<String, Object>();
-        data.put("data", topicList);
+        data.put("topicList", topicList);//data topicList
         data.put("count", total);
         return ResponseUtil.ok(data);
     }

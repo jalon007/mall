@@ -95,3 +95,11 @@ export const getBrandList = (params) => {
 export const getBrandDetail = (params) => {
   return http.fetchGet('/wx/brand/detail', params)
 }
+// 专题列表
+export const getTopicList = (params) => {
+  return http.fetchGet('/wx/topic/list', params)
+}
+// 专题详情
+export const getTopicDetail = (params) => {
+  return http.fetchGet('/wx/topic/detail', params)
+}

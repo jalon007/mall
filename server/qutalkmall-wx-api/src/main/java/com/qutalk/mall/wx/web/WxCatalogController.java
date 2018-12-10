@@ -1,12 +1,15 @@
 package com.qutalk.mall.wx.web;
 
 import com.qutalk.mall.wx.service.HomeCacheManager;
+import com.qutalk.mall.wx.view.LitemallCategoryView;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.qutalk.mall.core.util.ResponseUtil;
 import com.qutalk.mall.db.domain.LitemallCategory;
 import com.qutalk.mall.db.service.LitemallCategoryService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -123,6 +127,42 @@ public class WxCatalogController {
     }
 
     /**
+     * pc首页分类导航
+     * @return
+     */
+    @GetMapping("pall")
+    public Object categories() {
+        List<LitemallCategoryView> categoryViews = new ArrayList<>();
+        LitemallCategoryView litemallCategoryView =new LitemallCategoryView();
+        //优先从缓存中读取
+        if (HomeCacheManager.hasData(HomeCacheManager.CATALOG_PC)) {
+            return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.CATALOG_PC));
+        }
+        // 所有一级分类目录
+        List<LitemallCategory> cates = categoryService.queryL1();
+        for (LitemallCategory category : cates) {
+            BeanUtils.copyProperties(category,litemallCategoryView);
+            List<LitemallCategory> subCates = categoryService.queryByPid(category.getId());
+
+            List<LitemallCategoryView> subCategoryViews = new ArrayList<>();
+            if (subCates!=null){
+                for(LitemallCategory subcate:subCates){
+                    LitemallCategoryView subCategoryView =new LitemallCategoryView();
+                    BeanUtils.copyProperties(subcate,subCategoryView);
+                    subCategoryViews.add(subCategoryView);
+                }
+                litemallCategoryView.setSubCategory(subCategoryViews);
+            }
+            categoryViews.add(litemallCategoryView);
+        }
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("categoryList", categoryViews);
+        //缓存数据
+        HomeCacheManager.loadData(HomeCacheManager.CATALOG_PC, data);
+        return ResponseUtil.ok(data);
+    }
+
+    /**
      * 当前分类栏目
      *
      * @param id 分类类目ID
@@ -142,12 +182,21 @@ public class WxCatalogController {
     @GetMapping("current")
     public Object current(@NotNull Integer id) {
         // 当前分类
-        LitemallCategory currentCategory = categoryService.findById(id);
-        List<LitemallCategory> currentSubCategory = categoryService.queryByPid(currentCategory.getId());
+        LitemallCategoryView categoryView=new LitemallCategoryView();
+        BeanUtils.copyProperties(categoryService.findById(id),categoryView);
 
+        List<LitemallCategory> currentSubCategory = categoryService.queryByPid(categoryView.getId());
+        List<LitemallCategoryView> subCateViews =new ArrayList<>();
+        if(currentSubCategory!=null){
+            for(LitemallCategory subCate :currentSubCategory){
+                LitemallCategoryView subCategoryView = new LitemallCategoryView();
+                BeanUtils.copyProperties(subCate,subCategoryView);
+                subCateViews.add(subCategoryView);
+            }
+        }
         Map<String, Object> data = new HashMap<String, Object>();
-        data.put("currentCategory", currentCategory);
-        data.put("currentSubCategory", currentSubCategory);
+        data.put("currentCategory", categoryView);
+        data.put("currentSubCategory", subCateViews);
         return ResponseUtil.ok(data);
     }
 }
