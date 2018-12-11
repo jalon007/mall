@@ -1046,7 +1046,7 @@
       align-items: center;
       height: 100%;
       li:first-child {
-        padding-left: 0;
+        padding-left: 200px;
         a {
           padding-left: 10px;
         }

@@ -107,6 +107,10 @@
       border-top-right-radius: 18px;
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
+      .good-content{
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
     }
 
     .good-button{
@@ -118,7 +122,7 @@
       }
       .detailbutton{
         &:hover{
-          border: 1px solid #5c81e3;
+          border: 1px solid #af0527;
         }
       }
     }

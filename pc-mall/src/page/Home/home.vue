@@ -4,15 +4,15 @@
   <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
 
     <div class="category-con">
-      <div class="category-inner-con w1200">
+      <div class="category-inner-con w1220">
         <div class="category-type">
           <h3>全部分类</h3>
         </div>
         <div class="category-tab-content">
           <div class="nav-con">
             <ul class="normal-nav layui-clear">
-              <li class="nav-item">
-                <div class="title">奶粉辅食</div>
+              <li class="nav-item"  v-for="(item, i) in categoryList" :key="i">
+                <div class="title">{{item.name}}</div>
                 <p><a href="#">奶粉</a><a href="#">捕食</a><a href="#">营养品</a></p>
                 <i class="layui-icon layui-icon-right"></i>
               </li>
@@ -20,28 +20,28 @@
           </div>
         </div>
       </div>
+      <div class="banner" >
+        <div class="bg" ref="bg"
+             @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
+          <transition name="fade">
+            <div v-for="(item, i) in banner" v-if="i===mark" :key="i" style="position:absolute" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
+              <img v-if="item.url" class="img1" :src="item.url"/>
+            </div>
+          </transition>
+        </div>
+        <div class="page">
+          <ul class="dots">
+            <li class="dot-active" v-for="(item, i) in banner" :class="{ 'dot':i!=mark }" :key="i" @click="change(i)"></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="banner" >
-      <div class="bg" ref="bg"
-        @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
-        <transition name="fade">
-          <div v-for="(item, i) in banner" v-if="i===mark" :key="i" style="position:absolute" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
-            <img v-if="item.url" class="img1" :src="item.url"/>
-          </div>
-        </transition>
-      </div>
-      <div class="page">
-        <ul class="dots">
-          <li class="dot-active" v-for="(item, i) in banner" :class="{ 'dot':i!=mark }" :key="i" @click="change(i)"></li>
-        </ul>
-      </div>
-    </div>
+
 
 
       <div class="activity-panel">
         <ul class="box">
-
           <li class="content" v-for="(iitem,j) in brandList" :key="j" @click="openBrand(iitem.id) ">
             <div class="title">{{iitem.name}}</div>
             <img class="i" :src="iitem.picUrl" :alt="iitem.name">
@@ -52,7 +52,7 @@
 
     <div v-if="item=home" >
       <section class="w mt30 clearfix">
-        <y-shelf :title="人气推荐">
+        <y-shelf :title="i">
           <div slot="content" class="hot">
             <mall-goods :msg="iitem" v-for="(iitem,j) in item.newGoodsList" v-if="j<4" :key="j"></mall-goods>
           </div>
@@ -98,7 +98,8 @@
   </div>
 </template>
 <script>
-  import { productHome } from '/api/index.js'
+  import { productHome } from '/api/index'
+  import { category } from '/api/goods'
   import YShelf from '/components/shelf'
   import product from '/components/product'
   import mallGoods from '/components/mallGoods'
@@ -122,7 +123,8 @@
         loading: true,
         notify: '1',
         dialogVisible: false,
-        timer: ''
+        timer: '',
+        categoryList: []
       }
     },
     methods: {
@@ -204,6 +206,11 @@
           setStore('notify', this.notify)
         }
       },
+      _getCategory () {
+        category().then(res => {
+          this.categoryList = res.data.categoryList
+        })
+      },
       getColor (i) {
         return 'color' + parseInt(i % 4)
       }
@@ -219,9 +226,11 @@
         this.loading = false
         this.banner = data.banner
         this.newGoodsList = data.newGoodsList
+        this.categoryList = data.channel
         this.brandList = data.brandList
         this.floorGoodsList = data.floorGoodsList
       })
+      this._getCategory()
       this.showNotify()
     },
     created () {
@@ -306,6 +315,18 @@
       padding: 10px;
       text-align: left;
       overflow: hidden;
+      a {
+        width: 32px;
+        height: 32px;
+        float: right;
+        right: 5px;
+        background-color: #fff;
+        background: url(/static/images/more.png) no-repeat center;
+        &:hover{
+          background: url(/static/images/more-hover.png) no-repeat center;
+          background-color: #1e88e5;
+        }
+      }
     }
     .content {
       float: left;
@@ -578,4 +599,50 @@
     color: #d0d0d0;
     padding: 10px;
   }
+  .home .w1220{width: 1220px; margin:0 auto;}
+  .home .category-con{position: relative; height: 500px; width: 100%;}
+  .home .category-con .category-type{
+    width: 200px;
+    height:50px;
+    line-height: 50px;
+    font-size: 14px;
+    background: #8b93f6;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    margin-top: -50px;
+    position: absolute;
+    z-index: 100;
+    border-bottom: 2px solid #a00006;
+  }
+  .home .category-con .category-type h3{font-size: 14px;}
+  .home .category-tab-content .nav-con{width: 200px; height: 0;
+  }
+  .home .category-tab-content .nav-con .normal-nav{
+    z-index:100;height: 500px; padding: 1px 0px;
+    box-sizing: border-box; position: relative; background: rgba(0,0,0,.55);
+    border-bottom: 1px solid #e9e9e9; box-sizing: border-box;}
+  .home .category-tab-content .nav-con .nav-item{
+    padding-left: 10px;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 4px;
+    position: relative;
+    &:hover{
+      background: #ffffff;
+      .title{
+        color: rgba(216, 0, 32, 0.93);
+      }
+      p a{
+        color: rgba(216, 0, 32, 0.93);;
+      }
+    }
+  }
+  .home .category-tab-content .nav-con .nav-item .title{font-size: 14px; color: #fff; line-height: 24px; font-weight: bold; cursor: pointer;}
+  .home .category-tab-content .nav-con .nav-item  p a{
+    font-size: 12px; color: #fff; margin-left: 4px; line-height: 18px;}
+  .home .category-tab-content .nav-con .nav-item i{position: absolute; right: 2px; top: 16px; font-size: 12px; }
+  .home .category-tab-content .nav-con .nav-item  p a:hover{
+    font-weight: bold
+  }
+  .home .category-banner{background:#ffc6dd;}
 </style>
