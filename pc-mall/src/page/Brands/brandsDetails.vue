@@ -6,14 +6,6 @@
         <div class="brand-cate-ul" v-for="(item,j) in brandCate" :key="j">
           <div :class="getColor(j)">{{item.name}}</div>
         </div>
-        <!--<ul class="cate-list" v-for="(item,j) in brandCate" :key="j">-->
-          <!--<li >-->
-            <!--<a @click="changGoods(j, item)" :class="{active:j===choosePage}">{{item.name}}</a>-->
-          <!--</li>-->
-          <!--<li >-->
-            <!--<a @click="changGoods(j, item)" :class="{active:j===choosePage}">{{item.name}}</a>-->
-          <!--</li>-->
-        <!--</ul>-->
       </div>
 
       <div class="brand-img">

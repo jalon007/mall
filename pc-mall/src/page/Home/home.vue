@@ -5,20 +5,11 @@
 
     <div class="category-con">
       <div class="category-inner-con w1220">
-        <div class="category-type">
+        <!--<div class="category-type">
           <h3>全部分类</h3>
-        </div>
-        <div class="category-tab-content">
-          <div class="nav-con">
-            <ul class="normal-nav layui-clear">
-              <li class="nav-item"  v-for="(item, i) in categoryList" :key="i">
-                <div class="title">{{item.name}}</div>
-                <p><a href="#">奶粉</a><a href="#">捕食</a><a href="#">营养品</a></p>
-                <i class="layui-icon layui-icon-right"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </div>-->
+        <category-tree :category="categoryList"></category-tree>
+
       </div>
       <div class="banner" >
         <div class="bg" ref="bg"
@@ -99,11 +90,12 @@
 </template>
 <script>
   import { productHome } from '/api/index'
-  import { category } from '/api/goods'
+  import { getCategory } from '/api/goods'
   import YShelf from '/components/shelf'
   import product from '/components/product'
   import mallGoods from '/components/mallGoods'
   import { setStore, getStore } from '/utils/storage.js'
+  import CategoryTree from '/components/categoryTree'
   export default {
     data () {
       return {
@@ -207,7 +199,7 @@
         }
       },
       _getCategory () {
-        category().then(res => {
+        getCategory().then(res => {
           this.categoryList = res.data.categoryList
         })
       },
@@ -226,7 +218,6 @@
         this.loading = false
         this.banner = data.banner
         this.newGoodsList = data.newGoodsList
-        this.categoryList = data.channel
         this.brandList = data.brandList
         this.floorGoodsList = data.floorGoodsList
       })
@@ -237,6 +228,7 @@
       this.play()
     },
     components: {
+      CategoryTree,
       YShelf,
       product,
       mallGoods
@@ -620,7 +612,7 @@
   }
   .home .category-tab-content .nav-con .normal-nav{
     z-index:100;height: 500px; padding: 1px 0px;
-    box-sizing: border-box; position: relative; background: rgba(0,0,0,.55);
+    box-sizing: border-box; position: relative; background: rgba(127, 127, 127, 0.27);
     border-bottom: 1px solid #e9e9e9; box-sizing: border-box;}
   .home .category-tab-content .nav-con .nav-item{
     padding-left: 10px;
@@ -637,7 +629,13 @@
       }
     }
   }
-  .home .category-tab-content .nav-con .nav-item .title{font-size: 14px; color: #fff; line-height: 24px; font-weight: bold; cursor: pointer;}
+  .home .category-tab-content .nav-con .nav-item .title{
+    font-size: 14px; color: #fff; line-height: 24px; font-weight: bold; cursor: pointer;
+    img{
+      width: 24px;
+      height: auto;
+    }
+  }
   .home .category-tab-content .nav-con .nav-item  p a{
     font-size: 12px; color: #fff; margin-left: 4px; line-height: 18px;}
   .home .category-tab-content .nav-con .nav-item i{position: absolute; right: 2px; top: 16px; font-size: 12px; }

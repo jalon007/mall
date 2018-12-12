@@ -133,7 +133,6 @@ public class WxCatalogController {
     @GetMapping("pall")
     public Object categories() {
         List<LitemallCategoryView> categoryViews = new ArrayList<>();
-        LitemallCategoryView litemallCategoryView =new LitemallCategoryView();
         //优先从缓存中读取
         if (HomeCacheManager.hasData(HomeCacheManager.CATALOG_PC)) {
             return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.CATALOG_PC));
@@ -141,6 +140,7 @@ public class WxCatalogController {
         // 所有一级分类目录
         List<LitemallCategory> cates = categoryService.queryL1();
         for (LitemallCategory category : cates) {
+            LitemallCategoryView litemallCategoryView =new LitemallCategoryView();
             BeanUtils.copyProperties(category,litemallCategoryView);
             List<LitemallCategory> subCates = categoryService.queryByPid(category.getId());
 

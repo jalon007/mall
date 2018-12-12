@@ -107,3 +107,7 @@ export const getTopicList = (params) => {
 export const getTopicDetail = (params) => {
   return http.fetchGet('/wx/topic/detail', params)
 }
+// 左侧导航
+export const getCategory = (params) => {
+  return http.fetchGet('/wx/catalog/pall', params)
+}
