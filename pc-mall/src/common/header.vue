@@ -205,14 +205,14 @@
           this.$router.push({
             path: '/refreshsearch',
             query: {
-              key: this.input
+              keyword: this.input
             }
           })
         } else {
           this.$router.push({
             path: '/search',
             query: {
-              key: this.input
+              keyword: this.input
             }
           })
         }
@@ -258,25 +258,21 @@
       loadAll () {
         let params = {
           params: {
-            key: this.input
+            keyword: this.input
           }
         }
         getQuickSearch(params).then(res => {
           if (res === null || res === '') {
             return
           }
-          if (res.error) {
-            this.showError(res.error.reason)
-            return
-          }
           var array = []
           var maxSize = 5
-          if (res.hits.hits.length <= 5) {
-            maxSize = res.hits.hits.length
+          if (res.data.length <= 5) {
+            maxSize = res.data.length
           }
           for (var i = 0; i < maxSize; i++) {
             var obj = {}
-            obj.value = res.hits.hits[i]._source.productName
+            obj.value = res.data[i]
             array.push(obj)
           }
           if (array.length !== 0) {
@@ -299,7 +295,7 @@
           this.loadAll()
           setTimeout(() => {
             cb(this.searchResults)
-          }, 300)
+          }, 500)
         }
       },
       handleSelect (item) {
@@ -333,7 +329,7 @@
       },
       // 控制顶部
       navFixed () {
-        if (this.$route.path === '/goods' || this.$route.path === '/home' || this.$route.path === '/goodsDetails' || this.$route.path === '/thanks') {
+        if (this.$route.path === '/goods' || this.$route.path === '/home' || this.$route.path === '/goodsDetails' || this.$route.path === '/search' || this.$route.path === '/brands' || this.$route.path === '/topics') {
           var st = document.documentElement.scrollTop || document.body.scrollTop
           st >= 100 ? this.st = true : this.st = false
           // 计算小圆当前位置
@@ -390,8 +386,8 @@
       this.getPage()
       window.addEventListener('scroll', this.navFixed)
       window.addEventListener('resize', this.navFixed)
-      if (typeof (this.$route.query.key) !== undefined) {
-        this.input = this.$route.query.key
+      if (typeof (this.$route.query.keyword) !== undefined) {
+        this.input = this.$route.query.keyword
       }
     },
     components: {
@@ -489,7 +485,7 @@
 
   header {
     height: 160px;
-    z-index: 30;
+    /*z-index: 30;*/
     position: relative;
   }
   .w-box {
@@ -536,21 +532,21 @@
         margin-left: -10px;
       }
       &.fixed {
-        /*width: 400px;*/
         position: fixed;
         justify-content: center;
         align-items: center;
-        /*margin-right: 62px;*/
+        width: 270px;
         left: 50%;
-        z-index: 32;
-        top: -55px;
+        margin-left: 200px;
+        z-index: 320;
+        top: -45px;
         -webkit-transform: translate3d(0, 59px, 0);
         transform: translate3d(0, 59px, 0);
         -webkit-transition: -webkit-transform .3s cubic-bezier(.165, .84, .44, 1);
         transition: transform .3s cubic-bezier(.165, .84, .44, 1);
         .el-autocomplete{
-          width: 330px;
-          border: 1px solid #c81623;
+          width: 200px;
+          border: none;
         }
       }
     }
@@ -559,7 +555,7 @@
       &:before {
         background: #333;
         background: hsla(0, 0%, 100%, .2);
-        content: " ";
+        /*content: " ";*/
         @include wh(1px, 13px);
         overflow: hidden;
         // position: absolute;
@@ -569,13 +565,12 @@
         left: 0;
       }
       &.fixed {
-        width: 262px;
+        width: 140px;
         position: fixed;
         left: 50%;
-        top: 19px;
-        margin-left: 451px;
+        margin-left: 470px;
         margin-top: 0;
-        z-index: 32;
+        z-index: 320;
         top: -40px;
         -webkit-transform: translate3d(0, 59px, 0);
         transform: translate3d(0, 59px, 0);
@@ -706,7 +701,7 @@
     .shop {
       position: relative;
       float: left;
-      margin-left: 21px;
+      margin-left: 10px;
       width: 61px;
       z-index: 99;
       &:hover {
@@ -1153,6 +1148,22 @@
     .el-icon-search:before{
       content: "搜 索";
       color: #ffffff;
+    }
+    &.fixed {
+      .el-input__icon{
+        width: 50px;
+        background: #c85f62;
+        &:hover{
+          background: #c8000e;
+        }
+      }
+      .el-autocomplete{
+        .el-input__inner{
+          border-radius: 30px;
+          border-color: #c89db0;
+          height: 24px;
+        }
+      }
     }
   }
 </style>

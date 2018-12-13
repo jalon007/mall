@@ -2,9 +2,10 @@
   <div class="brands w">
     <div class="brands-center" v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;">
       <div class="brand-left">
-        <notion :title="notions[0]" :notions="brands" :index="0"></notion>
-        <notion :title="notions[1]" :notions="brands" :index="1"></notion>
-        <notion :title="notions[2]" :notions="brands" :index="2"></notion>
+        <notion :title="notions[0]" :notions="notions.hotBrands" :index="0"></notion>
+        <notion :title="notions[1]" :notions="notions.hotGoods" :index="1"></notion>
+        <notion :title="notions[2]" :notions="notions.newGoods" :index="2"></notion>
+        <notion :title="notions[3]" :notions="notions.hotTopics" :index="2"></notion>
       </div>
       <div class="brand-item" v-if="!noResult">
         <!--商品-->
@@ -53,7 +54,7 @@
   </div>
 </template>
 <script>
-  import { getBrandList } from '/api/goods.js'
+  import { getBrandList, getNotions } from '/api/goods.js'
   import { recommend } from '/api/index.js'
   import brandMall from '/components/brandMall'
   import notion from '/components/notion'
@@ -62,7 +63,7 @@
   export default {
     data () {
       return {
-        notions: ['top', 'hot', 'recommend'],
+        notions: ['Brands', 'Goods', 'News', 'Topics'],
         brands: [],
         noResult: false,
         error: false,
@@ -114,6 +115,22 @@
           this.loading = false
         })
       },
+      _getNotions () {
+        getNotions().then(res => {
+          if (res.errno === 0) {
+            this.notions = res.data
+
+            this.noResult = false
+            // if (this.total === 0) {
+            //   this.noResult = true
+            // }
+            this.error = false
+          } else {
+            this.error = true
+          }
+          this.loading = false
+        })
+      },
       // 默认排序
       reset () {
         this.sortType = 1
@@ -145,6 +162,7 @@
       this.windowHeight = window.innerHeight
       this.windowWidth = window.innerWidth
       this._getBrandList()
+      this._getNotions()
       recommend().then(res => {
         let data = res.result
         this.recommendPanel = data[0]

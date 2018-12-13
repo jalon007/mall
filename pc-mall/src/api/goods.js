@@ -83,9 +83,12 @@ export const delOrder = (params) => {
 export const getSearch = (params) => {
   return http.fetchGet('/goods/search', params)
 }
+export const getSearchGoods = (params) => {
+  return http.fetchGet('/wx/goods/list', params)
+}
 // 快速搜索
 export const getQuickSearch = (params) => {
-  return http.fetchGet('/goods/quickSearch', params)
+  return http.fetchGet('/wx/search/helper', params)
 }
 // 商品分类
 export const catagory = (params) => {
@@ -110,4 +113,7 @@ export const getTopicDetail = (params) => {
 // 左侧导航
 export const getCategory = (params) => {
   return http.fetchGet('/wx/catalog/pall', params)
+}
+export const getNotions = (params) => {
+  return http.fetchGet('/wx/home/pnotions', params)
 }

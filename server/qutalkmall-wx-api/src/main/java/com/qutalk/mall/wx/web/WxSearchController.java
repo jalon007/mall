@@ -1,5 +1,10 @@
 package com.qutalk.mall.wx.web;
 
+import com.mysql.jdbc.StringUtils;
+import com.qutalk.mall.core.validator.Order;
+import com.qutalk.mall.core.validator.Sort;
+import com.qutalk.mall.db.domain.LitemallCategory;
+import com.qutalk.mall.db.domain.LitemallGoods;
 import com.qutalk.mall.wx.annotation.LoginUser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -70,7 +75,6 @@ public class WxSearchController {
         data.put("hotKeywordList", hotKeywordList);
         return ResponseUtil.ok(data);
     }
-
     /**
      * 关键字提醒
      * <p>

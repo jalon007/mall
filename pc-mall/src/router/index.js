@@ -51,7 +51,9 @@ export default new Router({
         {path: '/refreshbrands', name: 'refreshbrands', component: RefreshBrands},
         {path: 'topics', component: TopicS},
         {path: 'topicsDetails', name: 'topicsDetails', component: topicsDetails},
-        {path: '/refreshtopics', name: 'refreshtopics', component: RefreshTopics}
+        {path: '/refreshtopics', name: 'refreshtopics', component: RefreshTopics},
+        {path: 'search', component: Search},
+        {path: '/refreshsearch', name: 'refreshsearch', component: RefreshSearch}
       ]
     },
     {path: '/login', name: 'login', component: Login},

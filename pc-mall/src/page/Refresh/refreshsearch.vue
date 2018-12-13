@@ -1,5 +1,5 @@
 <template>
- 
+
 </template>
 <script>
 export default {
@@ -7,7 +7,7 @@ export default {
     this.$router.push({
       path: '/search',
       query: {
-        key: this.$route.query.key
+        keyword: this.$route.query.keyword
       }
     })
     return {
@@ -18,5 +18,5 @@ export default {
 }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
-  
+
 </style>

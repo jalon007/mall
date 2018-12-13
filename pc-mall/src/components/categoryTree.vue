@@ -3,19 +3,21 @@
     <div class="nav-con">
       <ul class="normal-nav layui-clear">
         <li class="nav-item"  v-for="(item, i) in category" :key="i">
-          <div class="title" @mouseover="setMenu(item.subCategory)">{{item.name}}
+          <div class="title" @mouseover="setMenu(item.subCategory)" @mouseleave="leaveMenu()">{{item.name}}
             <i class="layui-icon layui-icon-right"></i>
           </div>
         </li>
-        <div class="sub_menu">
+        <div class="sub_menu" :class="{'item-display': classdisplay}">
           <div class="left-menu">
-            <a class="menu-item" v-for="(iitem,j) in subCategory" :key="j">
+            <a class="menu-item"  v-for="(iitem,j) in subCategory" :key="j">
               <img :src="iitem.iconUrl"/>
               <span>{{iitem.name}}</span>
             </a>
           </div>
           <div class="right-menu">
-
+            <div class="menu-ad">
+              广告位招商8888888
+            </div>
           </div>
         </div>
       </ul>
@@ -29,12 +31,17 @@
     ],
     data () {
       return {
-        subCategory: {}
+        subCategory: {},
+        classdisplay: false
       }
     },
     methods: {
       setMenu (obj) {
         this.subCategory = obj
+        this.classdisplay = true
+      },
+      leaveMenu () {
+        this.classdisplay = false
       }
     }
   }
@@ -46,7 +53,7 @@
     .nav-con{
       width: 220px; height: 0;
       .normal-nav{
-        z-index:100;
+        z-index:20;
         height: 500px;
         padding: 1px 0px;
         box-sizing: border-box;
@@ -62,9 +69,6 @@
         position: relative;
         &:hover{
           background: #c81623;
-          .sub_menu{
-            display: flex;
-          }
         }
         .title{
           font-size: 14px;
@@ -93,29 +97,31 @@
         }
 
       }
-
+      .item-display{
+        display: flex!important;
+      }
       .sub_menu{
         float: left;
         width: 800px;
         height: 300px;
         left: 220px;
         margin-top: 5px;
-        display: table;
+        display: none;
         position: absolute;
-        background: #F7F7F7;
+        background: #ffffff;
 
         .left-menu{
-          top:10px;
+          padding-top:10px;
           float: left;
           position: absolute;
           width: 600px;
           height: 300px;
-          border-right: 1px solid #825854;
+          /*border-right: 1px solid #825854;*/
         }
         .menu-item{
           float: left;
           margin: 10px;
-          width: 170px;
+          width: 180px;
           height: 50px;
           display: flex;
           span{
@@ -129,9 +135,19 @@
         }
         .right-menu{
           position: absolute;
-
-          width: 100px;
+          right: 0px;
+          width: 200px;
           height: 300px;
+          .menu-ad{
+            margin: 20px;
+            padding-top: 20px;
+            width: 160px;
+            height: 150px;
+            float: left;
+            background: #b1bfea;
+            text-align: center;
+            line-height: 100px;
+          }
         }
       }
     }
