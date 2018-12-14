@@ -16,10 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/wx/home")
@@ -157,6 +154,7 @@ public class WxHomeController {
 
         List<LitemallBrand> brandList = brandService.queryVO(0, SystemConfig.getBrandLimit());
         data.put("brandList", brandList);
+        data.put("brandsss", changgggg(brandList));
 
         List<LitemallTopic> topicList = topicService.queryList(0, SystemConfig.getTopicLimit());
         data.put("topicList", topicList);
@@ -191,6 +189,23 @@ public class WxHomeController {
         return ResponseUtil.ok(data);
     }
 
+    private List<List<LitemallBrand>> changgggg(List<LitemallBrand> list){
+            int size=3;
+            List<List<LitemallBrand>> listArr = new ArrayList<List<LitemallBrand>>();
+            //获取被拆分的数组个数
+            int arrSize = list.size()%size==0?list.size()/size:list.size()/size+1;
+            for(int i=0;i<arrSize;i++) {
+                List<LitemallBrand>	sub = new ArrayList<LitemallBrand>();
+                //把指定索引数据放入到list中
+                for(int j=i*size;j<=size*(i+1)-1;j++) {
+                    if(j<=list.size()-1) {
+                        sub.add(list.get(j));
+                    }
+                }
+                listArr.add(sub);
+            }
+            return listArr;
+    }
     /**
      * 挂件数据
      * @return

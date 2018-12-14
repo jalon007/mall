@@ -36,7 +36,7 @@
           <div class="box">
             <div class="title">耍大牌</div>
             <div>
-              <slide-top  :goods="newGoodsList"></slide-top>
+              <slide-top :goods="brandsss"></slide-top>
             </div>
           </div>
           <div class="box middle">
@@ -119,6 +119,7 @@
         banner: [],
         newGoodsList: [],
         brandList: [],
+        brandsss: [],
         floorGoodsList: [],
         mark: 0,
         bgOpt: {
@@ -236,6 +237,7 @@
         this.newGoodsList = data.newGoodsList
         this.brandList = data.brandList
         this.floorGoodsList = data.floorGoodsList
+        this.brandsss = data.brandsss
       })
       this._getCategory()
       this.showNotify()

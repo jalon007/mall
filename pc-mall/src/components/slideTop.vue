@@ -3,17 +3,17 @@
     <div class="slideshow">
       <transition-group tag="ul" name="image">
         <li v-for="(item, i) in goods" v-show="i===mark" :key="i">
-          <di >
-            <ul>
+          <div class="item" v-for="(iitem,j) in item" :key="j">
+            <div class="img">
               <a href="#">
-                <img :src='item.picUrl'>
+                <img :src='iitem.picUrl'>
               </a>
-            </ul>
-            <ul>
-              <div class="title">{{item.name}}</div>
-              <div class="sub-title">{{item.desc}}</div>
-            </ul>
-          </di>
+            </div>
+            <div class="content">
+              <div class="title">{{iitem.name}}</div>
+              <div class="sub-title">{{iitem.desc}}</div>
+            </div>
+          </div>
         </li>
       </transition-group>
     </div>
@@ -27,28 +27,7 @@
 <script>
   export default {
     props: {
-      goods: [
-        [
-          {
-            name: 'name11',
-            desc: 'desc'
-          },
-          {
-            name: 'name12',
-            desc: 'desc'
-          }
-        ],
-        [
-          {
-            name: 'name21',
-            desc: 'desc'
-          },
-          {
-            name: 'name22',
-            desc: 'desc'
-          }
-        ]
-      ]
+      goods: {}
     },
     data () {
       return {
@@ -59,7 +38,7 @@
     methods: {
       autoPlay () {
         this.mark++
-        if (this.mark === 3) {
+        if (this.mark === 2) {
           this.mark = 0
         }
       },
@@ -114,16 +93,29 @@
     .slideshow {
       width: 100%;
       height: 100%;
-      ul{
-
-      }
-      li {
-        position: absolute;
-        img {
-          width: 100%;
+      .item{
+        width: 100%;
+        height: 100px;
+        .img{
+          float: left;
+          width: 30%;
+          height: 100%;
+        }
+        .content{
+          width: 70%;
           height: 100%;
         }
       }
+      ul{
+
+      }
+      /*li {*/
+        /*position: absolute;*/
+        /*img {*/
+          /*width: 100%;*/
+          /*height: 100%;*/
+        /*}*/
+      /*}*/
     }
   }
   .bullet {
