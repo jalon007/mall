@@ -20,10 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/wx/goods")
@@ -398,4 +395,24 @@ public class WxGoodsController {
         return ResponseUtil.ok(data);
     }
 
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
+
+        int size=3;
+        List<List<Integer>> listArr = new ArrayList<List<Integer>>();
+        //获取被拆分的数组个数
+        int arrSize = list.size()%size==0?list.size()/size:list.size()/size+1;
+        for(int i=0;i<arrSize;i++) {
+            List<Integer>	sub = new ArrayList<Integer>();
+            //把指定索引数据放入到list中
+            for(int j=i*size;j<=size*(i+1)-1;j++) {
+                if(j<=list.size()-1) {
+                    sub.add(list.get(j));
+                }
+            }
+            listArr.add(sub);
+        }
+
+        System.out.println(listArr);
+    }
 }

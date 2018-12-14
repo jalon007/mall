@@ -2,12 +2,14 @@
   <div class="home">
 
   <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
-
+  <div class="w">
     <div class="category-con">
       <div class="category-inner-con w1220">
-        <!--<div class="category-type">
-          <h3>全部分类</h3>
-        </div>-->
+        <div class="category-type">
+          <!--<h3>全部分类</h3>-->
+          <message></message>
+          <tran></tran>
+        </div>
         <category-tree :category="categoryList"></category-tree>
 
       </div>
@@ -29,30 +31,41 @@
     </div>
 
 
-
-
-      <div class="activity-panel">
-        <ul class="box">
-          <li class="content" v-for="(iitem,j) in brandList" :key="j" @click="openBrand(iitem.id) ">
-            <div class="title">{{iitem.name}}</div>
-            <img class="i" :src="iitem.picUrl" :alt="iitem.name">
-            <a class="cover-link"></a>
-          </li>
+      <div class="slider-area">
+        <ul class="slider-ul">
+          <div class="box">
+            <div class="title">耍大牌</div>
+            <div>
+              <slide-top  :goods="newGoodsList"></slide-top>
+            </div>
+          </div>
+          <div class="box middle">
+            <div class="title">耍大牌</div>
+            <div>
+              <slide-model  :goods="brandList"></slide-model>
+            </div>
+          </div>
+          <div class="box">
+            <div class="title">耍大牌</div>
+            <div>
+              <slide-model  :goods="brandList"></slide-model>
+            </div>
+          </div>
         </ul>
       </div>
 
-    <div v-if="item=home" >
-      <section class="w mt30 clearfix">
-        <y-shelf :title="i">
-          <div slot="content" class="hot">
-            <mall-goods :msg="iitem" v-for="(iitem,j) in item.newGoodsList" v-if="j<4" :key="j"></mall-goods>
-          </div>
-        </y-shelf>
-      </section>
-    </div>
+    <!--<div v-if="item=home" >-->
+      <!--<section class="w mt30 clearfix">-->
+        <!--<y-shelf :title="i">-->
+          <!--<div slot="content" class="hot">-->
+            <!--<mall-goods :msg="iitem" v-for="(iitem,j) in item.newGoodsList" v-if="j<4" :key="j"></mall-goods>-->
+          <!--</div>-->
+        <!--</y-shelf>-->
+      <!--</section>-->
+    <!--</div>-->
+      <div class="floor-goods">
+        <div v-for="(item ,i) in floorGoodsList" >
 
-    <div v-for="(item ,i) in floorGoodsList" >
-      <section class="w mt30 clearfix">
         <y-shelf :title="item.name" :child="item.childCategory" :class="getColor(i)">
           <div slot="content" class="floors" >
             <div class="imgbanner" v-for="(iitem,j) in item.goodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
@@ -64,11 +77,11 @@
             <mall-goods :msg="iitem" v-for="(iitem,j) in item.goodsList" v-if="j>0" :key="j+'key'"></mall-goods>
           </div>
         </y-shelf>
-      </section>
-
+        </div>
       </div>
+    <div class="you-like"></div>
     </div>
-
+  </div>
     <div class="no-info" v-if="error">
       <div class="no-data">
         <img src="/static/images/error.png">
@@ -94,8 +107,11 @@
   import YShelf from '/components/shelf'
   import product from '/components/product'
   import mallGoods from '/components/mallGoods'
+  import slideModel from '/components/slideModel'
   import { setStore, getStore } from '/utils/storage.js'
   import CategoryTree from '/components/categoryTree'
+  import SlideTop from '/components/slideTop'
+  import message from '/components/message'
   export default {
     data () {
       return {
@@ -228,10 +244,13 @@
       this.play()
     },
     components: {
+      SlideTop,
       CategoryTree,
       YShelf,
       product,
-      mallGoods
+      mallGoods,
+      slideModel,
+      message
     }
   }
 </script>
@@ -284,42 +303,44 @@
     }
   }
 
-  .activity-panel {
-    width: 1220px;
+  .slider-area {
+    width: 100%;
     margin: 0 auto;
-    .box {
-      overflow: hidden;
-      position: relative;
-      z-index: 0;
-      margin-top: 25px;
-      box-sizing: border-box;
-      border: 1px solid rgba(0,0,0,.14);
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
-    }
-    .title{
-      height: 54px;
-      font-weight: bold;
-      line-height: 1.8;
-      font-size: 20px;
-      color: #424242;
-      padding: 10px;
-      text-align: left;
-      overflow: hidden;
-      a {
-        width: 32px;
-        height: 32px;
-        float: right;
-        right: 5px;
-        background-color: #fff;
-        background: url(/static/images/more.png) no-repeat center;
-        &:hover{
-          background: url(/static/images/more-hover.png) no-repeat center;
-          background-color: #1e88e5;
+    position: relative;
+    .slider-ul {
+      width: 100%;
+      /*position: relative;*/
+      .box {
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+        width: 380px;
+        float: left;
+        margin-top: 25px;
+
+        box-sizing: border-box;
+        border-radius: 2px;
+        background: #fff;
+        padding: 20px 40px;
+        .title {
+          float: left;
+          height: 54px;
+          font-weight: bold;
+          line-height: 1.8;
+          font-size: 20px;
+          color: #424242;
+          padding: 10px;
+          text-align: center;
+          overflow: hidden;
         }
       }
+      .middle{
+        margin-left: 40px;
+        margin-right: 40px;
+      }
     }
+
+
     .content {
       float: left;
       position: relative;
@@ -373,7 +394,13 @@
       transition: all .15s ease;
     }
   }
-
+  .floor-goods{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30px;
+    float: left;
+  }
   .banner, .banner span, .banner div {
     font-family: "Microsoft YaHei";
     transition: all .3s;
@@ -594,7 +621,7 @@
   .home .w1220{width: 1220px; margin:0 auto;}
   .home .category-con{position: relative; height: 500px; width: 100%;}
   .home .category-con .category-type{
-    width: 200px;
+    width: 220px;
     height:50px;
     line-height: 50px;
     font-size: 14px;

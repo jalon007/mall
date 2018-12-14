@@ -2,10 +2,10 @@
   <div class="brands w">
     <div class="brands-center" v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;">
       <div class="brand-left">
-        <notion :title="notions[0]" :notions="notions.hotBrands" :index="0"></notion>
-        <notion :title="notions[1]" :notions="notions.hotGoods" :index="1"></notion>
-        <notion :title="notions[2]" :notions="notions.newGoods" :index="2"></notion>
-        <notion :title="notions[3]" :notions="notions.hotTopics" :index="2"></notion>
+        <notion :title="notionsTitle[0]" :notions="notions.hotBrands" :index="0"></notion>
+        <notion :title="notionsTitle[1]" :notions="notions.hotGoods" :index="1"></notion>
+        <notion :title="notionsTitle[2]" :notions="notions.newGoods" :index="2"></notion>
+        <notion :title="notionsTitle[3]" :notions="notions.hotTopics" :index="2"></notion>
       </div>
       <div class="brand-item" v-if="!noResult">
         <!--商品-->
@@ -63,8 +63,9 @@
   export default {
     data () {
       return {
-        notions: ['Brands', 'Goods', 'News', 'Topics'],
+        notionsTitle: ['Brands', 'Goods', 'News', 'Topics'],
         brands: [],
+        notions: [],
         noResult: false,
         error: false,
         min: '',

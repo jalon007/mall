@@ -1,9 +1,9 @@
 <template>
   <div class="category-tab-content">
     <div class="nav-con">
-      <ul class="normal-nav layui-clear">
+      <ul class="normal-nav layui-clear"  @mouseleave="leaveMenu()">
         <li class="nav-item"  v-for="(item, i) in category" :key="i">
-          <div class="title" @mouseover="setMenu(item.subCategory)" @mouseleave="leaveMenu()">{{item.name}}
+          <div class="title" @mouseover="setMenu(item.subCategory)">{{item.name}}
             <i class="layui-icon layui-icon-right"></i>
           </div>
         </li>
@@ -11,7 +11,7 @@
           <div class="left-menu">
             <a class="menu-item"  v-for="(iitem,j) in subCategory" :key="j">
               <img :src="iitem.iconUrl"/>
-              <span>{{iitem.name}}</span>
+              <span @click="changGoods(iitem)" >{{iitem.name}}</span>
             </a>
           </div>
           <div class="right-menu">
@@ -42,6 +42,15 @@
       },
       leaveMenu () {
         this.classdisplay = false
+      },
+      changGoods (item) {
+        this.$router.push({
+          path: '/refreshgoods',
+          query: {
+            cid: item.id
+          }
+        })
+       // window.open('//' + window.location.host + '/#/goods?cid=' + item.id)
       }
     }
   }

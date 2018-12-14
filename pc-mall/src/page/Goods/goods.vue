@@ -1,15 +1,26 @@
 <template>
   <div class="goods">
-    <div class="nav">
+    <div class="nav-cateory">
       <div class="w">
-        <a href="javascript:;" :class="{active:sortType===1}" @click="reset()">综合排序</a>
+        <div class="title">分类：</div>
+        <a class="cate-item" v-for="(item,i) in categoryList" :class="{active:categoryId===item.id}" @click="searchByCategory(item)" :key="i">
+
+          <div>{{item.name}}</div>
+        </a>
+      </div>
+    </div>
+    <div class="nav w">
+      <div class="l-filter">
+        <a href="javascript:;" :class="{active:sortType===1}" @click="reset()">综合</a>
+        <a href="javascript:;" :class="{active:sortType===4}" @click="reset()">人气</a>
+        <a href="javascript:;" :class="{active:sortType===5}" @click="reset()">新品</a>
         <a href="javascript:;" @click="sortByPrice(1)" :class="{active:sortType===2}">价格从低到高</a>
         <a href="javascript:;" @click="sortByPrice(-1)" :class="{active:sortType===3}">价格从高到低</a>
         <div class="price-interval">
           <input type="number" class="input" placeholder="价格" v-model="min">
           <span style="margin: 0 5px"> - </span>
           <input type="number" placeholder="价格" v-model="max">
-          <y-button text="确定" classStyle="main-btn" @btnClick="reset" style="margin-left: 10px;"></y-button>
+          <y-button class="yes" text="确定" classStyle="main-btn" @btnClick="reset" style="margin-left: 10px;"></y-button>
         </div>
       </div>
     </div>
@@ -71,6 +82,7 @@
     data () {
       return {
         goods: [],
+        categoryList: [],
         noResult: false,
         error: false,
         min: '',
@@ -99,7 +111,7 @@
         this.loading = true
       },
       _getAllGoods () {
-        let cid = this.$route.query.cid
+        // this.categoryId = this.$route.query.cid
         if (this.min !== '') {
           this.min = Math.floor(this.min)
         }
@@ -113,14 +125,17 @@
             sort: this.sort,
             priceGt: this.min,
             priceLte: this.max,
-            categoryId: cid
+            categoryId: this.categoryId,
+            keyword: this.keyword,
+            brandId: this.brandId,
+            order: this.order
           }
         }
         getAllGoods(params).then(res => {
           if (res.errno === 0) {
             this.total = res.data.count
             this.goods = res.data.goodsList
-
+            this.categoryList = res.data.filterCategoryList
             this.noResult = false
             // if (this.total === 0) {
             //   this.noResult = true
@@ -147,6 +162,12 @@
         this.currentPage = 1
         this.loading = true
         this._getAllGoods()
+      },
+      searchByCategory (item) {
+        this.categoryId = item.id
+        this.categoryName = item.name
+        this.loading = true
+        this._getAllGoods()
       }
     },
     watch: {
@@ -162,6 +183,7 @@
     mounted () {
       this.windowHeight = window.innerHeight
       this.windowWidth = window.innerWidth
+      this.categoryId = this.$route.query.cid
       this._getAllGoods()
       recommend().then(res => {
         let data = res.result
@@ -180,44 +202,92 @@
   @import "../../assets/style/theme";
 
   .nav {
-    height: 60px;
-    line-height: 60px;
-    > div {
+    height: 40px;
+    line-height: 30px;
+    padding: 6px 8px;
+
+    .l-filter {
       display: flex;
       align-items: center;
+      margin-right: 2px;
       a {
+        border: 1px solid #5e7382;
+        margin-right: -1px;
         padding: 0 15px;
-        height: 100%;
-        @extend %block-center;
+        height: 25px;
+        line-height: 25px;
+        //@extend %block-center;
         font-size: 12px;
         color: #999;
         &.active {
-          color: #5683EA;
+          color: #FFFFFF;
+          background: #c81623;
+          border: 1px solid #c81623;
         }
         &:hover {
-          color: #5683EA;
+          border-bottom: 1px solid #c81623;
         }
       }
       input {
-        @include wh(80px, 30px);
+        @include wh(80px, 25px);
         border: 1px solid #ccc;
       }
       input + input {
         margin-left: 10px;
+        height: 28px;
       }
     }
     .price-interval {
       padding: 0 15px;
       @extend %block-center;
       input[type=number] {
-        border: 1px solid #ccc;
+        border: 1px dashed #5683EA;
         text-align: center;
         background: none;
-        border-radius: 5px;
+        /*border-radius: 5px;*/
       }
+
     }
   }
 
+  .nav-cateory{
+    position: relative;
+    z-index: 15;
+    height: 120px;
+    line-height: 60px;
+    background: #f7f7f7;
+    .title{
+      float: left;
+      padding-top: 15px;
+      height: 60px;
+      width: 100px;
+      line-height: 30px;
+      color: #666;
+      /*text-align: center;*/
+      padding-left: 10px;
+      background: #f3f3f3;
+      font-weight: bold;
+    }
+    .cate-item{
+      float: left;
+      width: 80px;
+      margin-top: 15px;
+      margin-right: 20px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 2px;
+      color: #23658f;
+      text-align: center;
+      &:hover{
+        border: 1px dashed #d44d44;
+      }
+      &.active {
+        border: 1px dashed #d44d44;
+        border-bottom: 1px solid #d44d44;
+        color: #d44d44;
+      }
+    }
+  }
   .goods-box {
     > div {
       float: left;

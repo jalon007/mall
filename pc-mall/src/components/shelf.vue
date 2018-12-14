@@ -33,7 +33,7 @@
     margin-bottom: 30px;
     overflow: hidden;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 3px;
     border: 1px solid #dcdcdc;
     border-color: rgba(0, 0, 0, .14);
     box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
