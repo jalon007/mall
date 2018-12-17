@@ -156,6 +156,26 @@
     }
   }
 </script>
+<style lang="scss">
+  .brand-img {
+    position: relative;
+    left: 10px;
+    z-index: 0;
+    overflow: hidden;
+    >>> img:nth-child(odd){
+      right: 0px;
+    }
+    >>> img:nth-child(even){
+      left: 0px;
+    }
+    >>> img{
+      width: 900px;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+</style>
 <style lang="scss" scoped>
   @import "../../assets/style/mixin";
   .brand-detail {
@@ -217,12 +237,22 @@
         left: 10px;
         z-index: 0;
         overflow: hidden;
-       >>> img{
+        >>> img:nth-child(odd){
+          right: 0px;
+        }
+        >>> img:nth-child(even){
+          left: 0px;
+        }
+        >>> img{
          width: 900px;
          height: auto;
          max-width: 100%;
          max-height: 100%;
-       }
+        }
+      }
+      .brand-img >>> img{
+        width: 20px;
+        height: 20px;
       }
       .brand-content {
         @include wh(100%,100%);

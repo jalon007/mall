@@ -13,9 +13,11 @@
         <h6 class="good-title" v-html="msg.name">{{msg.name}}</h6>
         <h3 class="sub-title">{{msg.brief}}</h3>
         <div class="good-price pr">
-          <p><span style="font-size:14px;color:#000">原价:￥</span><span class="yj">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
-          <p><span style="font-size:14px;color:#000">券后价格:￥</span><span class="jhjg">{{Number(msg.retailPrice).toFixed(2)}}</span></p>
+          <p><span class="yj">￥{{Number(msg.retailPrice).toFixed(2)}}</span></p>
+          <p><span class="jhjg">￥{{Number(msg.retailPrice).toFixed(2)}}</span></p>
         </div>
+      </div>
+      <div class="button_lay">
         <div class="good-button">
           <a @click="openProduct(msg.id)">
             <y-button text="查看详情" style="margin: 0 5px" class="detailbutton"></y-button>
@@ -25,7 +27,7 @@
                     @btnClick="addCart(msg.id,msg.retailPrice,msg.name,msg.picUrl)"
                     classStyle="main-btn"
           ></y-button> -->
-          <y-button text="领取优惠券"
+          <y-button text="趣领券"
                     style="margin: 0 5px"
                     @btnClick="addCart(msg.id,msg.retailPrice,msg.name,msg.picUrl)"
                     classStyle="main-btn"main-btn
@@ -95,82 +97,101 @@
   @import "../assets/style/theme";
 
   .good-item {
+    position: relative;
     background: #fff;
-    width: 25%;
+    width: 200px;
     transition: all .5s;
-    height: 430px;
+    height: 270px;
     padding: 2px;
     &:hover {
-      /*transform: translateY(-5px);*/
-      /*box-shadow: 1px 6px 20px #5c81e3;*/
-      /*border-top-left-radius: 18px;
-      border-top-right-radius: 18px;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;*/
-      .good-content{
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
+      .button_lay{
+        display: flex;
       }
     }
+    .button_lay{
+      display: none;
+      @include wh(100%);
+      position: absolute;
+      top:0;
+      z-index: 11;
+      background: rgba(206, 199, 197, 0.85);
+      .good-button{
+        @include wh(100%,100px);
+        display: flex;
+        /*padding-bottom: 17px;*/
+        position: relative;
+        margin: 0 auto;
+        padding: 15px;
+        top:170px;
+        .detailbutton{
+          background: #5e7382;
+          color: #ffffff;
+          &:hover{
+            border: 1px solid #af0527;
+          }
+        }
+          input{
+            width: 70px;
+            height: 70px;
+            border-radius: 50px;
+            line-height: 28px;
+            vertical-align: middle;
 
-    .good-button{
-      @extend %block-center;
-      display: flex;
-      padding-bottom: 17px;
-      a{
-        padding: 0 27px;
-      }
-      .detailbutton{
-        &:hover{
-          border: 1px solid #af0527;
         }
       }
     }
+
     .good-img {
       img {
-        margin: 20px auto 10px;
-        @include wh(206px);
+        /*margin: 0 10px;*/
+        @include wh(196px);
         display: block;
       }
     }
     .good-content {
-        @include wh(100%,50%);
+      top:-35px;
+      position: relative;
+        @include wh(196px,130px);
         display: block;
-        background: #dcdcdc;
-      padding-top: 10px;
+        /*background: #dcdcdc;*/
+      /*padding-top: 10px;*/
     }
     .good-price {
-      margin: 15px 0;
+      /*margin: 15px 0;*/
       height: 30px;
-      text-align: center;
-      line-height: 30px;
+      text-align: left;
+      line-height: 20px;
       font-family: Arial;
       font-size: 18px;
       font-weight: 300;
       .yj{
+        color: #d44d44;
+        padding-left: 20px;
+        font-size: 12px;
         text-decoration:line-through
       }
       p{
-        color: #d44d44;
-        display: inline;
+        /*display: inline;*/
         padding: 0 10px;
       }
     }
     .good-title {
       line-height: 1.2;
-      font-size: 18px;
+      font-size: 16px;
       color: #424242;
       margin: 0 auto;
-      padding: 10px 10px;
+      padding: 5px 10px;
       text-align: center;
       overflow: hidden;
+      white-space: nowrap;
+      text-overflow:ellipsis;
     }
     h3 {
       text-align: center;
       line-height: 1.2;
       font-size: 12px;
       color: #696969;
-      padding: 10px;
+      padding: 5px 10px;
     }
 
   }
