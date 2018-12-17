@@ -60,10 +60,10 @@
   .category-tab-content{
     position: absolute;
     .nav-con{
-      width: 220px; height: 0;
+      width: 200px; height: 0;
       .normal-nav{
         z-index:20;
-        height: 500px;
+        height: 400px;
         padding: 1px 0px;
         box-sizing: border-box;
         position: relative;
@@ -113,7 +113,7 @@
         float: left;
         width: 800px;
         height: 300px;
-        left: 220px;
+        left: 200px;
         margin-top: 5px;
         display: none;
         position: absolute;

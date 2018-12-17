@@ -10,7 +10,7 @@
               </a>
             </div>
             <div class="content">
-              <div class="title">{{iitem.name}}</div>
+              <div class="title"><a>{{(i*3+j+1)}} </a>{{iitem.name}}</div>
               <div class="sub-title">{{iitem.desc}}</div>
             </div>
           </div>
@@ -95,15 +95,30 @@
       height: 100%;
       .item{
         width: 100%;
-        height: 100px;
-        .img{
+        height: 107px;
+        img{
           float: left;
-          width: 30%;
-          height: 100%;
+          position: relative;
+          width: 100px;
+          height: auto;
         }
         .content{
-          width: 70%;
+          float: left;
+          width: 200px;
           height: 100%;
+          .title{
+            text-align: center;
+          }
+          .sub-title{
+            text-align: left;
+            line-height: 18px;
+            font-size: 13px;
+            color: #747474;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow:ellipsis;
+          }
         }
       }
       ul{

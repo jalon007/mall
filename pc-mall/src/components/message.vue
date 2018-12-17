@@ -1,15 +1,13 @@
 <template>
-  <div class="msg-box">
-    <div class="carousel-messagebox">
+    <div class="messagebox">
       <transition-group tag="ul" enter-active-class="animated fadeInUp"
                         leave-active-class="animated fadeOutUp">
         <li v-show="idx == isCurrent" v-for="(item, idx) in messageList" :key="idx" :class="['carousel-message']">
-          <span class="good">{{item.name}}</span>
+          <span class="good_name">{{item.name}}</span>
           <span>开通了</span>
-          <span class="good">{{item.prizeName}}</span>
+          <span class="good_msg">{{item.prizeName}}</span>
         </li>
       </transition-group>
-  </div>
   </div>
 </template>
 
@@ -56,45 +54,44 @@
 </script>
 
 <style   lang="scss" rel="stylesheet/scss"  scoped>
-  .box{
-    width: 300px;
-    height: 200px;
-    border: 1px dashed pink;
-    margin: 0 auto;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .carousel-messagebox {
-    width:260px;
-    height: 300px;
-  }
   .carousel-message {
-    width:220px;
-    height: 30px;
-    line-height:30px;
+    width:200px;
+    height: 25px;
+    line-height:25px;
     font-family: PingFangSC-Regular;
-    font-size: 12px;
-    background: url('/static/images/q32.png') 16px center no-repeat rgba(0,0,0,0.6);
-    background-size:20px 16px;
-    border-radius: 30px;
-    padding-left:30px;
+    font-size: 10px;
+    background: url('/static/images/q32.png')  10px center no-repeat rgba(0,0,0,0.6);
+    background: url('/static/images/q32.png')  8px center no-repeat rgba(0,0,0,0.6);
+    background-size:16px 16px;
+    border-radius: 25px;
+    padding-left:10px;
     position: absolute;
     color:#fff;
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
   }
-  .good {
+  .good_name {
+    color: #ffe795;
+    /*width: 80px;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    padding-left:12px;
+    padding-right: 3px;
+  }
+  .good_msg {
     color: #ffe795;
     width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: block;
-    height: 30px;
-    line-height: 30px;
-    margin-left: 8px;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 3px;
   }
 </style>

@@ -9,6 +9,7 @@ import { userInfo } from './api'
 import { Button, Pagination, Checkbox, Icon, Autocomplete, Loading, Message, Notification, Steps, Step, Table, TableColumn, Input, Dialog, Select, Option } from 'element-ui'
 import { getStore } from '/utils/storage'
 import VueContentPlaceholders from 'vue-content-placeholders'
+import animated from 'animate.css'
 Vue.use(VueContentPlaceholders)
 Vue.use(Button)
 Vue.use(Pagination)
@@ -24,6 +25,7 @@ Vue.use(Dialog)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Loading.directive)
+Vue.use(animated)
 Vue.prototype.$loading = Loading.service
 Vue.prototype.$notify = Notification
 Vue.prototype.$message = Message

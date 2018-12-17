@@ -3,17 +3,17 @@
 
   <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
   <div class="w">
-    <div class="category-con">
-      <div class="category-inner-con w1220">
-        <div class="category-type">
-          <!--<h3>全部分类</h3>-->
-          <message></message>
-          <tran></tran>
-        </div>
-        <category-tree :category="categoryList"></category-tree>
+    <div class="home_top_area">
 
+        <!--<div class="category-type">-->
+          <!--&lt;!&ndash;<h3>全部分类</h3>&ndash;&gt;-->
+          <!--<message></message>-->
+          <!--<tran></tran>-->
+        <!--</div>-->
+      <div class="left_category_bar">
+        <category-tree :category="categoryList"></category-tree>
       </div>
-      <div class="banner" >
+      <div class="middle_banner_bar" >
         <div class="bg" ref="bg"
              @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
           <transition name="fade">
@@ -28,13 +28,22 @@
           </ul>
         </div>
       </div>
+      <div class="right_msg_bar">
+        <div>
+          <div class="login_info"></div>
+          <div class="sales_info">
+          </div>
+          <div class="msg_info">
+            <message></message>
+          </div>
+        </div>
+
+      </div>
     </div>
-
-
       <div class="slider-area">
         <ul class="slider-ul">
           <div class="box">
-            <div class="title">耍大牌</div>
+            <div class="title">排行榜TOP</div>
             <div>
               <slide-top :goods="brandsss"></slide-top>
             </div>
@@ -53,16 +62,6 @@
           </div>
         </ul>
       </div>
-
-    <!--<div v-if="item=home" >-->
-      <!--<section class="w mt30 clearfix">-->
-        <!--<y-shelf :title="i">-->
-          <!--<div slot="content" class="hot">-->
-            <!--<mall-goods :msg="iitem" v-for="(iitem,j) in item.newGoodsList" v-if="j<4" :key="j"></mall-goods>-->
-          <!--</div>-->
-        <!--</y-shelf>-->
-      <!--</section>-->
-    <!--</div>-->
       <div class="floor-goods">
         <div v-for="(item ,i) in floorGoodsList" >
 
@@ -283,7 +282,7 @@
   .page {
     position: absolute;
     width: 100%;
-    top: 470px;
+    top: 350px;
     z-index: 30;
     .dots {
       display: flex;
@@ -294,7 +293,7 @@
         display: inline-block;
         width: 15px;
         height: 15px;
-        background-color: whitesmoke;
+        background-color: #af0527;
         border-radius: 8px;
         margin-right: 10px;
         cursor: pointer;
@@ -409,41 +408,13 @@
     transition-timing-function: linear;
   }
 
-  .banner {
-    cursor: pointer;
-    perspective: 3000px;
-    position: relative;
-    z-index: 19;
-    margin: 0 auto;
-    width: 1220px;
-  }
-
-  .bg {
-    position: relative;
-    display: flex;
-    /*width: 1220px;*/
-    width: 100%;
-    height: 500px;
-    margin: 0px auto;
-    background-size: 100% 100%;
-    /*border-radius: 10px;*/
-    transform-style: preserve-3d;
-    transform-origin: 50% 50%;
-    transform: rotateY(0deg) rotateX(0deg);
-    & div{
-      position: relative;
-      height: 100%;
-      width: 100%;
-    }
-  }
-
   .img1 {
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
   }
 
   .img2 {
@@ -620,56 +591,67 @@
     color: #d0d0d0;
     padding: 10px;
   }
-  .home .w1220{width: 1220px; margin:0 auto;}
-  .home .category-con{position: relative; height: 500px; width: 100%;}
-  .home .category-con .category-type{
-    width: 220px;
-    height:50px;
-    line-height: 50px;
-    font-size: 14px;
-    background: #8b93f6;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
-    margin-top: -50px;
-    position: absolute;
-    z-index: 100;
-    border-bottom: 2px solid #a00006;
-  }
-  .home .category-con .category-type h3{font-size: 14px;}
-  .home .category-tab-content .nav-con{width: 200px; height: 0;
-  }
-  .home .category-tab-content .nav-con .normal-nav{
-    z-index:100;height: 500px; padding: 1px 0px;
-    box-sizing: border-box; position: relative; background: rgba(127, 127, 127, 0.27);
-    border-bottom: 1px solid #e9e9e9; box-sizing: border-box;}
-  .home .category-tab-content .nav-con .nav-item{
-    padding-left: 10px;
-    border-bottom: 1px solid #e7e7e7;
-    padding-bottom: 4px;
+  /*.home .w1220{width: 1220px; margin:0 auto;}*/
+  .home_top_area{
     position: relative;
-    &:hover{
-      background: #ffffff;
-      .title{
-        color: rgba(216, 0, 32, 0.93);
+    height: 400px;
+    width: 100%;
+    .left_category_bar{
+      width: 200px;
+      height: 100%;
+      float: left;
+    }
+    .middle_banner_bar {
+      float: left;
+      cursor: pointer;
+      perspective: 3000px;
+      position: relative;
+      z-index: 19;
+      margin: 0 10px;
+      width: 800px;
+      .bg {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 400px;
+        margin: 0px auto;
+        background-size: 100% 100%;
+        transform-style: preserve-3d;
+        transform-origin: 50% 50%;
+        transform: rotateY(0deg) rotateX(0deg);
+        & div{
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
       }
-      p a{
-        color: rgba(216, 0, 32, 0.93);;
+    }
+
+    .right_msg_bar{
+      width: 200px;
+      height: 100%;
+      background: #5079d9;
+      position: relative;
+      display: flex;
+      .login_info{
+        background: #999999;
+        width: 200px;
+        height: 200px;
+      }
+      .sales_info{
+        background: #888888;
+        width: 200px;
+        height: 170px;
+      }
+      .msg_info{
+        background: #777777;
+        width: 200px;
+        height: 30px;
       }
     }
   }
-  .home .category-tab-content .nav-con .nav-item .title{
-    font-size: 14px; color: #fff; line-height: 24px; font-weight: bold; cursor: pointer;
-    img{
-      width: 24px;
-      height: auto;
-    }
-  }
-  .home .category-tab-content .nav-con .nav-item  p a{
-    font-size: 12px; color: #fff; margin-left: 4px; line-height: 18px;}
-  .home .category-tab-content .nav-con .nav-item i{position: absolute; right: 2px; top: 16px; font-size: 12px; }
-  .home .category-tab-content .nav-con .nav-item  p a:hover{
-    font-weight: bold
-  }
-  .home .category-banner{background:#ffc6dd;}
+
+
+
+
 </style>
