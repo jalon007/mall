@@ -64,7 +64,9 @@
       <!--</section>-->
     <!--</div>-->
       <div class="floor-goods">
-        <div v-for="(item ,i) in floorGoodsList" >
+        <floors :floors="floorGoodsList"></floors>
+
+       <!-- <div v-for="(item ,i) in floorGoodsList" >
 
         <y-shelf :title="item.name" :child="item.childCategory" :class="getColor(i)">
           <div slot="content" class="floors" >
@@ -77,9 +79,14 @@
             <mall-goods :msg="iitem" v-for="(iitem,j) in item.goodsList" v-if="j>0" :key="j+'key'"></mall-goods>
           </div>
         </y-shelf>
-        </div>
+        </div>-->
       </div>
-    <div class="you-like"></div>
+    <div class="maybe_like">
+
+        <maybe-like :goods="newGoodsList"></maybe-like>
+
+
+    </div>
     </div>
   </div>
     <div class="no-info" v-if="error">
@@ -112,6 +119,8 @@
   import CategoryTree from '/components/categoryTree'
   import SlideTop from '/components/slideTop'
   import message from '/components/message'
+  import Floors from '/components/floors'
+  import MaybeLike from '/components/maybeLike'
   export default {
     data () {
       return {
@@ -246,6 +255,8 @@
       this.play()
     },
     components: {
+      MaybeLike,
+      Floors,
       SlideTop,
       CategoryTree,
       YShelf,
@@ -397,6 +408,13 @@
     }
   }
   .floor-goods{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 30px;
+    float: left;
+  }
+  .maybe_like{
     width: 100%;
     margin: 0 auto;
     position: relative;
