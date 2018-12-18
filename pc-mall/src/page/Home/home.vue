@@ -37,6 +37,8 @@
             </div>
           </div>
           <div class="sales_info">
+            <p class="s_title">领红包</p>
+            <img class="ali_red"/>
           </div>
           <div class="msg_info">
             <message></message>
@@ -577,13 +579,12 @@
     .right_msg_bar{
       width: 200px;
       height: 100%;
-      background: #5079d9;
       position: relative;
       display: flex;
       .login_info{
         background: #f4f4f4;
         width: 200px;
-        height: 200px;
+        height: 150px;
 
         .nav-user-avatar {
           padding-top: 10px;
@@ -633,12 +634,21 @@
         }
       }
       .sales_info{
-        background: #888888;
         width: 200px;
-        height: 170px;
+        height: 220px;
+        .s_title{
+          padding: 2px;
+        }
+        .ali_red{
+          position: relative;
+          margin: 0 auto;
+          @include wh(100%);
+          background: url("/static/images/ali_red.png");
+          background-repeat: no-repeat;
+          background-size: 200px;
+        }
       }
       .msg_info{
-        background: #777777;
         width: 200px;
         height: 30px;
       }

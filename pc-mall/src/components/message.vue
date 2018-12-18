@@ -4,7 +4,7 @@
                         leave-active-class="animated fadeOutUp">
         <li v-show="idx == isCurrent" v-for="(item, idx) in messageList" :key="idx" :class="['carousel-message']">
           <span class="good_name">{{item.name}}</span>
-          <span>开通了</span>
+          <span>成功领取</span>
           <span class="good_msg">{{item.prizeName}}</span>
         </li>
       </transition-group>
@@ -18,15 +18,15 @@
         messageList: [
           {
             name: '电风**啦',
-            prizeName: '腾讯超高级会员'
+            prizeName: '22.05元'
           },
           {
             name: '你***包',
-            prizeName: '苹果高级会员'
+            prizeName: '2.11元'
           },
           {
             name: '一枫****书',
-            prizeName: '百度高级会员'
+            prizeName: '3.45'
           }
         ],
         isCurrent: 0
