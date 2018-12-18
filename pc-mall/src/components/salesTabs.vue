@@ -83,7 +83,7 @@
         position: relative;
         margin: 0 auto;
         @include wh(100%);
-
+        border-radius: 10px;
       }
 
     }

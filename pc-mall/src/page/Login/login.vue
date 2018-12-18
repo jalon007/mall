@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="dialog dialog-shadow" style="display: block; margin-top: -362px;">
         <div class="title">
-          <!--<h4>使用 XMall 账号 登录官网</h4>-->
+          <h4>Hi~,欢迎登录趣Talk网站</h4>
         </div>
         <div v-if="loginPage" class="content">
           <ul class="common-form">
@@ -262,12 +262,12 @@ export default {
 }
 
 .v2 .dialog {
-  width: 450px;
+  width: 400px;
   border: 1px solid #dadada;
   border-radius: 10px;
   top: 50%;
-  left: 50%;
-  margin-left: -225px;
+  left: 70%;
+  margin-left: -200px;
   position: absolute;
   .title {
     background: linear-gradient(#fff, #f5f5f5);
@@ -276,12 +276,12 @@ export default {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     position: relative;
     background-image: url(/static/images/Q64-2.png);
-    background-size: 140px;
+    background-size: 100px;
     background-position: top center;
     background-repeat: no-repeat;
-    height: 92px;
+    height: 130px;
     margin: 23px 0 50px;
-    padding: 75px 0 0;
+    /*padding: 75px 0 0;*/
     box-shadow: none;
     h4 {
       padding: 0;
@@ -350,7 +350,7 @@ export default {
     border-radius: 12px;
     display: none;
     margin: -163px 0 0 -218px;
-    width: 436px;
+    width: 386px;
     position: fixed;
     left: 50%;
     top: 50%;
