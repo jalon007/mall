@@ -63,25 +63,15 @@
         </ul>
       </div>
       <div class="floor-goods">
-        <floors :floors="floorGoodsList"></floors>
-
-       <!-- <div v-for="(item ,i) in floorGoodsList" >
-
-        <y-shelf :title="item.name" :child="item.childCategory" :class="getColor(i)">
-          <div slot="content" class="floors" >
-            <div class="imgbanner" v-for="(iitem,j) in item.goodsList"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
-              <img v-lazy="iitem.picUrl">
-              <h6 class="good-title" v-html="iitem.name">{{iitem.name}}</h6>
-              <h3 class="sub-title ellipsis">{{iitem.brief}}</h3>
-              <a class="cover-link"></a>
-            </div>
-            <mall-goods :msg="iitem" v-for="(iitem,j) in item.goodsList" v-if="j>0" :key="j+'key'"></mall-goods>
-          </div>
-        </y-shelf>
-        </div>-->
+        <!--<floors :floors="floorGoodsList"></floors>-->
+        <div v-for="(item ,i) in floorGoodsList" >
+          <floor-goods :title="item.name" :sub-category="item.childCategory" :sub-goods="item.goodsList"  :class="getColor(i)"></floor-goods>
+        </div>
       </div>
     <div class="maybe_like">
-
+        <div class="mb_hd">
+          <h3 class="mb_title">还没逛够</h3>
+        </div>
         <maybe-like :goods="newGoodsList"></maybe-like>
 
 
@@ -120,6 +110,7 @@
   import message from '/components/message'
   import Floors from '/components/floors'
   import MaybeLike from '/components/maybeLike'
+  import FloorGoods from '/components/floorGoods'
   export default {
     data () {
       return {
@@ -254,6 +245,7 @@
       this.play()
     },
     components: {
+      FloorGoods,
       MaybeLike,
       Floors,
       SlideTop,
@@ -419,6 +411,47 @@
     position: relative;
     margin-top: 30px;
     float: left;
+    .mb_hd{
+      width: 100%;
+      height: 60px;
+
+    }
+    .mb_title{
+      position: relative;
+      width: 250px;
+      height: 45px;
+      font-size: 28px;
+      font-family: 'fzzzh', sans-serif;
+      font-weight: normal;
+      text-align: center;
+      line-height: 45px;
+      padding: 0 50px;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      color: #222;
+      /*font-size: 30px;*/
+      /*text-align: center;*/
+      &:before{
+        right: 0px;
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        display: block;
+        background: #222;
+        top: 19px;
+      }
+      &:after{
+        left: 0px;
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        display: block;
+        background: #222;
+        top: 19px;
+      }
+    }
   }
   .banner, .banner span, .banner div {
     font-family: "Microsoft YaHei";
