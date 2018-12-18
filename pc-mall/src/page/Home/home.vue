@@ -24,6 +24,7 @@
       </div>
       <div class="right_msg_bar">
         <div>
+          <!-- 用户头像登陆信息-->
           <div class="login_info">
             <div class="nav-user-avatar">
               <div>
@@ -36,11 +37,11 @@
               <a class="to_register">注册</a>
             </div>
           </div>
+          <!-- 促销信息-->
           <div class="sales_info">
             <sales-tabs></sales-tabs>
-            <!--<p class="s_title">领红包</p>
-            <img class="ali_red"/>-->
           </div>
+          <!-- 消息条-->
           <div class="msg_info">
             <message></message>
           </div>
@@ -71,7 +72,6 @@
         </ul>
       </div>
       <div class="floor-goods">
-        <!--<floors :floors="floorGoodsList"></floors>-->
         <div v-for="(item ,i) in floorGoodsList" >
           <floor-goods :title="item.name" :sub-category="item.childCategory" :sub-goods="item.goodsList"  :class="getColor(i)"></floor-goods>
         </div>
@@ -81,8 +81,6 @@
           <h3 class="mb_title">还没逛够</h3>
         </div>
         <maybe-like :goods="newGoodsList"></maybe-like>
-
-
     </div>
     </div>
   </div>

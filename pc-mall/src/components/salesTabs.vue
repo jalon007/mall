@@ -6,10 +6,13 @@
       </li>
     </ul>
     <div class="divTab" v-show="nowIndex===0">
-      <img class="wx_award"/>
+      <img class="ali_red"/>
     </div>
     <div class="divTab" v-show="nowIndex===1">
-      <img class="ali_red"/>
+      <img class="ali_award"/>
+    </div>
+    <div class="divTab" v-show="nowIndex===2">
+      <img class="wx_award"/>
     </div>
   </div>
 </template>
@@ -17,7 +20,7 @@
   export default {
     data () {
       return {
-        tabsTitle: ['打赏', '领红包'],
+        tabsTitle: ['领红包', '打赏', '捐赠'],
         nowIndex: 0
       }
     },
@@ -37,9 +40,6 @@
     .tabs{
       width: 100%;
       height: 20px;
-      li:first-child {
-        border-right: 1px solid #dfe0e1;
-      }
       li {
         height: 100%;
         position: relative;
@@ -47,6 +47,7 @@
         padding: 0 8px;
         font-size: 12px;
         line-height: 18px;
+        border-right: 1px solid #dfe0e1;
         a {
           display: block;
           color: #666;
@@ -55,28 +56,36 @@
           }
         }
       }
-
+      li:last-child {
+        border-right: none;
+      }
     }
     .divTab{
       margin-top: 5px;
       width: 200px;
       height: 200px;
       .ali_red{
-        position: relative;
-        margin: 0 auto;
-        @include wh(100%);
         background: url("/static/images/ali_red.png");
         background-repeat: no-repeat;
         background-size: 200px;
       }
       .wx_award{
-        position: relative;
-        margin: 0 auto;
-        @include wh(100%);
         background: url("/static/images/wx_award.png");
         background-repeat: no-repeat;
         background-size: 200px;
       }
+      .ali_award{
+        background: url("/static/images/ali_award.png");
+        background-repeat: no-repeat;
+        background-size: 200px;
+      }
+      img{
+        position: relative;
+        margin: 0 auto;
+        @include wh(100%);
+
+      }
+
     }
   }
 
