@@ -36,7 +36,7 @@
     height: 100%;
     .tabs{
       width: 100%;
-      height: 25px;
+      height: 20px;
       li:first-child {
         border-right: 1px solid #dfe0e1;
       }
@@ -44,7 +44,9 @@
         height: 100%;
         position: relative;
         display:inline-block;
-        padding: 0 8px; ;
+        padding: 0 8px;
+        font-size: 12px;
+        line-height: 18px;
         a {
           display: block;
           color: #666;

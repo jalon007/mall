@@ -588,7 +588,7 @@
       .login_info{
         background: #f4f4f4;
         width: 200px;
-        height: 150px;
+        height: 155px;
 
         .nav-user-avatar {
           padding-top: 10px;
@@ -654,7 +654,7 @@
       }
       .msg_info{
         width: 200px;
-        height: 30px;
+        height: 25px;
       }
     }
   }
