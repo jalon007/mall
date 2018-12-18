@@ -107,6 +107,9 @@
       .button_lay{
         display: flex;
       }
+      .good-title{
+        color: #c81623;
+      }
     }
     .button_lay{
       display: none;
@@ -114,7 +117,7 @@
       position: absolute;
       top:0;
       z-index: 11;
-      background: rgba(206, 199, 197, 0.85);
+      background: rgba(206, 199, 197, 0.7);
       .good-button{
         @include wh(100%,100px);
         display: flex;
@@ -130,14 +133,14 @@
             border: 1px solid #af0527;
           }
         }
-          input{
-            width: 70px;
-            height: 70px;
-            border-radius: 50px;
-            line-height: 28px;
-            vertical-align: middle;
-
+        input{
+          width: 70px;
+          height: 70px;
+          border-radius: 50px;
+          line-height: 28px;
+          vertical-align: middle;
         }
+
       }
     }
 
