@@ -5,33 +5,28 @@
         <ul class="c0">
           <h3 class="c1">订单服务</h3>
           <ul>
-            <li class="c2"><router-link to="/thanks"><a class="c3">购买指南</a></router-link></li>
-            <li class="c2"><a class="c3" @click="open4">支付方式</a></li>
-            <li class="c2"><a class="c3" @click="open5">送货政策</a></li>
+            <li class="c2"><a class="c3" @click="open4">打赏方式</a></li>
+            <li class="c2"><a class="c3" @click="open5">领券指南</a></li>
           </ul>
         </ul>
         <ul class="c0">
           <h3 class="c1">服务支持</h3>
           <ul>
-            <li class="c2"><a class="c3" target="_blank" href="https://github.com/Exrick">官方开源</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="https://github.com/Exrick/xmall-front">项目前端</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="https://github.com/Exrick/xmall">项目后端</a></li>
+            <li class="c2"><a class="c3" target="_blank" href="">官方开源</a></li>
           </ul>
         </ul>
         <ul class="c0">
           <h3 class="c1">自助服务</h3>
           <ul>
-            <li class="c2"><a class="c3" target="_blank" href="http://blog.exrick.cn">个人博客</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="http://blog.exrick.cn/intro/">个人简介</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="https://www.bilibili.com/video/av15860053/">个人视频</a></li>
+            <li class="c2"><a class="c3" target="_blank" href="http://blog.jalon.xyz">个人博客</a></li>
+            <li class="c2"><a class="c3" target="_blank" href="">个人简介</a></li>
           </ul>
         </ul>
         <ul class="c0">
           <h3 class="c1">其他项目</h3>
           <ul>
             <li class="c2"><a class="c3" target="_blank" href="http://xpay.exrick.cn">XPay支付系统</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="http://shouji.baidu.com/software/11783429.html">数据共享</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="https://github.com/Exrick">待开发...</a></li>
+            <li class="c2"><a class="c3" target="_blank" href="">待开发...</a></li>
           </ul>
         </ul>
         <ul class="c0">
@@ -45,19 +40,19 @@
         <ul class="c0">
           <h3 class="c1">关注我吧</h3>
           <ul>
-            <li class="c2"><a class="c3" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1012139570&site=qq&menu=yes">腾讯 QQ</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="http://weibo.com/2255094222/profile">新浪微博</a></li>
-            <li class="c2"><a class="c3" target="_blank" href="mailto:1012139570@qq.com">官方邮箱</a></li>
+            <li class="c2"><a class="c3" target="_blank" href="">腾讯 QQ</a></li>
+            <li class="c2"><a class="c3" target="_blank" href="">新浪微博</a></li>
+            <li class="c2"><a class="c3" target="_blank" href="">官方邮箱</a></li>
           </ul>
         </ul>
 
-        <ul class="c4">
+        <!--<ul class="c4">
           <li class="tel"><a class="c5" href="http://wpa.qq.com/msgrd?v=3&uin=1012139570&site=qq&menu=yes" target="_blank">11111111</a></li>
           <li class="time">周一至周日 10:00-23:00（限Starrer或捐赠人联系）</li>
           <li class="online">
             <y-button text="在线帮助" class="button" @btnClick="open3"></y-button>
           </li>
-        </ul>
+        </ul>-->
       </div>
 
       <div class="copyright">
@@ -65,7 +60,6 @@
         <ul class="privacy">
           <li class="content-c1"><a class="content-c0" @click="open1">法律声明</a></li>
           <li class="content-c1"><a class="content-c0" @click="open2">隐私条款</a></li>
-          <li class="content-c1"><a class="content-c0" target="_blank" href="https://github.com/Exrick">开发者中心</a></li>
         </ul>
       </div>
       <div class="cop">
@@ -105,14 +99,14 @@
       },
       open4 () {
         this.$notify.info({
-          title: '支付方式',
-          message: '支持支付宝、微信等方式捐赠'
+          title: '打赏方式',
+          message: '微信、支持支付宝等方式捐赠'
         })
       },
       open5 () {
         this.$notify({
-          title: '送货政策',
-          message: '本网站只推荐购买优惠券、请到对应平台购买商品、本网站不对商品负',
+          title: '领券指南',
+          message: '本网站只推荐购买优惠券、请到对应平台购买商品、本网站暂不售卖任何商品、不对商品质量及交易方式负责',
           type: 'warning'
         })
       }
@@ -128,7 +122,7 @@
     border-top: 1px solid #e6e6e6;
     background: #fafafa;
     margin-top: 60px;
-    height: 350px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,7 +133,7 @@
   }
 
   .siteinfo {
-    height: 100px;
+    height: 10px;
     padding: 50px 0 130px;
     border-bottom: 1px solid #e6e6e6;
     position: relative;

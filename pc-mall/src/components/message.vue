@@ -18,15 +18,23 @@
         messageList: [
           {
             name: '电风**啦',
-            prizeName: '22.05元'
+            prizeName: '12.05元红包'
           },
           {
-            name: '你***包',
-            prizeName: '2.11元'
+            name: 'J***6',
+            prizeName: '2.11元红包'
           },
           {
             name: '一枫****书',
-            prizeName: '3.45'
+            prizeName: '3.45元支付宝红包'
+          },
+          {
+            name: 'A***包',
+            prizeName: '3.11元红包'
+          },
+          {
+            name: 'wx***9',
+            prizeName: '1.45元支付宝红包'
           }
         ],
         isCurrent: 0

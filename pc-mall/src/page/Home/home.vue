@@ -37,8 +37,9 @@
             </div>
           </div>
           <div class="sales_info">
-            <p class="s_title">领红包</p>
-            <img class="ali_red"/>
+            <sales-tabs></sales-tabs>
+            <!--<p class="s_title">领红包</p>
+            <img class="ali_red"/>-->
           </div>
           <div class="msg_info">
             <message></message>
@@ -117,6 +118,8 @@
   import message from '/components/message'
   import MaybeLike from '/components/maybeLike'
   import FloorGoods from '/components/floorGoods'
+  import 'element-ui/lib/theme-default/index.css'
+  import SalesTabs from '/components/salesTabs'
   export default {
     data () {
       return {
@@ -251,6 +254,7 @@
       this.play()
     },
     components: {
+      SalesTabs,
       FloorGoods,
       MaybeLike,
       SlideTop,
