@@ -55,9 +55,9 @@
             </div>
           </div>
           <div class="box">
-            <div class="title">耍大牌</div>
+            <div class="title">换新季</div>
             <div>
-              <slide-model  :goods="brandList"></slide-model>
+              <slide-model  :goods="newGoodsList"></slide-model>
             </div>
           </div>
         </ul>
@@ -108,7 +108,6 @@
   import CategoryTree from '/components/categoryTree'
   import SlideTop from '/components/slideTop'
   import message from '/components/message'
-  import Floors from '/components/floors'
   import MaybeLike from '/components/maybeLike'
   import FloorGoods from '/components/floorGoods'
   export default {
@@ -247,7 +246,6 @@
     components: {
       FloorGoods,
       MaybeLike,
-      Floors,
       SlideTop,
       CategoryTree,
       YShelf,
@@ -325,7 +323,7 @@
         box-sizing: border-box;
         border-radius: 2px;
         background: #fff;
-        padding: 20px 40px;
+        padding: 20px 30px;
         .title {
           float: left;
           height: 54px;

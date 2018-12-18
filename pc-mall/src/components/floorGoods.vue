@@ -7,7 +7,7 @@
       <div class="right">
         <ul class="nav-list2">
           <li v-for="(iitem,i) in subCategory" :key="i">
-            <a @click="changeGoods(i,iitem)" :class="{active:i===checked}">{{iitem.name}}</a>
+            <a @click="changeGoods(i,iitem.id)" :class="{active:i===checked}">{{iitem.name}}</a>
           </li>
           <li>
             <a @click="moreGoods(-2)" :class="{active:checked===-1}">更多</a>
@@ -17,20 +17,20 @@
     </div>
     <!--内容-->
     <div slot="content" class="floors" >
-        <div class="imgbanner" v-for="(iitem,j) in subGoods"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
+        <div class="imgbanner" v-for="(iitem,j) in Goods"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
           <img v-lazy="iitem.picUrl">
           <h6 class="good-title" v-html="iitem.name">{{iitem.name}}</h6>
           <h3 class="sub-title ellipsis">{{iitem.brief}}</h3>
           <a class="cover-link"></a>
         </div>
-        <small-goods :msg="iitem" v-for="(iitem,j) in subGoods" v-if="j>0" :key="j+'key'"></small-goods>
+        <small-goods :msg="iitem" v-for="(iitem,j) in Goods" v-if="j>0" :key="j+'key'"></small-goods>
       </div>
     </div>
   <!--</div>-->
 </template>
 <script>
   import smallGoods from '/components/smallGoods'
-
+  import { getAllGoods } from '/api/goods.js'
   export default {
     props: [
       'subCategory',
@@ -39,15 +39,44 @@
     ],
     data () {
       return {
-        checked: 0
+        checked: 0,
+        categoryId: '',
+        Goods: this.subGoods
       }
     },
     methods: {
       getColor (i) {
         return 'color' + parseInt(i % 4)
       },
-      changeGoods (i, item) {
+      changeGoods (i, cid) {
         this.checked = i
+        this._getAllGoods(cid)
+      },
+      searchByCategory (cid) {
+        this.categoryId = cid
+        this.loading = true
+        this._getAllGoods()
+      },
+      _getAllGoods (cid) {
+        let params = {
+          params: {
+            categoryId: cid
+          }
+        }
+        getAllGoods(params).then(res => {
+          if (res.errno === 0) {
+            this.total = res.data.count
+            this.Goods = res.data.goodsList
+            this.noResult = false
+            // if (this.total === 0) {
+            //   this.noResult = true
+            // }
+            this.error = false
+          } else {
+            this.error = true
+          }
+          this.loading = false
+        })
       }
     },
     components: {

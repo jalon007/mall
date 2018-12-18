@@ -78,7 +78,7 @@
     list-style: none;
   }
   .slide {
-    width: 300px;
+    width: 320px;
     height: 320px;
     margin: 0 auto;
     margin-top: 50px;
@@ -92,6 +92,14 @@
         img {
           width: 100%;
           height: 100%;
+        }
+        .title{
+          text-align: left;
+          font-size: 18px;
+          text-shadow: 1px 1px #5e7382;
+        }
+        .sub-title{
+          color: #c88386;
         }
       }
     }

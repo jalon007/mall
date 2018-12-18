@@ -84,7 +84,7 @@
     list-style: none;
   }
   .slide {
-    width: 300px;
+    width: 320px;
     height: 320px;
     margin: 0 auto;
     margin-top: 50px;
@@ -99,7 +99,7 @@
         img{
           float: left;
           position: relative;
-          width: 100px;
+          width: 120px;
           height: auto;
         }
         .content{
@@ -121,16 +121,6 @@
           }
         }
       }
-      ul{
-
-      }
-      /*li {*/
-        /*position: absolute;*/
-        /*img {*/
-          /*width: 100%;*/
-          /*height: 100%;*/
-        /*}*/
-      /*}*/
     }
   }
   .bullet {
