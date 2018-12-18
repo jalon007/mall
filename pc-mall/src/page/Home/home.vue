@@ -4,12 +4,6 @@
   <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
   <div class="w">
     <div class="home_top_area">
-
-        <!--<div class="category-type">-->
-          <!--&lt;!&ndash;<h3>全部分类</h3>&ndash;&gt;-->
-          <!--<message></message>-->
-          <!--<tran></tran>-->
-        <!--</div>-->
       <div class="left_category_bar">
         <category-tree :category="categoryList"></category-tree>
       </div>
@@ -18,7 +12,7 @@
              @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
           <transition name="fade">
             <div v-for="(item, i) in banner" v-if="i===mark" :key="i" style="position:absolute" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
-              <img v-if="item.url" class="img1" :src="item.url"/>
+              <img v-if="item.url" class="img" :src="item.url"/>
             </div>
           </transition>
         </div>
@@ -30,7 +24,18 @@
       </div>
       <div class="right_msg_bar">
         <div>
-          <div class="login_info"></div>
+          <div class="login_info">
+            <div class="nav-user-avatar">
+              <div>
+              <img class="avatar" />
+              </div>
+              <p class="name">Hi~欢迎来到趣Talk</p>
+            </div>
+            <div class="button_ul">
+              <a class="to_login">登录</a>
+              <a class="to_register">注册</a>
+            </div>
+          </div>
           <div class="sales_info">
           </div>
           <div class="msg_info">
@@ -42,19 +47,19 @@
     </div>
       <div class="slider-area">
         <ul class="slider-ul">
-          <div class="box">
+          <div class="slider_box">
             <div class="title">排行榜TOP</div>
             <div>
               <slide-top :goods="brandsss"></slide-top>
             </div>
           </div>
-          <div class="box middle">
+          <div class="slider_box middle">
             <div class="title">耍大牌</div>
             <div>
               <slide-model  :goods="brandList"></slide-model>
             </div>
           </div>
-          <div class="box">
+          <div class="slider_box">
             <div class="title">换新季</div>
             <div>
               <slide-model  :goods="newGoodsList"></slide-model>
@@ -257,6 +262,8 @@
   }
 </script>
 <style lang="scss" rel="stylesheet/scss" scoped>
+  @import "../../assets/style/theme";
+  @import "../../assets/style/mixin";
   .home {
     display: flex;
     flex-direction: column;
@@ -312,7 +319,7 @@
     .slider-ul {
       width: 100%;
       /*position: relative;*/
-      .box {
+      .slider_box {
         overflow: hidden;
         position: relative;
         z-index: 0;
@@ -457,35 +464,6 @@
     transition-timing-function: linear;
   }
 
-  .img1 {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    /*border-radius: 10px;*/
-  }
-
-  .img2 {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 5px;
-    left: 0;
-    background-size: 95% 100%;
-    border-radius: 10px;
-  }
-
-  .img3 {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    border-radius: 10px;
-  }
-
   .a {
     z-index: 20;
     transform: translateZ(40px);
@@ -498,94 +476,6 @@
 
   .c {
     transform: translateZ(0px);
-  }
-
-  .sk_item {
-    width: 170px;
-    height: 225px;
-    padding: 0 14px 0 15px;
-    > div {
-      width: 100%;
-    }
-    a {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: all .3s;
-      &:hover {
-        transform: translateY(-5px);
-      }
-    }
-    img {
-      width: 130px;
-      height: 130px;
-      margin: 17px 0;
-    }
-    .sk_item_name {
-      color: #999;
-      display: block;
-      max-width: 100%;
-      _width: 100%;
-      overflow: hidden;
-      font-size: 12px;
-      text-align: left;
-      height: 32px;
-      line-height: 16px;
-      word-wrap: break-word;
-      word-break: break-all;
-    }
-    .sk_item_price {
-      padding: 3px 0;
-      height: 25px;
-    }
-    .price_new {
-      font-size: 18px;
-      font-weight: 700;
-      margin-right: 8px;
-      color: #f10214;
-    }
-    .price_origin {
-      color: #999;
-      font-size: 12px;
-    }
-  }
-
-  .box {
-    overflow: hidden;
-    position: relative;
-    z-index: 0;
-    margin-top: 29px;
-    box-sizing: border-box;
-    /*border: 1px solid rgba(0, 0, 0, .14);*/
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 3px 8px -6px rgba(0, 0, 0, .1);
-
-  }
-
-  ul.box {
-    display: flex;
-    li {
-      flex: 1;
-      img {
-        display: block;
-        width: 305px;
-        height: 200px;
-      }
-    }
-  }
-
-  .mt30 {
-    margin-top: 30px;
-  }
-
-  .hot {
-    display: flex;
-    > div {
-      flex: 1;
-      width: 25%;
-    }
   }
 
   .floors {
@@ -673,6 +563,14 @@
           height: 100%;
           width: 100%;
         }
+        .img {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          /*border-radius: 10px;*/
+        }
       }
     }
 
@@ -683,9 +581,56 @@
       position: relative;
       display: flex;
       .login_info{
-        background: #999999;
+        background: #f4f4f4;
         width: 200px;
         height: 200px;
+
+        .nav-user-avatar {
+          padding-top: 10px;
+          > div {
+            position: relative;
+            margin: 0 auto;
+            @include wh(80px);
+            text-align: center;
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              border-radius: 50%;
+              box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
+            }
+            .avatar {
+              border-radius: 50%;
+              display: block;
+              @include wh(100%);
+              background: url("/static/images/user-avatar.png");
+              background-repeat: no-repeat;
+              background-size: 80px;
+            }
+
+          }
+          .name {
+            margin-top: 4px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: center;
+            color: #757575;
+          }
+        }
+        .button_ul{
+          position: relative;
+          margin: 0 auto;
+          text-align: center;
+          a{
+            &:hover{
+              color: #c81623;
+            }
+          }
+        }
       }
       .sales_info{
         background: #888888;
@@ -699,7 +644,6 @@
       }
     }
   }
-
 
 
 
