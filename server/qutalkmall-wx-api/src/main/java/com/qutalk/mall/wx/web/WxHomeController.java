@@ -213,7 +213,7 @@ public class WxHomeController {
         List<LitemallGoods> hotGoods = goodsService.queryByHot(0, SystemConfig.getHotLimit());
         data.put("hotGoods", hotGoods);
 
-        List<LitemallBrand> brandList = brandService.queryVO(0, SystemConfig.getBrandLimit());
+        List<LitemallBrand> brandList = brandService.queryVO(0, 6);//SystemConfig.getBrandLimit()
         data.put("hotBrands", brandList);
         data.put("brandsss", changgggg(brandList));
 
