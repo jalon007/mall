@@ -4,11 +4,13 @@ import com.qutalk.mall.core.system.SystemConfig;
 import com.qutalk.mall.db.domain.*;
 import com.qutalk.mall.db.service.*;
 import com.qutalk.mall.wx.service.HomeCacheManager;
+import com.qutalk.mall.wx.view.LitemallCategoryView;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.qutalk.mall.core.util.ResponseUtil;
 import com.qutalk.mall.db.domain.*;
 import com.qutalk.mall.db.service.*;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -130,39 +132,27 @@ public class WxHomeController {
         HomeCacheManager.loadData(HomeCacheManager.INDEX, data);
         return ResponseUtil.ok(data);
     }
-    @GetMapping("/pindex")
+    @GetMapping("/pbanner")
     public Object pindex() {
         //优先从缓存中读取
-        if (HomeCacheManager.hasData(HomeCacheManager.INDEX)) {
-            return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.INDEX));
+        if (HomeCacheManager.hasData(HomeCacheManager.BANNER)) {
+            return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.BANNER));
         }
-
-
         Map<String, Object> data = new HashMap<>();
-
         List<LitemallAd> banner = adService.queryIndex();
         data.put("banner", banner);
+        //缓存数据
+        HomeCacheManager.loadData(HomeCacheManager.BANNER, data);
+        return ResponseUtil.ok(data);
+    }
+    @GetMapping("/pfloors")
+    public Object pfloors() {
+        //优先从缓存中读取
+        if (HomeCacheManager.hasData(HomeCacheManager.FLOORS)) {
+            return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.FLOORS));
+        }
 
-        List<LitemallCategory> channel = categoryService.queryChannel();
-        data.put("channel", channel);
-
-        List<LitemallGoods> newGoods = goodsService.queryByNew(0, SystemConfig.getNewLimit());
-        data.put("newGoodsList", newGoods);
-
-        List<LitemallGoods> hotGoods = goodsService.queryByHot(0, SystemConfig.getHotLimit());
-        data.put("hotGoodsList", hotGoods);
-
-        List<LitemallBrand> brandList = brandService.queryVO(0, SystemConfig.getBrandLimit());
-        data.put("brandList", brandList);
-        data.put("brandsss", changgggg(brandList));
-
-        List<LitemallTopic> topicList = topicService.queryList(0, SystemConfig.getTopicLimit());
-        data.put("topicList", topicList);
-
-        //团购专区
-        List<Map<String, Object>> grouponList = grouponRulesService.queryList(0, 5);
-        data.put("grouponList", grouponList);
-
+        Map<String, Object> data = new HashMap<>();
         List<Map> categoryList = new ArrayList<>();
         List<LitemallCategory> catL1List = categoryService.queryL1WithoutRecommend(0, 8);//SystemConfig.getCatlogListLimit()
         for (LitemallCategory catL1 : catL1List) {
@@ -174,7 +164,6 @@ public class WxHomeController {
                     break;
                 }
             }
-
             Map<String, Object> catGoods = new HashMap<String, Object>();
             catGoods.put("id", catL1.getId());
             catGoods.put("name", catL1.getName());
@@ -185,10 +174,9 @@ public class WxHomeController {
         data.put("floorGoodsList", categoryList);
 
         //缓存数据
-        HomeCacheManager.loadData(HomeCacheManager.INDEX, data);
+        HomeCacheManager.loadData(HomeCacheManager.FLOORS, data);
         return ResponseUtil.ok(data);
     }
-
     private List<List<LitemallBrand>> changgggg(List<LitemallBrand> list){
             int size=3;
             List<List<LitemallBrand>> listArr = new ArrayList<List<LitemallBrand>>();
@@ -227,6 +215,7 @@ public class WxHomeController {
 
         List<LitemallBrand> brandList = brandService.queryVO(0, SystemConfig.getBrandLimit());
         data.put("hotBrands", brandList);
+        data.put("brandsss", changgggg(brandList));
 
         List<LitemallTopic> topicList = topicService.queryList(0, SystemConfig.getTopicLimit());
         data.put("hotTopics", topicList);
@@ -240,6 +229,10 @@ public class WxHomeController {
         return ResponseUtil.ok(data);
     }
 
+    /**
+     * 暂时由分类代替
+     * @return
+     */
     @GetMapping("/navList")
     public Object navList() {
         //优先从缓存中读取
@@ -251,9 +244,10 @@ public class WxHomeController {
         Map<String, Object> data = new HashMap<>();
         List<LitemallCategory> channel = categoryService.queryChannel();
 
-        data.put("channel", channel);
+        data.put("navList", channel);
         //缓存数据
         HomeCacheManager.loadData(HomeCacheManager.NAVLIST, data);
         return ResponseUtil.ok(data);
     }
+
 }

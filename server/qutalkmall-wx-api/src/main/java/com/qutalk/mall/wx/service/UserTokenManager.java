@@ -29,8 +29,23 @@ public class UserTokenManager {
         return userToken.getUserId();
     }
 
+    public static String getOpenId(String token) {
+        UserToken userToken = tokenMap.get(token);
+        if (userToken == null) {
+            return null;
+        }
 
-    public static UserToken generateToken(Integer id) {
+        if (userToken.getExpireTime().isBefore(LocalDateTime.now())) {
+            tokenMap.remove(token);
+            idMap.remove(userToken.getUserId());
+            return null;
+        }
+
+        return userToken.getOpenId();
+    }
+
+
+    public static UserToken generateToken(Integer id,String openId) {
         UserToken userToken = null;
 
 //        userToken = idMap.get(id);
@@ -52,6 +67,7 @@ public class UserTokenManager {
         userToken.setUpdateTime(update);
         userToken.setExpireTime(expire);
         userToken.setUserId(id);
+        userToken.setOpenId(openId);
         tokenMap.put(token, userToken);
         idMap.put(id, userToken);
 

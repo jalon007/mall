@@ -10,6 +10,7 @@ import com.qutalk.mall.core.util.CharUtil;
 import com.qutalk.mall.core.util.JacksonUtil;
 import com.qutalk.mall.core.util.bcrypt.BCryptPasswordEncoder;
 import com.qutalk.mall.wx.dao.UserInfo;
+import com.sun.javafx.font.t2k.T2KFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.qutalk.mall.core.util.RegexUtil;
@@ -69,8 +70,8 @@ public class WxAuthController {
      */
     @PostMapping("login")
     public Object login(@RequestBody String body, HttpServletRequest request) {
-        String username = JacksonUtil.parseString(body, "username");
-        String password = JacksonUtil.parseString(body, "password");
+        String username = JacksonUtil.parseString(body, "userName");
+        String password = JacksonUtil.parseString(body, "userPwd");
         if (username == null || password == null) {
             return ResponseUtil.badArgument();
         }
@@ -92,11 +93,12 @@ public class WxAuthController {
 
         // userInfo
         UserInfo userInfo = new UserInfo();
+        userInfo.setUserId(user.getId());
         userInfo.setNickName(username);
         userInfo.setAvatarUrl(user.getAvatar());
-
+        userInfo.setOpenId(user.getWeixinOpenid());
         // token
-        UserToken userToken = UserTokenManager.generateToken(user.getId());
+        UserToken userToken = UserTokenManager.generateToken(user.getId(),user.getWeixinOpenid());
 
         Map<Object, Object> result = new HashMap<Object, Object>();
         result.put("token", userToken.getToken());
@@ -170,7 +172,7 @@ public class WxAuthController {
         }
 
         // token
-        UserToken userToken = UserTokenManager.generateToken(user.getId());
+        UserToken userToken = UserTokenManager.generateToken(user.getId(),openId);
         userToken.setSessionKey(sessionKey);
 
         Map<Object, Object> result = new HashMap<Object, Object>();
@@ -315,7 +317,7 @@ public class WxAuthController {
         userInfo.setAvatarUrl(user.getAvatar());
 
         // token
-        UserToken userToken = UserTokenManager.generateToken(user.getId());
+        UserToken userToken = UserTokenManager.generateToken(user.getId(),openId);
 
         Map<Object, Object> result = new HashMap<Object, Object>();
         result.put("token", userToken.getToken());
@@ -325,14 +327,15 @@ public class WxAuthController {
     }
     @PostMapping("pregister")
     public Object pregister(@RequestBody String body, HttpServletRequest request) {
-        String username = JacksonUtil.parseString(body, "username");
-        String password = JacksonUtil.parseString(body, "password");
-        String mobile = JacksonUtil.parseString(body, "mobile");
-        String code = JacksonUtil.parseString(body, "code");
+        String username = JacksonUtil.parseString(body, "userName");
+        String password = JacksonUtil.parseString(body, "userPwd");
+        //String mobile = JacksonUtil.parseString(body, "mobile");
+        String mobile="18611111111";
+        //String code = JacksonUtil.parseString(body, "code");|| StringUtils.isEmpty(code)
         //String wxCode = JacksonUtil.parseString(body, "wxCode");
 
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password) || StringUtils.isEmpty(mobile)
-                || StringUtils.isEmpty(code)) {
+                ) {
             return ResponseUtil.badArgument();
         }
 
@@ -353,7 +356,7 @@ public class WxAuthController {
 //            return ResponseUtil.fail(403, "验证码错误");
 //        }
 
-        String openId = "pc_register_defult_openid";
+        String openId = "pc_"+CharUtil.getRandomString(29);
 //        try {
 //            WxMaJscode2SessionResult result = this.wxService.getUserService().getSessionInfo(wxCode);
 //            openId = result.getOpenid();
@@ -369,9 +372,9 @@ public class WxAuthController {
             LitemallUser checkUser = userList.get(0);
             String checkUsername = checkUser.getUsername();
             String checkPassword = checkUser.getPassword();
-            if (!checkUsername.equals(openId) || !checkPassword.equals(openId)) {
-                return ResponseUtil.fail(403, "openid已绑定账号");
-            }
+//            if (!checkUsername.equals(openId) || !checkPassword.equals(openId)) {
+//                return ResponseUtil.fail(403, "openid已绑定账号");
+//            }
         }
 
         LitemallUser user = null;
@@ -397,7 +400,7 @@ public class WxAuthController {
         userInfo.setAvatarUrl(user.getAvatar());
 
         // token
-        UserToken userToken = UserTokenManager.generateToken(user.getId());
+        UserToken userToken = UserTokenManager.generateToken(user.getId(),openId);
 
         Map<Object, Object> result = new HashMap<Object, Object>();
         result.put("token", userToken.getToken());
@@ -480,13 +483,30 @@ public class WxAuthController {
         UserTokenManager.removeToken(userId);
         return ResponseUtil.ok();
     }
+
+    /**
+     * status true登录状态 false 未登录或等录过期
+     * @param userId
+     * @return
+     */
     @GetMapping("checkLogin")
-    public Object checkLogin() {
+    public Object checkLogin(@LoginUser Integer userId) {
         Map<String, Object> data = new HashMap<>();
-        data.put("state", 1);
-        data.put("id","id123456");
-        data.put("username","id123456");
-        data.put("token","id123456");
+        data.put("state", false);
+        if(userId != null){
+            LitemallUser user = null;
+            List<LitemallUser> userList = userService.queryByUserid(userId);
+            if (userList.size() > 1) {
+                return ResponseUtil.serious();
+            } else {
+                user = userList.get(0);
+                data.put("userId",user.getId());
+                data.put("openId",user.getWeixinOpenid());
+                data.put("userName",user.getNickname());
+                data.put("avator",user.getAvatar());
+            }
+            data.put("state", true);
+        }
         return ResponseUtil.ok(data);
     }
 }

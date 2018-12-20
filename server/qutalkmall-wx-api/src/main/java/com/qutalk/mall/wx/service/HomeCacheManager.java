@@ -10,6 +10,8 @@ import java.util.Map;
 public class HomeCacheManager {
     public static final boolean ENABLE = false;
     public static final String INDEX = "index";
+    public static final String BANNER = "banner";
+    public static final String FLOORS = "floors";
     public static final String NOTION = "notion";
     public static final String NAVLIST = "navlist";
     public static final String CATALOG = "catalog";

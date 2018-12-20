@@ -105,7 +105,11 @@ public class LitemallUserService {
         example.or().andWeixinOpenidEqualTo(openid).andDeletedEqualTo(false);
         return userMapper.selectByExample(example);
     }
-
+    public List<LitemallUser> queryByUserid(Integer userId) {
+        LitemallUserExample example = new LitemallUserExample();
+        example.or().andIdEqualTo(userId).andDeletedEqualTo(false);
+        return userMapper.selectByExample(example);
+    }
     public void deleteById(Integer id) {
         userMapper.logicalDeleteByPrimaryKey(id);
     }

@@ -6,6 +6,7 @@ import com.qutalk.mall.db.domain.LitemallGoods;
 import com.qutalk.mall.db.domain.LitemallGoods.Column;
 import com.qutalk.mall.db.domain.LitemallGoodsExample;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
@@ -87,11 +88,15 @@ public class LitemallGoodsService {
     }
 
 
-    public List<LitemallGoods> querySelective(Integer catId, Integer brandId, String keywords, Boolean isHot, Boolean isNew, Integer offset, Integer limit, String sort, String order) {
+    public List<LitemallGoods> querySelective(List<Integer> cats , Integer catId, Integer brandId, String keywords, Boolean isHot, Boolean isNew, Integer offset, Integer limit, String sort, String order) {
         LitemallGoodsExample example = new LitemallGoodsExample();
         LitemallGoodsExample.Criteria criteria1 = example.or();
         LitemallGoodsExample.Criteria criteria2 = example.or();
 
+        if (!CollectionUtils.isEmpty(cats)) {
+            criteria1.andCategoryIdIn(cats);
+            criteria2.andCategoryIdIn(cats);
+        }
         if (!StringUtils.isEmpty(catId) && catId != 0) {
             criteria1.andCategoryIdEqualTo(catId);
             criteria2.andCategoryIdEqualTo(catId);
@@ -128,11 +133,15 @@ public class LitemallGoodsService {
         return goodsMapper.selectByExampleSelective(example, columns);
     }
 
-    public int countSelective(Integer catId, Integer brandId, String keywords, Boolean isHot, Boolean isNew, Integer offset, Integer limit, String sort, String order) {
+    public int countSelective(List<Integer> cats ,Integer catId, Integer brandId, String keywords, Boolean isHot, Boolean isNew, Integer offset, Integer limit, String sort, String order) {
         LitemallGoodsExample example = new LitemallGoodsExample();
         LitemallGoodsExample.Criteria criteria1 = example.or();
         LitemallGoodsExample.Criteria criteria2 = example.or();
 
+        if (!CollectionUtils.isEmpty(cats)) {
+            criteria1.andCategoryIdIn(cats);
+            criteria2.andCategoryIdIn(cats);
+        }
         if (!StringUtils.isEmpty(catId) && catId != 0) {
             criteria1.andCategoryIdEqualTo(catId);
             criteria2.andCategoryIdEqualTo(catId);

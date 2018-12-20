@@ -246,7 +246,7 @@ public class WxGoodsController {
      * 失败则 { errno: XXX, errmsg: XXX }
      */
     @GetMapping("list")
-    public Object list(Integer categoryId, Integer brandId, String keyword, Boolean isNew, Boolean isHot,
+    public Object list(Integer pId, Integer categoryId, Integer brandId, String keyword, Boolean isNew, Boolean isHot,
                        @LoginUser Integer userId,
                        @RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "10") Integer size,
@@ -262,9 +262,20 @@ public class WxGoodsController {
             searchHistoryService.save(searchHistoryVo);
         }
 
+        List<Integer> cateIds = null;
+        if( categoryId==null && pId!=null && pId!=0){
+            List<LitemallCategory> subCates = categoryService.queryByPid(pId);
+            if(subCates!=null){
+                cateIds = new ArrayList<>();
+                for(LitemallCategory cate :subCates){
+                    cateIds.add(cate.getId());
+                }
+            }
+        }
+
         //查询列表数据
-        List<LitemallGoods> goodsList = goodsService.querySelective(categoryId, brandId, keyword, isHot, isNew, page, size, sort, order);
-        int total = goodsService.countSelective(categoryId, brandId, keyword, isHot, isNew, page, size, sort, order);
+        List<LitemallGoods> goodsList = goodsService.querySelective(cateIds,categoryId, brandId, keyword, isHot, isNew, page, size, sort, order);
+        int total = goodsService.countSelective(cateIds,categoryId, brandId, keyword, isHot, isNew, page, size, sort, order);
 
         // 查询商品所属类目列表。
         List<Integer> goodsCatIds = goodsService.getCatIds(brandId, keyword, isHot, isNew);
@@ -395,24 +406,4 @@ public class WxGoodsController {
         return ResponseUtil.ok(data);
     }
 
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
-
-        int size=3;
-        List<List<Integer>> listArr = new ArrayList<List<Integer>>();
-        //获取被拆分的数组个数
-        int arrSize = list.size()%size==0?list.size()/size:list.size()/size+1;
-        for(int i=0;i<arrSize;i++) {
-            List<Integer>	sub = new ArrayList<Integer>();
-            //把指定索引数据放入到list中
-            for(int j=i*size;j<=size*(i+1)-1;j++) {
-                if(j<=list.size()-1) {
-                    sub.add(list.get(j));
-                }
-            }
-            listArr.add(sub);
-        }
-
-        System.out.println(listArr);
-    }
 }

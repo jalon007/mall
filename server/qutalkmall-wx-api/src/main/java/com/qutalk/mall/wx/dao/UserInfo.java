@@ -1,6 +1,7 @@
 package com.qutalk.mall.wx.dao;
 
 public class UserInfo {
+    private Integer userId;
     private String nickName;
     private String avatarUrl;
     private String country;
@@ -8,6 +9,15 @@ public class UserInfo {
     private String city;
     private String language;
     private Byte gender;
+    private String openId;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
     public String getCountry() {
         return country;
@@ -63,5 +73,13 @@ public class UserInfo {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 }
