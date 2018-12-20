@@ -9,80 +9,88 @@
         </a>
       </div>
     </div>
-    <div class="nav w">
-      <div class="l-filter">
-        <a href="javascript:;" :class="{active:sortType===1}" @click="reset()">综合</a>
-        <a href="javascript:;" :class="{active:sortType===4}" @click="reset()">人气</a>
-        <a href="javascript:;" :class="{active:sortType===5}" @click="reset()">新品</a>
-        <a href="javascript:;" @click="sortByPrice(1)" :class="{active:sortType===2}">价格从低到高</a>
-        <a href="javascript:;" @click="sortByPrice(-1)" :class="{active:sortType===3}">价格从高到低</a>
-        <div class="price-interval">
-          <input type="number" class="input" placeholder="价格" v-model="min">
-          <span style="margin: 0 5px"> - </span>
-          <input type="number" placeholder="价格" v-model="max">
-          <y-button class="yes" text="确定" classStyle="main-btn" @btnClick="reset" style="margin-left: 10px;"></y-button>
+    <div class="nav-goods w">
+      <div class="left_goods">
+        <notion :title="notionsTitle[1]" :notions="notions.hotGoods" :index="3"></notion>
+      </div>
+      <div class="right_goods">
+        <div class="l-filter">
+          <a href="javascript:;" :class="{active:sortType===1}" @click="reset()">综合</a>
+          <a href="javascript:;" :class="{active:sortType===4}" @click="reset()">人气</a>
+          <a href="javascript:;" :class="{active:sortType===5}" @click="reset()">新品</a>
+          <a href="javascript:;" @click="sortByPrice(1)" :class="{active:sortType===2}">价格从低到高</a>
+          <a href="javascript:;" @click="sortByPrice(-1)" :class="{active:sortType===3}">价格从高到低</a>
+          <div class="price-interval">
+            <input type="number" class="input" placeholder="价格" v-model="min">
+            <span style="margin: 0 5px"> - </span>
+            <input type="number" placeholder="价格" v-model="max">
+            <y-button class="yes" text="确定" classStyle="main-btn" @btnClick="reset" style="margin-left: 10px;"></y-button>
+          </div>
+        </div>
+        <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;">
+          <div class="img-item" v-if="!noResult">
+            <!--商品-->
+            <div class="goods-box">
+              <small-goods v-for="(item,i) in goods" :key="i" :msg="item"></small-goods>
+            </div>
+
+            <el-pagination
+              v-if="!noResult&&!error"
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="currentPage"
+              :page-sizes="[8, 20, 40, 80]"
+              :page-size="pageSize"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="total">
+            </el-pagination>
+          </div>
+          <div class="no-info" v-if="noResult">
+            <div class="no-data">
+              <img src="/static/images/no-search.png">
+              <br> 抱歉！暂时还没有商品
+            </div>
+            <section class="section">
+              <y-shelf :title="recommendPanel.name">
+                <div slot="content" class="recommend">
+                  <mall-goods :msg="item" v-for="(item,i) in recommendPanel.panelContents" :key="i"></mall-goods>
+                </div>
+              </y-shelf>
+            </section>
+          </div>
+          <div class="no-info" v-if="error">
+            <div class="no-data">
+              <img src="/static/images/error.png">
+              <br> 抱歉！出错了...
+            </div>
+            <section class="section">
+              <y-shelf :title="recommendPanel.name">
+                <div slot="content" class="recommend">
+                  <mall-goods :msg="item" v-for="(item,i) in recommendPanel.panelContents" :key="i"></mall-goods>
+                </div>
+              </y-shelf>
+            </section>
+          </div>
         </div>
       </div>
     </div>
 
-    <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;">
-      <div class="img-item" v-if="!noResult">
-        <!--商品-->
-        <div class="goods-box w">
-          <mall-goods v-for="(item,i) in goods" :key="i" :msg="item"></mall-goods>
-        </div>
-
-        <el-pagination
-          v-if="!noResult&&!error"
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="currentPage"
-          :page-sizes="[8, 20, 40, 80]"
-          :page-size="pageSize"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="total">
-        </el-pagination>
-      </div>
-      <div class="no-info" v-if="noResult">
-        <div class="no-data">
-          <img src="/static/images/no-search.png">
-          <br> 抱歉！暂时还没有商品
-        </div>
-        <section class="section">
-          <y-shelf :title="recommendPanel.name">
-            <div slot="content" class="recommend">
-              <mall-goods :msg="item" v-for="(item,i) in recommendPanel.panelContents" :key="i"></mall-goods>
-            </div>
-          </y-shelf>
-        </section>
-      </div>
-      <div class="no-info" v-if="error">
-        <div class="no-data">
-          <img src="/static/images/error.png">
-          <br> 抱歉！出错了...
-        </div>
-        <section class="section">
-          <y-shelf :title="recommendPanel.name">
-            <div slot="content" class="recommend">
-              <mall-goods :msg="item" v-for="(item,i) in recommendPanel.panelContents" :key="i"></mall-goods>
-            </div>
-          </y-shelf>
-        </section>
-      </div>
-    </div>
   </div>
 </template>
 <script>
-  import { getAllGoods } from '/api/goods.js'
-  import { recommend } from '/api/index.js'
-  import mallGoods from '/components/mallGoods'
+  import {getAllGoods, getNotions} from '/api/goods.js'
+  // import { recommend } from '/api/index.js'
+  import smallGoods from '/components/smallGoods'
   import YButton from '/components/YButton'
   import YShelf from '/components/shelf'
+  import notion from '/components/notion'
   export default {
     data () {
       return {
         goods: [],
         categoryList: [],
+        notionsTitle: ['Brands', 'Goods', 'News', 'Topics'],
+        notions: [],
         noResult: false,
         error: false,
         min: '',
@@ -96,7 +104,9 @@
         sort: '',
         currentPage: 1,
         total: 0,
-        pageSize: 20
+        pageSize: 20,
+        categoryId: '',
+        pId: ''
       }
     },
     methods: {
@@ -126,6 +136,7 @@
             priceGt: this.min,
             priceLte: this.max,
             categoryId: this.categoryId,
+            pId: this.pId,
             keyword: this.keyword,
             brandId: this.brandId,
             order: this.order
@@ -136,6 +147,22 @@
             this.total = res.data.count
             this.goods = res.data.goodsList
             this.categoryList = res.data.filterCategoryList
+            this.noResult = false
+            // if (this.total === 0) {
+            //   this.noResult = true
+            // }
+            this.error = false
+          } else {
+            this.error = true
+          }
+          this.loading = false
+        })
+      },
+      _getNotions () {
+        getNotions().then(res => {
+          if (res.errno === 0) {
+            this.notions = res.data
+
             this.noResult = false
             // if (this.total === 0) {
             //   this.noResult = true
@@ -184,16 +211,21 @@
       this.windowHeight = window.innerHeight
       this.windowWidth = window.innerWidth
       this.categoryId = this.$route.query.cid
+      this.pId = this.$route.query.pId
       this._getAllGoods()
+      this._getNotions()
+      /*
       recommend().then(res => {
         let data = res.result
         this.recommendPanel = data[0]
       })
+      */
     },
     components: {
-      mallGoods,
+      smallGoods,
       YButton,
-      YShelf
+      YShelf,
+      notion
     }
   }
 </script>
@@ -201,53 +233,69 @@
   @import "../../assets/style/mixin";
   @import "../../assets/style/theme";
 
-  .nav {
-    height: 40px;
+  .nav-goods {
+   /* height: 40px;
     line-height: 30px;
-    padding: 6px 8px;
+    padding: 6px 8px;*/
+    .left_goods{
+      position: relative;
+      float: left;
+      width: 180px;
+      height: 200px;
+      background: #5e7382;
 
-    .l-filter {
+    }
+    .right_goods{
+      position: relative;
       display: flex;
-      align-items: center;
-      margin-right: 2px;
-      a {
-        border: 1px solid #5e7382;
-        margin-right: -1px;
+      flex-direction: column;
+      padding: 10px;
+      width: 1030px;
+      .l-filter {
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        margin-right: 2px;
+        a {
+          border: 1px solid #5e7382;
+          margin-right: -1px;
+          padding: 0 15px;
+          height: 25px;
+          line-height: 25px;
+          //@extend %block-center;
+          font-size: 12px;
+          color: #999;
+          &.active {
+            color: #FFFFFF;
+            background: #c81623;
+            border: 1px solid #c81623;
+          }
+          &:hover {
+            border-bottom: 1px solid #c81623;
+          }
+        }
+        input {
+          @include wh(80px, 25px);
+          border: 1px solid #ccc;
+        }
+        input + input {
+          margin-left: 10px;
+          height: 28px;
+        }
+      }
+      .price-interval {
         padding: 0 15px;
-        height: 25px;
-        line-height: 25px;
-        //@extend %block-center;
-        font-size: 12px;
-        color: #999;
-        &.active {
-          color: #FFFFFF;
-          background: #c81623;
-          border: 1px solid #c81623;
+        @extend %block-center;
+        input[type=number] {
+          border: 1px dashed #5683EA;
+          text-align: center;
+          background: none;
+          /*border-radius: 5px;*/
         }
-        &:hover {
-          border-bottom: 1px solid #c81623;
-        }
-      }
-      input {
-        @include wh(80px, 25px);
-        border: 1px solid #ccc;
-      }
-      input + input {
-        margin-left: 10px;
-        height: 28px;
-      }
-    }
-    .price-interval {
-      padding: 0 15px;
-      @extend %block-center;
-      input[type=number] {
-        border: 1px dashed #5683EA;
-        text-align: center;
-        background: none;
-        /*border-radius: 5px;*/
-      }
 
+      }
     }
+
   }
 
   .nav-cateory{
@@ -288,10 +336,11 @@
       }
     }
   }
+
   .goods-box {
     > div {
       float: left;
-      border: 1px solid #efefef;
+      /*border: 1px solid #efefef;*/
     }
   }
 

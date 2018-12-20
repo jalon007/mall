@@ -5,9 +5,9 @@ import store from './store/'
 import VueLazyload from 'vue-lazyload'
 import infiniteScroll from 'vue-infinite-scroll'
 import VueCookie from 'vue-cookie'
-import { userInfo } from './api'
+import { checkLogin } from './api'
 import { Button, Pagination, Checkbox, Icon, Autocomplete, Loading, Message, Notification, Steps, Step, Table, TableColumn, Input, Dialog, Select, Option } from 'element-ui'
-import { getStore } from '/utils/storage'
+// import { getStore } from '/utils/storage'
 import VueContentPlaceholders from 'vue-content-placeholders'
 import animated from 'animate.css'
 Vue.use(VueContentPlaceholders)
@@ -34,7 +34,7 @@ Vue.use(VueCookie)
 Vue.use(VueLazyload, {
   // preLoad: 1.3,
   // error: 'dist/error.png',
-  loading: '/static/images/load.gif'
+  // loading: '/static/images/load.gif'
   // attempt: 1
 })
 Vue.config.productionTip = false
@@ -53,28 +53,22 @@ const whiteList = [
   '/refreshtopics',
   '/refreshgoods']
 router.beforeEach(function (to, from, next) {
-  let params = {
-    params: {
-      token: getStore('token')
-    }
-  }
-  userInfo(params).then(res => {
+  checkLogin().then(res => {
     if (to.path) {
       window._hmt.push(['_trackPageview', '/#' + to.fullPath])
     }
-    console.error(to.path)
-    if (res.data.state !== 1) { // 没登录
-      if (whiteList.indexOf(to.path) !== -1) { // 白名单
-        next()
-      } else {
-        next('/login')
-      }
-    } else {
+    if (res.data.state === true) { // 登录状态
       store.commit('RECORD_USERINFO', {info: res.data})
       if (to.path === '/login') { //  跳转到
         next({path: '/'})
       }
       next()
+    } else { // 未登录状态
+      if (whiteList.indexOf(to.path) !== -1) { // 白名单
+        next()
+      } else {
+        next('/login')
+      }
     }
   })
 })

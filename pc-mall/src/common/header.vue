@@ -20,13 +20,6 @@
                 :on-icon-click="handleIconClick"
                 @keydown.enter.native="handleIconClick">
               </el-autocomplete>
-              <!--<router-link to="/goods"><a @click="changePage(2)">全部商品</a></router-link>-->
-              <!--<router-link to="/thanks"><a @click="changePage(4)">捐赠</a></router-link>-->
-              <!-- <router-link to="/">Smartisan M1 / M1L</router-link>
-              <router-link to="/">Smartisan OS</router-link>
-              <router-link to="/">欢喜云</router-link>
-              <router-link to="/">应用下载</router-link>
-              <router-link to="/">官方论坛</router-link> -->
             </div>
             <div class="nav-aside" ref="aside" :class="{fixed:st}">
               <div class="user pr">
@@ -38,10 +31,10 @@
                       <!--头像-->
                       <li class="nav-user-avatar">
                         <div>
-                          <span class="avatar" :style="{backgroundImage:'url('+userInfo.info.file+')'}">
+                          <span class="avatar" :style="{backgroundImage:'url('+userInfo.info.avator+')'}">
                           </span>
                         </div>
-                        <p class="name">{{userInfo.info.username}}</p>
+                        <p class="name">{{userInfo.info.userName}}</p>
                       </li>
                       <li>
                         <router-link to="/user/orderList">我的订单</router-link>
@@ -245,13 +238,14 @@
             path: '/refreshtopics'
           })
         } else {
-          // window.open('//' + window.location.host + '/#/goods?cid=' + item.id)
-          // window.location.href = window.location.host + '/#/goods?cid=' + item.id
-          // 站内跳转 todo 调用接口跳转
-          window.location.href = item.fullUrl
-          // 站外跳转
-            // window.open(item.fullUrl)
-         //   window.location.href = item.fullUrl
+          this.$router.push({
+            path: '/refreshgoods',
+            query: {
+              pId: item.id
+            }
+          })
+        //  console.log(window.location.host + '/home/#/goods?pid=' + item.id)
+         // window.location.href = window.location.host + '/home/#/goods?pid=' + item.id
         }
       },
       // 搜索框提示
@@ -307,8 +301,13 @@
       },
       // 登陆时获取一次购物车商品
       _getCartList () {
-        getCartList({userId: getStore('userId')}).then(res => {
-          if (res.success === true) {
+        let params = {
+          params: {
+            userId: getStore('userId')
+          }
+        }
+        getCartList(params).then(res => {
+          if (res.errno === 0) {
             setStore('buyCart', res.result)
           }
           // 重新初始化一次本地数据
@@ -370,7 +369,7 @@
       },
       _getNavList () {
         navList().then(res => {
-          this.navList = res.data.channel
+          this.navList = res.data.navList
         })
       }
     },

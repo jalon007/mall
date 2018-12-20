@@ -1,7 +1,10 @@
 <template>
   <div class="login v2">
     <div class="wrapper">
-      <div class="dialog dialog-shadow" style="display: block; margin-top: -362px;">
+      <div class="login_logo">欢迎登陆</div>
+      <div class="login_gb">
+        <div class="bg_pic"></div>
+      <div class="dialog dialog-shadow" style="">
         <div class="title">
           <h4>Hi~,欢迎登录趣Talk网站</h4>
         </div>
@@ -17,11 +20,11 @@
                 <input type="password" v-model="ruleForm.userPwd" @keyup.enter="login" placeholder="密码">
               </div>
             </li>
-            <li>
+<!--            <li>
               <div id="captcha">
                 <p id="wait">正在加载验证码...</p>
               </div>
-            </li>
+            </li>-->
             <li style="text-align: right" class="pr">
               <el-checkbox class="auto-login" v-model="autoLogin">记住密码</el-checkbox>
               <!-- <span class="pa" style="top: 0;left: 0;color: #d44d44">{{ruleForm.errMsg}}</span> -->
@@ -34,20 +37,24 @@
             <y-button :text="logintxt"
                       :classStyle="ruleForm.userPwd&& ruleForm.userName&& logintxt === '登录'?'main-btn':'disabled-btn'"
                       @btnClick="login"
-                      style="margin: 0;width: 100%;height: 48px;font-size: 18px;line-height: 48px"></y-button>
+                      style="margin: 0;width: 100%;height: 38px;font-size: 18px;line-height: 38px"></y-button>
           </div>
           <!--返回-->
-          <div>
+          <!--<div>
             <y-button text="返回" @btnClick="login_back"
               style="marginTop: 10px;marginBottom: 15px;width: 100%;height: 48px;font-size: 18px;line-height: 48px">
             </y-button>
-          </div>
+          </div>-->
           <div class="border"></div>
           <div class="footer">
             <div class="other">其它账号登录：</div>
             <a><img @click="open('待开发','微信扫码登陆...')" style="height: 15px; margin-top: 22px;" src="/static/images/other-login.png"></a>
           </div>
         </div>
+      </div>
+      </div>
+      <div class="copyright">
+        <h4 class="content-c2">Copyright ©2018, qutalk.cn Co., Ltd. All Rights Reserved.</h4>
       </div>
     </div>
   </div>
@@ -156,24 +163,29 @@ export default {
         this.message('账号或者密码不能为空!')
         return false
       }
-      var result = captcha.getValidate()
+     /*
+     var result = captcha.getValidate()
       if (!result) {
         this.message('请完成验证')
         this.logintxt = '登录'
         return false
       }
+      */
       var params = {
         userName: this.ruleForm.userName,
-        userPwd: this.ruleForm.userPwd,
-        challenge: result.geetest_challenge,
+        userPwd: this.ruleForm.userPwd
+        /*,
+       challenge: result.geetest_challenge,
         validate: result.geetest_validate,
         seccode: result.geetest_seccode,
         statusKey: this.statusKey
+        */
       }
       userLogin(params).then(res => {
-        if (res.result.state === 1) {
-          setStore('token', res.result.token)
-          setStore('userId', res.result.id)
+        if (res.errno === 0) {
+          setStore('token', res.data.token)
+          setStore('userId', res.data.userInfo.userId)
+          setStore('userInfo', res.data.userInfo)
           // 登录后添加当前缓存中的购物车
           if (this.cart.length) {
             for (var i = 0; i < this.cart.length; i++) {
@@ -240,17 +252,17 @@ export default {
   overflow-x: hidden;
   overflow-y: hidden;
   .input {
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
     input {
       font-size: 16px;
       width: 100%;
       height: 100%;
-      padding: 10px 15px;
+      padding: 10px 10px;
       box-sizing: border-box;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 3px;
     }
   }
   .wrapper {
@@ -258,17 +270,40 @@ export default {
     background-size: 100px;
     min-height: 800px;
     min-width: 630px;
+    .login_gb{
+      width: 100%;
+      height: 500px;
+      background: #5a0b11;
+      top: 50%;
+      margin-top:-250px;
+      position: absolute;
+      .bg_pic{
+        width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        background: url(//img13.360buyimg.com/da/jfs/t1/20259/39/1981/78607/5c184bb5E810ebba1/9249091ac42199c0.jpg) 0px 0px no-repeat;
+        background-color: #5a0b11;
+      }
+    }
+    .copyright{
+      position: relative;
+      margin: 0 auto;
+      top:50%;
+      margin-top: 250px;
+      text-align: center;
+    }
   }
 }
 
 .v2 .dialog {
-  width: 400px;
-  border: 1px solid #dadada;
-  border-radius: 10px;
+  width: 320px;
   top: 50%;
-  left: 70%;
-  margin-left: -200px;
+  left: 50%;
+  margin-left: 200px;
   position: absolute;
+  display: block;
+  margin-top: -240px;
   .title {
     background: linear-gradient(#fff, #f5f5f5);
     height: auto;
@@ -276,11 +311,11 @@ export default {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     position: relative;
     background-image: url(/static/images/Q64-2.png);
-    background-size: 100px;
+    background-size: 80px;
     background-position: top center;
     background-repeat: no-repeat;
     height: 130px;
-    margin: 23px 0 50px;
+    margin: 23px 0 20px;
     /*padding: 75px 0 0;*/
     box-shadow: none;
     h4 {

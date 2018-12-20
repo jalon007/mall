@@ -5,11 +5,11 @@ export const getAllGoods = (params) => {
 }
 // 获取购物车列表
 export const getCartList = (params) => {
-  return http.fetchPost('/member/cartList', params)
+  return http.fetchGet('/wx/cart/index', params)
 }
 // 加入购物车
 export const addCart = (params) => {
-  return http.fetchPost('/member/addCart', params)
+  return http.fetchPost('/wx/cart/add', params)
 }
 // 删除购物车
 export const delCart = (params) => {

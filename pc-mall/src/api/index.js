@@ -1,19 +1,19 @@
 import http from './public'
 // 登陆
 export const userLogin = (params) => {
-  return http.fetchPost('/member/login', params)
+  return http.fetchPost('/wx/auth/login', params)
 }
 // 退出登陆
 export const loginOut = (params) => {
-  return http.fetchGet('/member/loginOut', params)
+  return http.fetchPost('/wx/auth/logout', params)
 }
 // 用户信息
-export const userInfo = (params) => {
+export const checkLogin = (params) => {
   return http.fetchGet('/wx/auth/checkLogin', params)
 }
 // 注册账号
 export const register = (params) => {
-  return http.fetchPost('/member/register', params)
+  return http.fetchPost('/wx/auth/pregister', params)
 }
 // 上传图片
 export const upload = (params) => {
@@ -28,8 +28,12 @@ export const thanksList = (params) => {
   return http.fetchGet('/member/thanks', params)
 }
 // 首页接口
-export const productHome = (params) => {
-  return http.fetchGet('/wx/home/pindex', params)
+export const homeBanner = (params) => {
+  return http.fetchGet('/wx/home/pbanner', params)
+}
+// 首页接口
+export const homeFloors = (params) => {
+  return http.fetchGet('/wx/home/pfloors', params)
 }
 // 首页接口
 export const navList = (params) => {

@@ -1,9 +1,12 @@
 <template>
   <div class="login v2">
     <div class="wrapper">
-      <div class="dialog dialog-shadow" style="display: block; margin-top: -362px;">
+      <div class="login_logo">欢迎注册</div>
+      <div class="register_gb">
+        <div class="bg_pic"></div>
+        <div class="dialog dialog-shadow">
         <div class="registered">
-          <h4>注册 XMall 账号</h4>
+          <h4>Hi~,欢迎注册趣Talk账号</h4>
           <div class="content" style="margin-top: 20px;">
             <ul class="common-form">
               <li class="username border-1p">
@@ -34,15 +37,15 @@
               <!--</li>-->
             </ul>
             <el-checkbox class="agree" v-model="agreement">
-              我已阅读并同意遵守
-              <a @click="open('法律声明','此仅为个人练习开源模仿项目，仅供学习参考，承担不起任何法律问题')">法律声明</a> 和
-              <a @click="open('隐私条款','本网站将不会严格遵守有关法律法规和本隐私政策所载明的内容收集、使用您的信息')">隐私条款</a>
+              <span style="font-size: 12px">我已阅读并同意遵守
+              <a @click="open('法律声明','此仅为个人练习开源模仿项目，仅供学习参考，承担不起任何法律问题')">法律声明</a>和
+              <a @click="open('隐私条款','本网站将不会严格遵守有关法律法规和本隐私政策所载明的内容收集、使用您的信息')">隐私条款</a></span>
             </el-checkbox>
             <div style="margin-bottom: 30px;">
               <y-button
                 :classStyle="registered.userPwd&&registered.userPwd2&&registered.userName&&registxt==='注册'?'main-btn':'disabled-btn'"
                 :text="registxt"
-                style="margin: 0;width: 100%;height: 48px;font-size: 18px;line-height: 48px"
+                style="margin: 0;width: 100%;height: 38px;font-size: 18px;line-height: 38px"
                 @btnClick="regist"
               >
               </y-button>
@@ -60,6 +63,10 @@
             </ul>
           </div>
         </div>
+      </div>
+      </div>
+      <div class="copyright">
+        <h4 class="content-c2">Copyright ©2018, qutalk.cn Co., Ltd. All Rights Reserved.</h4>
       </div>
     </div>
   </div>
@@ -140,29 +147,27 @@ export default {
         this.registxt = '注册'
         return false
       }
-      var result = captcha.getValidate()
-      if (!result) {
-        this.message('请完成验证')
-        this.registxt = '注册'
-        return false
-      }
-      register({
+      // var result = captcha.getValidate()
+      // if (!result) {
+      //   this.message('请完成验证')
+      //   this.registxt = '注册'
+      //   return false
+      // }
+      let params = {
         userName,
-        userPwd,
-        challenge: result.geetest_challenge,
-        validate: result.geetest_validate,
-        seccode: result.geetest_seccode,
-        statusKey: this.statusKey }).then(res => {
-          if (res.success === true) {
-            this.messageSuccess()
-            this.toLogin()
-          } else {
-            this.message(res.message)
-            captcha.reset()
-            this.regist = '注册'
-            return false
-          }
-        })
+        userPwd
+      }
+      register(params).then(res => {
+        if (res.errno === 0) {
+          this.messageSuccess()
+          this.toLogin()
+        } else {
+          this.message(res.message)
+          captcha.reset()
+          this.regist = '注册'
+          return false
+        }
+      })
     },
     init_geetest () {
       geetest().then(res => {
@@ -202,14 +207,14 @@ export default {
   overflow-x: hidden;
   overflow-y: hidden;
   .input {
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
     input {
       font-size: 16px;
       width: 100%;
       height: 100%;
-      padding: 10px 15px;
+      padding: 10px 10px;
       box-sizing: border-box;
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -220,30 +225,55 @@ export default {
     background-size: 100px;
     min-height: 800px;
     min-width: 630px;
+    .register_gb{
+      width: 100%;
+      height: 500px;
+      background: #5a0b11;
+      top: 50%;
+      margin-top:-250px;
+      position: absolute;
+      .bg_pic{
+        width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        background: url(//img13.360buyimg.com/da/jfs/t1/20259/39/1981/78607/5c184bb5E810ebba1/9249091ac42199c0.jpg) 0px 0px no-repeat;
+        background-color: #5a0b11;
+      }
+    }
+    .copyright{
+      position: relative;
+      margin: 0 auto;
+      top:50%;
+      margin-top: 250px;
+      text-align: center;
+    }
   }
 }
 
 .v2 .dialog {
-  width: 450px;
-  border: 1px solid #dadada;
-  border-radius: 10px;
+  width: 320px;
+  /*border: 1px solid #dadada;*/
+  /*border-radius: 10px;*/
   top: 50%;
   left: 50%;
-  margin-left: -225px;
+  margin-left: 200px;
   position: absolute;
+  display: block;
+  margin-top: -240px;
   .title {
     background: linear-gradient(#fff, #f5f5f5);
     height: auto;
     overflow: visible;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     position: relative;
-    background-image: url(/static/images/Q128-2.png);
-    background-size: 140px;
+    background-image: url(/static/images/Q64-2.png);
+    background-size: 80px;
     background-position: top center;
     background-repeat: no-repeat;
-    height: 92px;
-    margin: 23px 0 50px;
-    padding: 75px 0 0;
+    height: 130px;
+    margin: 23px 0 20px;
+    /*padding: 75px 0 0;*/
     box-shadow: none;
     h4 {
       padding: 0;
@@ -278,6 +308,11 @@ export default {
         clear: both;
         margin-bottom: 15px;
         position: relative;
+      }
+    }
+    .el-checkbox{
+      .el-checkbox__label{
+        font-size: 12px;
       }
     }
   }

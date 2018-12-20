@@ -6,14 +6,14 @@
         <div class="gallery">
           <div class="thumbnail">
             <ul>
-              <li v-for="(item,i) in small" :key="i" :class="{on:big===item}" @click="big=item">
-                <img v-lazy="item" :alt="product.info.name">
+              <li v-for="(item,i) in goodInfo.gallery" :key="i" :class="{on:big===item}" @click="big=item">
+                <img v-lazy="item" :alt="goodInfo.name">
               </li>
             </ul>
           </div>
           <div class="thumb">
             <div class="big">
-              <img :src="big" :alt="product.info.name">
+              <img :src="big" :alt="goodInfo.name">
             </div>
           </div>
         </div>
@@ -21,11 +21,11 @@
       <!--右边-->
       <div class="banner">
         <div class="sku-custom-title">
-          <h4>{{product.info.name}}</h4>
+          <h4>{{goodInfo.name}}</h4>
           <h6>
-            <span>{{product.info.brief}}</span>
+            <span>{{goodInfo.brief}}</span>
             <span class="price">
-              <em>¥</em><i>{{product.info.retailPrice.toFixed(2)}}</i></span>
+              <em>¥</em><i>{{goodInfo.retailPrice.toFixed(2)}}</i></span>
           </h6>
         </div>
         <div class="num">
@@ -34,14 +34,14 @@
         </div>
         <div class="buy">
           <y-button text="加入收藏"
-                    @btnClick="addCart(product.info.id,product.info.retailPrice,product.info.name,product.info.picUrl)"
+                    @btnClick="addCart(goodInfo.id,goodInfo.retailPrice,goodInfo.name,goodInfo.picUrl)"
                     classStyle="main-btn"
                     style="width: 145px;height: 50px;line-height: 48px"></y-button>
           <!--<y-button text="现在购买"-->
                     <!--@btnClick="checkout(product.info.id)"-->
                     <!--style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>-->
           <y-button text="立即领券"
-                    @btnClick="checkout(product.info.id)"
+                    @btnClick="checkout(goodInfo.id)"
                     style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>
         </div>
       </div>
@@ -74,13 +74,16 @@
     data () {
       return {
         productMsg: {},
-        small: [],
-        big: '',
+        goodInfo: {},
+        productList: [],
+        specificationList: [],
         product: {
           salePrice: 0
         },
         productNum: 1,
-        userId: ''
+        userId: '',
+        big: '',
+        productId: '151'
       }
     },
     computed: {
@@ -91,16 +94,20 @@
       _productDet (id) {
         productDet({params: {id}}).then(res => {
           let result = res.data
-          this.product = result
+          this.goodInfo = res.data.info
+          this.productList = res.data.productList
+          this.specificationList = res.data.specificationList
           this.productMsg = result.info.detail || ''
-          this.small = result.info.gallery
-          this.big = this.small[0]
+          this.big = this.goodInfo.picUrl
+          if (this.productList.size > 0) {
+            this.productId = this.productList.get(0).id
+          }
         })
       },
       addCart (id, price, name, img) {
         if (!this.showMoveImg) {     // 动画是否在运动
           if (this.login) { // 登录了 直接存在用户名下
-            addCart({userId: this.userId, productId: id, productNum: this.productNum}).then(res => {
+            addCart({goodsId: id, number: this.productNum, productId: this.productId}).then(res => {
               // 并不重新请求数据
               this.ADD_CART({
                 productId: id,

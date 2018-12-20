@@ -195,7 +195,7 @@
         window.open(window.location.origin + '#/goodsDetails?productId=' + id)
       },
       _getCartList () {
-        getCartList({userId: this.userId}).then(res => {
+        getCartList({params: {userId: this.userId}}).then(res => {
           this.cartList = res.result
         })
       },

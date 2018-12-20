@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
-  <div v-loading="loading" element-loading-text="加载中..." style="min-height: 35vw;" v-if="!error">
+  <div v-if="!error">
   <div class="w">
     <div class="home_top_area">
       <div class="left_category_bar">
@@ -25,16 +25,29 @@
       <div class="right_msg_bar">
         <div>
           <!-- 用户头像登陆信息-->
-          <div class="login_info">
+          <div class="login_info" v-if="!login">
             <div class="nav-user-avatar">
               <div>
               <img class="avatar" />
               </div>
               <p class="name">Hi~欢迎来到趣Talk</p>
             </div>
+            <!-- 如果已登录 换其他ul -->
             <div class="button_ul">
-              <a class="to_login">登录</a>
-              <a class="to_register">注册</a>
+              <a class="to_login" > <router-link to="/login">登录</router-link></a>
+              <a class="to_register"><router-link to="/register">注册</router-link></a>
+            </div>
+          </div>
+          <div class="login_info" v-if="login">
+            <div class="nav-user-avatar">
+              <div>
+                <img class="avatar" :style="{backgroundImage:'url('+userInfo.info.avator+')'}"/>
+              </div>
+              <p class="name">Hi~{{userInfo.info.userName}},欢迎来到趣Talk</p>
+            </div>
+            <!-- 如果已登录 换其他ul -->
+            <div class="button_ul">
+            <a class="to_login"  @click="_loginOut">退出</a>
             </div>
           </div>
           <!-- 促销信息-->
@@ -60,13 +73,13 @@
           <div class="slider_box middle">
             <div class="title">耍大牌</div>
             <div>
-              <slide-model  :goods="brandList"></slide-model>
+              <slide-model  :goods="hotBrands"></slide-model>
             </div>
           </div>
           <div class="slider_box">
             <div class="title">换新季</div>
             <div>
-              <slide-model  :goods="newGoodsList"></slide-model>
+              <slide-model  :goods="newGoods"></slide-model>
             </div>
           </div>
         </ul>
@@ -80,7 +93,7 @@
         <div class="mb_hd">
           <h3 class="mb_title">还没逛够</h3>
         </div>
-        <maybe-like :goods="newGoodsList"></maybe-like>
+        <maybe-like :goods="newGoods"></maybe-like>
     </div>
     </div>
   </div>
@@ -104,13 +117,13 @@
   </div>
 </template>
 <script>
-  import { productHome } from '/api/index'
-  import { getCategory } from '/api/goods'
+  import { homeBanner, homeFloors, loginOut } from '/api/index'
+  import { getCategory, getNotions } from '/api/goods'
   import YShelf from '/components/shelf'
   import product from '/components/product'
   import mallGoods from '/components/mallGoods'
   import slideModel from '/components/slideModel'
-  import { setStore, getStore } from '/utils/storage.js'
+  import { setStore, getStore, removeStore } from '/utils/storage.js'
   import CategoryTree from '/components/categoryTree'
   import SlideTop from '/components/slideTop'
   import message from '/components/message'
@@ -118,14 +131,18 @@
   import FloorGoods from '/components/floorGoods'
   import 'element-ui/lib/theme-default/index.css'
   import SalesTabs from '/components/salesTabs'
+  import { mapState } from 'vuex'
   export default {
     data () {
       return {
         error: false,
         banner: [],
-        newGoodsList: [],
-        brandList: [],
+        newGoods: [],
+        hotGoods: [],
+        hotBrands: [],
         brandsss: [],
+        hotTopics: [],
+        hotGroupons: [],
         floorGoodsList: [],
         mark: 0,
         bgOpt: {
@@ -134,13 +151,14 @@
           w: 0,
           h: 0
         },
-        home: [],
-        loading: true,
         notify: '1',
         dialogVisible: false,
         timer: '',
         categoryList: []
       }
+    },
+    computed: {
+      ...mapState(['login', 'showMoveImg', 'showCart', 'userInfo'])
     },
     methods: {
       autoPlay () {
@@ -221,31 +239,47 @@
           setStore('notify', this.notify)
         }
       },
+      _getBanner () {
+        homeBanner().then(res => {
+          this.banner = res.data.banner
+        })
+      },
       _getCategory () {
         getCategory().then(res => {
           this.categoryList = res.data.categoryList
         })
       },
+      _getHomeFloors () {
+        homeFloors().then(res => {
+          this.floorGoodsList = res.data.floorGoodsList
+        })
+      },
+      _getNotions () {
+        getNotions().then(res => {
+          this.newGoods = res.data.newGoods
+          this.hotBrands = res.data.hotBrands
+          this.brandsss = res.data.brandsss
+          this.hotGoods = res.data.hotGoods
+          this.hotTopics = res.data.hotTopics
+          this.hotGroupons = res.data.hotGroupons
+        })
+      },
       getColor (i) {
         return 'color' + parseInt(i % 4)
+      },
+      // 退出登陆
+      _loginOut () {
+        loginOut().then(res => {
+          removeStore('buyCart')
+          window.location.href = '/'
+        })
       }
     },
     mounted () {
-      productHome().then(res => {
-        if (res.success === false) {
-          this.error = true
-          return
-        }
-        let data = res.data
-        this.home = data
-        this.loading = false
-        this.banner = data.banner
-        this.newGoodsList = data.newGoodsList
-        this.brandList = data.brandList
-        this.floorGoodsList = data.floorGoodsList
-        this.brandsss = data.brandsss
-      })
+      this._getBanner()
+      this._getNotions()
       this._getCategory()
+      this._getHomeFloors()
       this.showNotify()
     },
     created () {

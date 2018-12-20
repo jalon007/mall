@@ -105,10 +105,10 @@
   // 禁用
   .disabled-btn {
     cursor: not-allowed;
-    @include color(#afafaf, $cf, #a9a9a9);
+    @include color(#afafaf, $cf, #c8000e);
     @extend %style;
-    background-image: -webkit-linear-gradient(top, #b8b8b8, #a9a9a9);
-    background-image: linear-gradient(180deg, #b8b8b8, #a9a9a9);
+    /*background-image: -webkit-linear-gradient(top, #b8b8b8, #a9a9a9);
+    background-image: linear-gradient(180deg, #b8b8b8, #a9a9a9);*/
   }
 
 </style>
