@@ -1,6 +1,10 @@
 <template>
   <div class="slide" v-on:mouseover="stop()" v-on:mouseout="move()">
+
     <div class="slideshow">
+      <button class="slider_control slider_control_prev" @click="prev()">
+        <i class="iconfont"></i>
+      </button>
       <transition-group tag="ul" name="image">
         <li v-for="(item, i) in goods" v-show="i===mark" :key="i">
           <a href="#">
@@ -10,10 +14,14 @@
           <div class="sub-title">{{item.desc}}</div>
         </li>
       </transition-group>
+      <button class="slider_control slider_control_next" @click="next()">
+        <i class="iconfont"></i>
+      </button>
     </div>
+
     <div class="bullet">
       <span v-for="(item, i) in goods" :class="{ 'active':i===mark }"
-            @click="change(i)" :key="i"></span>
+            @mouseover="change(i)" :key="i"></span>
     </div>
   </div>
 </template>
@@ -21,19 +29,21 @@
 <script>
   export default {
     props: {
-      goods: {}
+      goods: []
     },
     data () {
       return {
         timer: null, // 定时器
-        mark: 0 // 比对图片索引的变量
+        mark: 0, // 比对图片索引的变量
+        slideSize: this.goods.length - 1
       }
     },
     methods: {
       autoPlay () {
-        this.mark++
-        if (this.mark === 3) {
+        if (this.mark === this.goods.length - 1) {
           this.mark = 0
+        } else {
+          this.mark++
         }
       },
       play () {
@@ -47,6 +57,16 @@
       },
       move () {
         this.timer = setInterval(this.autoPlay, 2500)
+      },
+      prev () {
+        if (this.mark === 0) {
+          this.mark = this.slideSize
+        } else {
+          this.mark--
+        }
+      },
+      next () {
+        this.autoPlay()
       }
     },
     created () {
@@ -78,15 +98,15 @@
     list-style: none;
   }
   .slide {
-    width: 320px;
+    width: 360px;
     height: 320px;
     margin: 0 auto;
     margin-top: 50px;
     overflow: hidden;
     position: relative;
     .slideshow {
-      width: 100%;
-      height: 100%;
+      width: 360px;
+      height: 320px;
       li {
         position: absolute;
         img {
@@ -100,6 +120,54 @@
         }
         .sub-title{
           color: #c88386;
+        }
+      }
+    }
+    &:hover{
+      .slider_control{
+        display: flex;
+      }
+    }
+    .slider_control{
+      display: none;
+      position: absolute;
+      top: 40%;
+      /*border-radius: 20px;*/
+      width: 20px;
+      height: 40px;
+      line-height: 40px;
+      background: rgba(85, 104, 122, 0.5);
+      z-index: 2;
+    }
+    .slider_control_prev{
+        left: 0px;
+      .iconfont{
+        color: hsla(0,0%,100%,.4);
+        display: inline-block;
+        border-left: 2px solid;
+        border-bottom: 2px solid;
+        width: 10px;
+        height: 10px;
+        margin-left: 6px;
+        transform: rotate(45deg);
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+    .slider_control_next{
+      right: 0px;
+      .iconfont{
+        color: hsla(0,0%,100%,.4);
+        display: inline-block;
+        border-left: 2px solid;
+        border-bottom: 2px solid;
+        width: 10px;
+        height: 10px;
+        margin-right: 6px;
+        transform: rotate(-135deg);
+        &:hover{
+          color: #fff;
         }
       }
     }

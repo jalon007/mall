@@ -8,8 +8,7 @@
         <category-tree :category="categoryList"></category-tree>
       </div>
       <div class="middle_banner_bar" >
-        <div class="bg" ref="bg"
-             @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
+        <div class="bg" ref="bg">
           <transition name="fade">
             <div v-for="(item, i) in banner" v-if="i===mark" :key="i" style="position:absolute" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
               <img v-if="item.url" class="img" :src="item.url"/>
@@ -170,13 +169,13 @@
       },
       play () {
         // 每2.5s自动切换
-        this.timer = setInterval(this.autoPlay, 2500)
+        this.timer = setInterval(this.autoPlay, 3500)
       },
       change (i) {
         this.mark = i
       },
       startTimer () {
-        this.timer = setInterval(this.autoPlay, 2500)
+        this.timer = setInterval(this.autoPlay, 3500)
       },
       stopTimer () {
         clearInterval(this.timer)
@@ -201,7 +200,6 @@
               productId: item.id
             }
           })
-          // window.location.href = item.fullUrl
         }
       },
       bgOver (e) {
@@ -361,14 +359,14 @@
         overflow: hidden;
         position: relative;
         z-index: 0;
-        width: 380px;
+        width: 400px;
         float: left;
         margin-top: 25px;
 
         box-sizing: border-box;
         border-radius: 2px;
         background: #fff;
-        padding: 20px 30px;
+        padding: 0 20px;
         .title {
           float: left;
           height: 54px;
@@ -382,8 +380,8 @@
         }
       }
       .middle{
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
       }
     }
 

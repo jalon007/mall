@@ -19,7 +19,7 @@
     </div>
     <div class="bullet">
       <span v-for="(item, i) in goods" :class="{ 'active':i===mark }"
-            @click="change(i)" :key="i"></span>
+            @mouseover="change(i)" :key="i"></span>
     </div>
   </div>
 </template>
@@ -27,23 +27,25 @@
 <script>
   export default {
     props: {
-      goods: {}
+      goods: []
     },
     data () {
       return {
         timer: null, // 定时器
-        mark: 0 // 比对图片索引的变量
+        mark: 0, // 比对图片索引的变量
+        slideSize: this.goods.size - 1
       }
     },
     methods: {
       autoPlay () {
-        this.mark++
-        if (this.mark === 2) {
+        if (this.mark === this.goods.length - 1) {
           this.mark = 0
+        } else {
+          this.mark++
         }
       },
       play () {
-        this.timer = setInterval(this.autoPlay, 2500)
+        this.timer = setInterval(this.autoPlay, 8000)
       },
       change (i) {
         this.mark = i
@@ -52,7 +54,7 @@
         clearInterval(this.timer)
       },
       move () {
-        this.timer = setInterval(this.autoPlay, 2500)
+        this.timer = setInterval(this.autoPlay, 8000)
       }
     },
     created () {
@@ -84,7 +86,7 @@
     list-style: none;
   }
   .slide {
-    width: 320px;
+    width: 360px;
     height: 320px;
     margin: 0 auto;
     margin-top: 50px;
