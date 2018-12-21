@@ -207,7 +207,8 @@ public class WxHomeController {
 
         Map<String, Object> data = new HashMap<>();
 
-        List<LitemallGoods> newGoods = goodsService.queryByNew(0, SystemConfig.getNewLimit());
+        List<LitemallGoods> newGoods = goodsService.queryByNew(0, 6);//SystemConfig.getNewLimit()
+        data.put("newGoods", newGoods);
         data.put("newGoods", newGoods);
 
         List<LitemallGoods> hotGoods = goodsService.queryByHot(0, SystemConfig.getHotLimit());
