@@ -57,6 +57,13 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/taobao-sdk-java-auto_1457166217151-20181220.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.taobao.api</groupId>
+            <artifactId>com.taobao.api</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/taobao-sdk-java-auto-20170928.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

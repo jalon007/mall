@@ -26,15 +26,9 @@ import java.util.Map;
  */
 public class TbController {
 
-    private final TaobaoClient client=new DefaultTaobaoClient(TBConstant.url, TBConstant.appkey, TBConstant.secret);
-
     @Autowired
     private TbService tbService;
 
-    /**
-     * 查询
-     * @return
-     */
     @GetMapping("search")
     public Object search(){
         TbkItemGetResponse r =tbService.searchGoods();
@@ -45,4 +39,49 @@ public class TbController {
         return ResponseUtil.ok(data);
     }
 
+    @GetMapping("search")
+    public Object search(){
+        TbkItemGetResponse r =tbService.searchGoods();
+        Map<String, Object> data = new HashMap<>();
+        data.put("count", r.getTotalResults());
+        data.put("goods", r.getResults());
+
+        return ResponseUtil.ok(data);
+    }
+    @GetMapping("search")
+    public Object search(){
+        TbkItemGetResponse r =tbService.searchGoods();
+        Map<String, Object> data = new HashMap<>();
+        data.put("count", r.getTotalResults());
+        data.put("goods", r.getResults());
+
+        return ResponseUtil.ok(data);
+    }
+    @GetMapping("search")
+    public Object search(){
+        TbkItemGetResponse r =tbService.searchGoods();
+        Map<String, Object> data = new HashMap<>();
+        data.put("count", r.getTotalResults());
+        data.put("goods", r.getResults());
+
+        return ResponseUtil.ok(data);
+    }
+    @GetMapping("search")
+    public Object search(){
+        TbkItemGetResponse r =tbService.searchGoods();
+        Map<String, Object> data = new HashMap<>();
+        data.put("count", r.getTotalResults());
+        data.put("goods", r.getResults());
+
+        return ResponseUtil.ok(data);
+    }
+    @GetMapping("search")
+    public Object search(){
+        TbkItemGetResponse r =tbService.searchGoods();
+        Map<String, Object> data = new HashMap<>();
+        data.put("count", r.getTotalResults());
+        data.put("goods", r.getResults());
+
+        return ResponseUtil.ok(data);
+    }
 }

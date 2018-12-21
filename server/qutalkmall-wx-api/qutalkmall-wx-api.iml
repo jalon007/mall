@@ -148,7 +148,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.taobao.api:com.taobao.api:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/taobao-sdk-java-auto_1457166217151-20181220.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/taobao-sdk-java-auto-20170928.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
