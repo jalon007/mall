@@ -7,7 +7,7 @@
       </button>
       <transition-group tag="ul" name="image">
         <li v-for="(item, i) in goods" v-show="i===mark" :key="i">
-          <a href="#">
+          <a @click="openDetail(item.id)">
             <img :src='item.picUrl'>
           </a>
           <div class="title">{{item.name}}</div>
@@ -28,9 +28,9 @@
 
 <script>
   export default {
-    props: {
-      goods: []
-    },
+    props: [
+      'goods'
+    ],
     data () {
       return {
         timer: null, // 定时器
@@ -47,7 +47,7 @@
         }
       },
       play () {
-        this.timer = setInterval(this.autoPlay, 2500)
+        this.timer = setInterval(this.autoPlay, 5000)
       },
       change (i) {
         this.mark = i
@@ -56,7 +56,7 @@
         clearInterval(this.timer)
       },
       move () {
-        this.timer = setInterval(this.autoPlay, 2500)
+        this.timer = setInterval(this.autoPlay, 5000)
       },
       prev () {
         if (this.mark === 0) {
@@ -67,6 +67,9 @@
       },
       next () {
         this.autoPlay()
+      },
+      openDetail (id) {
+        window.open('//' + window.location.host + '/#/goodsDetails?productId=' + id)
       }
     },
     created () {

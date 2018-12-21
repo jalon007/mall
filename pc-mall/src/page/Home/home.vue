@@ -17,7 +17,7 @@
         </div>
         <div class="page">
           <ul class="dots">
-            <li class="dot-active" v-for="(item, i) in banner" :class="{ 'dot':i!=mark }" :key="i" @click="change(i)"></li>
+            <li class="dot" v-for="(item, i) in banner" :class="{ 'dot-active':i===mark }" :key="i" @click="change(i)"></li>
           </ul>
         </div>
       </div>
@@ -333,17 +333,16 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      .dot-active {
-        display: inline-block;
-        width: 15px;
-        height: 15px;
-        background-color: #af0527;
-        border-radius: 8px;
-        margin-right: 10px;
-        cursor: pointer;
-      }
       .dot {
-        opacity: 0.2;
+        display: inline-block;
+        width: 25px;
+        height: 6px;
+        margin-right: 15px;
+        cursor: pointer;
+        background: rgba(94, 115, 130, 0.5);
+      }
+      .dot-active {
+        background-color: #c81623;
       }
     }
   }

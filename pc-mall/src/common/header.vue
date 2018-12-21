@@ -244,8 +244,6 @@
               pId: item.id
             }
           })
-        //  console.log(window.location.host + '/home/#/goods?pid=' + item.id)
-         // window.location.href = window.location.host + '/home/#/goods?pid=' + item.id
         }
       },
       // 搜索框提示
@@ -379,7 +377,7 @@
       if (this.login) {
         this._getCartList()
       } else {
-        this.INIT_BUYCART()
+        this.INIT_BUYCART
       }
       this.navFixed()
       this.getPage()

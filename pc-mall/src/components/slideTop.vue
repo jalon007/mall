@@ -3,14 +3,15 @@
     <div class="slideshow">
       <transition-group tag="ul" name="image">
         <li v-for="(item, i) in goods" v-show="i===mark" :key="i">
-          <div class="item" v-for="(iitem,j) in item" :key="j">
+          <div class="item" v-for="(iitem,j) in item" :key="j" @click="openDetail(iitem.id)">
             <div class="img">
-              <a href="#">
+              <a >
                 <img :src='iitem.picUrl'>
               </a>
             </div>
+            <span class="rank" :style="{color:(i==0 ? rankcolor[j]:'#515151')}">{{(i*3+j+1)}}</span>
             <div class="content">
-              <div class="title"><a>{{(i*3+j+1)}} </a>{{iitem.name}}</div>
+              <div class="title">{{iitem.name}}</div>
               <div class="sub-title">{{iitem.desc}}</div>
             </div>
           </div>
@@ -26,14 +27,14 @@
 
 <script>
   export default {
-    props: {
-      goods: []
-    },
+    props: [
+      'goods'
+    ],
     data () {
       return {
         timer: null, // 定时器
         mark: 0, // 比对图片索引的变量
-        slideSize: this.goods.size - 1
+        rankcolor: ['#fa041d', '#c82b3d', '#c86943']
       }
     },
     methods: {
@@ -55,6 +56,9 @@
       },
       move () {
         this.timer = setInterval(this.autoPlay, 8000)
+      },
+      openDetail (id) {
+        window.open('//' + window.location.host + '/#/goodsDetails?productId=' + id)
       }
     },
     created () {
@@ -103,11 +107,28 @@
           position: relative;
           width: 120px;
           height: auto;
+          border-radius: 60px;
+        }
+        .rank{
+          float: left;
+          width: 20px;
+          height: 40px;
+          line-height: 40px;
+          color: #c81623;
+          font-size: 30px;
+          font-weight: bold;
+          text-align: right;
+        }
+        &:hover{
+          .content{
+            color: #c81623;
+          }
         }
         .content{
           float: left;
-          width: 200px;
+          width: 220px;
           height: 100%;
+          color: rgba(77, 77, 77, 0.97);
           .title{
             text-align: center;
           }
@@ -115,7 +136,6 @@
             text-align: left;
             line-height: 18px;
             font-size: 13px;
-            color: #747474;
             padding: 10px;
             overflow: hidden;
             white-space: nowrap;

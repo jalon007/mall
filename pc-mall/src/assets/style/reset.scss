@@ -64,3 +64,9 @@ input[type="reset"] {
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #BEBEBE;
 }
+img{
+  opacity: 1;
+  &:hover{
+    opacity: 0.9;
+  }
+}

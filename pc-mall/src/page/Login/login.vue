@@ -195,13 +195,19 @@ export default {
               })
             }
             removeStore('buyCart')
+            /*
             this.$router.push({
               path: '/'
             })
+            */
+            window.location.href = '/'
           } else {
+            /*
             this.$router.push({
               path: '/'
             })
+            */
+            window.location.href = '/'
           }
         } else {
           this.logintxt = '登录'
@@ -235,7 +241,9 @@ export default {
     this.getRemembered()
     this.login_addCart()
     this.init_geetest()
+/*
     this.open('登录提示', '测试体验账号密码：test | test')
+*/
   },
   components: {
     YFooter,

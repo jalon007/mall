@@ -25,7 +25,7 @@
           <h6>
             <span>{{goodInfo.brief}}</span>
             <span class="price">
-              <em>¥</em><i>{{goodInfo.retailPrice.toFixed(2)}}</i></span>
+              <em>¥</em><i>{{Number(goodInfo.retailPrice).toFixed(2)}}</i></span>
           </h6>
         </div>
         <div class="num">

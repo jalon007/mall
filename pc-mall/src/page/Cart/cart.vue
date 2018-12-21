@@ -266,7 +266,7 @@
     },
     mounted () {
       this.userId = getStore('userId')
-      this.INIT_BUYCART()
+      this.INIT_BUYCART
     },
     components: {
       YButton,

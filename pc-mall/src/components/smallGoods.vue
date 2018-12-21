@@ -110,6 +110,9 @@
       .good-title{
         color: #c81623;
       }
+      .good-content{
+        opacity: 0.8;
+      }
     }
     .button_lay{
       display: none;
@@ -117,7 +120,7 @@
       position: absolute;
       top:0;
       z-index: 11;
-      background: rgba(206, 199, 197, 0.7);
+      background: rgba(206, 199, 197, 0.5);
       .good-button{
         @include wh(100%,100px);
         display: flex;
@@ -158,6 +161,7 @@
         display: block;
         /*background: #dcdcdc;*/
       /*padding-top: 10px;*/
+      opacity: 1;
     }
     .good-price {
       /*margin: 15px 0;*/
