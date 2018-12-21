@@ -597,7 +597,7 @@
       width: 1000px;
     }
     .nav-aside {
-      display: flex;
+      display: none;
       align-items: center;
     }
     // 用户

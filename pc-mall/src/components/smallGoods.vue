@@ -29,7 +29,7 @@
           ></y-button> -->
           <y-button text="趣领券"
                     style="margin: 0 5px"
-                    @btnClick="addCart(msg.id,msg.retailPrice,msg.name,msg.picUrl)"
+                    @btnClick="grap()"
                     classStyle="main-btn"main-btn
           ></y-button>
         </div>
@@ -58,6 +58,12 @@
       },
       openProduct (id) {
         window.open('//' + window.location.host + '/#/goodsDetails?productId=' + id)
+      },
+      grap () {
+        this.$notify.info({
+          title: 'Thanks',
+          message: '暂无优惠券可领取，敬请期待~^v^~'
+        })
       },
       addCart (id, price, name, img) {
         if (!this.showMoveImg) {     // 动画是否在运动

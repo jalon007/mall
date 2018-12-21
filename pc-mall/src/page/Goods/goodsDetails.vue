@@ -33,16 +33,17 @@
           <buy-num @edit-num="editNum" :limit="Number(100)"></buy-num>
         </div>
         <div class="buy">
-          <y-button text="加入收藏"
-                    @btnClick="addCart(goodInfo.id,goodInfo.retailPrice,goodInfo.name,goodInfo.picUrl)"
+          <y-button text="领取优惠券"
+                    @btnClick="grap()"
                     classStyle="main-btn"
                     style="width: 145px;height: 50px;line-height: 48px"></y-button>
+          <!--@btnClick="addCart(goodInfo.id,goodInfo.retailPrice,goodInfo.name,goodInfo.picUrl)"-->
           <!--<y-button text="现在购买"-->
                     <!--@btnClick="checkout(product.info.id)"-->
                     <!--style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>-->
-          <y-button text="立即领券"
-                    @btnClick="checkout(goodInfo.id)"
-                    style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>
+          <!--<y-button text="立即领券"
+                    @btnClick="grap()"
+                    style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>-->
         </div>
       </div>
     </div>
@@ -140,6 +141,12 @@
       },
       checkout (productId) {
         this.$router.push({path: '/checkout', query: {productId, num: this.productNum}})
+      },
+      grap () {
+        this.$notify.info({
+          title: 'Thanks',
+          message: '暂无优惠券可领取，敬请期待~^v^~'
+        })
       },
       editNum (num) {
         this.productNum = num

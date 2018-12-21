@@ -108,7 +108,7 @@
       :visible.sync="dialogVisible"
       width="30%"
       style="width:70%;margin:0 auto">
-      <span>本网站只做商品推荐展示，不向外出售任何商品！！</span>
+      <span>本网站只做商品导购推荐、分享优惠券，不向外出售任何商品！！</span>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="dialogVisible = false">知道了</el-button>
       </span>
