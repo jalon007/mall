@@ -4,16 +4,18 @@
     <div class="gray-box">
       <div class="gallery-wrapper">
         <div class="gallery">
+          <div class="thumb">
+            <div class="big">
+              <img :src="big" :alt="goodInfo.name">
+            </div>
+          </div>
           <div class="thumbnail">
+            <div>
             <ul>
               <li v-for="(item,i) in goodInfo.gallery" :key="i" :class="{on:big===item}" @click="big=item">
                 <img v-lazy="item" :alt="goodInfo.name">
               </li>
             </ul>
-          </div>
-          <div class="thumb">
-            <div class="big">
-              <img :src="big" :alt="goodInfo.name">
             </div>
           </div>
         </div>
@@ -175,19 +177,46 @@
 
   .gray-box {
     display: flex;
-    padding: 60px;
+    padding: 0 60px;
     margin: 20px 0;
     .gallery-wrapper {
       .gallery {
-        display: flex;
-        width: 540px;
+        float: left;
+        width: 460px;
+        position: relative;
+        .thumb {
+          position: relative;
+          display: table;
+          table-layout: fixed;
+          z-index: 1;
+          width: 420px;
+          height: 420px;
+          margin: 20px auto 0;
+          img {
+            display: block;
+            @include wh(100%)
+          }
+        }
         .thumbnail {
+          width: 100%;
+          height: 80px;
+          position: relative;
+          ul{
+            text-align: center;
+            margin-left: -16px;
+            white-space: nowrap;
+            position: relative;
+            transition: left .2s cubic-bezier(0,0,.25,1);
+            font-size: 0;
+          }
           li:first-child {
             margin-top: 0px;
           }
           li {
+            float: left;
+            position: relative;
             @include wh(80px);
-            margin-top: 10px;
+            /*margin-top: 10px;*/
             padding: 12px;
             border: 1px solid #f0f0f0;
             border: 1px solid rgba(0, 0, 0, .06);
@@ -204,15 +233,7 @@
             }
           }
         }
-        .thumb {
-          .big {
-            margin-left: 20px;
-          }
-          img {
-            display: block;
-            @include wh(440px)
-          }
-        }
+
       }
     }
     // 右边

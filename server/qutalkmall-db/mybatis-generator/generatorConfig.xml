@@ -56,7 +56,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.qutalk.mall.db.dao"
                              targetProject="src/main/java"/>
         <!--表名-->
-        <table tableName="litemall_ad">
+        <!--<table tableName="litemall_ad">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
         <table tableName="litemall_address">
@@ -156,6 +156,9 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
         <table tableName="litemall_groupon">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>-->
+        <table tableName="coupon_cate">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>

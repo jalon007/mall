@@ -3,6 +3,21 @@ spring:
     active: db, core, wx
   message:
     encoding: UTF-8
+  redis:
+    database: 0
+    host: 192.168.98.190
+    port: 6379
+    timeout: 3000ms
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
+
+  data:
+    mongodb:
+      uri: mongodb://MEDBUser:MEDBUser@192.168.98.75:27017/MedicalExaminationDB
 
 server:
   port: 8082
@@ -16,3 +31,6 @@ logging:
     com.qutalk.mall:  infocp
   path: /opt/logs
   file: qutalkmall.log
+
+cache:
+  switch: false

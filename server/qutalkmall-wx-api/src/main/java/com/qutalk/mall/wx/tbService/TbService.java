@@ -1,7 +1,8 @@
 package com.qutalk.mall.wx.tbService;
 
-import com.qutalk.mall.core.util.ResponseUtil;
+import com.qutalk.mall.wx.cache.MongoCache;
 import com.qutalk.mall.wx.config.TBConstant;
+import com.qutalk.mall.wx.cache.bean.CouponGoods;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -11,11 +12,10 @@ import com.taobao.api.request.*;
 import com.taobao.api.response.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -40,9 +40,12 @@ import java.util.Map;
  * @create 2018/12/21 - 17:43
  * @package com.qutalk.mall.wx.tbService
  */
+@Service
 public class TbService{
     private static final Logger logger = LoggerFactory.getLogger(TbService.class);
 
+    @Autowired
+    MongoCache mongoCache;
     private final TaobaoClient client=new DefaultTaobaoClient(TBConstant.url, TBConstant.appkey, TBConstant.secret);
 
     public TbkItemGetResponse searchGoods(){
@@ -77,13 +80,18 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkItemRecommendGetResponse  getRecommends() throws ApiException {
+    public TbkItemRecommendGetResponse  getRecommends(){
         TbkItemRecommendGetRequest req = new TbkItemRecommendGetRequest();
         req.setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url");
         req.setNumIid(123L);
         req.setCount(20L);
         req.setPlatform(1L);
-        TbkItemRecommendGetResponse rsp = client.execute(req);
+        TbkItemRecommendGetResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
@@ -94,12 +102,17 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkItemInfoGetResponse getItemInfo() throws ApiException {
+    public TbkItemInfoGetResponse getItemInfo() {
         TbkItemInfoGetRequest req = new TbkItemInfoGetRequest();
         req.setNumIids("123,456");
         req.setPlatform(1L);
         req.setIp("11.22.33.43");
-        TbkItemInfoGetResponse rsp = client.execute(req);
+        TbkItemInfoGetResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
@@ -110,7 +123,7 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkShopGetResponse getShop() throws ApiException {
+    public TbkShopGetResponse getShop() {
 
         TbkShopGetRequest req = new TbkShopGetRequest();
         req.setFields("user_id,shop_title,shop_type,seller_nick,pict_url,shop_url");
@@ -128,7 +141,12 @@ public class TbService{
         req.setPlatform(1L);
         req.setPageNo(1L);
         req.setPageSize(20L);
-        TbkShopGetResponse rsp = client.execute(req);
+        TbkShopGetResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
@@ -139,32 +157,58 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkShopRecommendGetResponse getRecommendShop() throws ApiException {
+    public TbkShopRecommendGetResponse getRecommendShop() {
         TbkShopRecommendGetRequest req = new TbkShopRecommendGetRequest();
         req.setFields("user_id,shop_title,shop_type,seller_nick,pict_url,shop_url");
         req.setUserId(123L);
         req.setCount(20L);
         req.setPlatform(1L);
-        TbkShopRecommendGetResponse rsp = client.execute(req);
+        TbkShopRecommendGetResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
 
     /**
+     * 母婴：
+     * 女装：
+     * 网红爆款：
+     *
      * taobao.tbk.dg.item.coupon.get	好券清单API【导购】
+     * 	mm_xxx_xxx_xxx的第三位
+     * 	mm_memberid_siteid_adzoneid。Memberid对应推广者，Siteid对应媒体，Adzoneid对应推广位
      * @return
      * @throws ApiException
      */
-    public TbkDgItemCouponGetResponse getCouponList () throws ApiException {
+    public TbkDgItemCouponGetResponse getCouponList (Long adzoneId){
         TbkDgItemCouponGetRequest req = new TbkDgItemCouponGetRequest();
-        req.setAdzoneId(123L);
-        req.setPlatform(1L);
-        req.setCat("16,18");
-        req.setPageSize(1L);
-        req.setQ("女装");
+        req.setAdzoneId(adzoneId);
+        req.setPlatform(2L);
+        req.setCat("16");
+        req.setPageSize(20L);
+       // req.setQ("宝宝服");
         req.setPageNo(1L);
-        TbkDgItemCouponGetResponse rsp = client.execute(req);
+        TbkDgItemCouponGetResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
+        if(rsp.getResults()!=null){
+            CouponGoods couponGoods = new CouponGoods();
+            couponGoods.setAdzoneId(req.getAdzoneId());
+            for(TbkDgItemCouponGetResponse.TbkCoupon coupon:rsp.getResults()){
+                couponGoods.setTbkCoupon(coupon);
+                mongoCache.set(couponGoods);
+            }
+        }
+
+
         return rsp;
     }
 
@@ -173,12 +217,17 @@ public class TbService{
      * taobao.tbk.coupon.get	阿里妈妈推广券信息查询
      * @return
      */
-    public TbkCouponGetResponse getCoupon() throws ApiException {
+    public TbkCouponGetResponse getCoupon(){
         TbkCouponGetRequest req = new TbkCouponGetRequest();
         req.setMe("nfr%2BYTo2k1PX18gaNN%2BIPkIG2PadNYbBnwEsv6mRavWieOoOE3L9OdmbDSSyHbGxBAXjHpLKvZbL1320ML%2BCF5FRtW7N7yJ056Lgym4X01A%3D");
         req.setItemId(123L);
         req.setActivityId("sdfwe3eefsdf");
-        TbkCouponGetResponse rsp = client.execute(req);
+        TbkCouponGetResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
@@ -188,14 +237,19 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkTpwdCreateResponse getTbpwd() throws ApiException {
+    public TbkTpwdCreateResponse getTbpwd(){
         TbkTpwdCreateRequest req = new TbkTpwdCreateRequest();
-        req.setUserId("123");
+        req.setUserId("123456789");
         req.setText("长度大于5个字符");
         req.setUrl("https://uland.taobao.com/");
         req.setLogo("https://uland.taobao.com/");
-        req.setExt("{}");
-        TbkTpwdCreateResponse rsp = client.execute(req);
+        req.setExt("{hahahahaq}");
+        TbkTpwdCreateResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
@@ -205,7 +259,7 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkDgNewuserOrderGetResponse getNewuserOrder() throws ApiException {
+    public TbkDgNewuserOrderGetResponse getNewuserOrder(){
         TbkDgNewuserOrderGetRequest req = new TbkDgNewuserOrderGetRequest();
         req.setPageSize(20L);
         req.setAdzoneId(123L);
@@ -213,7 +267,12 @@ public class TbService{
         req.setStartTime(StringUtils.parseDateTime("2018-01-24 00:34:05"));
         req.setEndTime(StringUtils.parseDateTime("2018-01-24 00:34:05"));
         req.setActivityId("119013_2");
-        TbkDgNewuserOrderGetResponse rsp = client.execute(req);
+        TbkDgNewuserOrderGetResponse rsp = null;
+        try {
+            rsp = client.execute(req);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
@@ -223,7 +282,7 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkScNewuserOrderGetResponse getScNewuserOrder() throws ApiException {
+    public TbkScNewuserOrderGetResponse getScNewuserOrder(){
         TbkScNewuserOrderGetRequest req = new TbkScNewuserOrderGetRequest();
         req.setPageSize(20L);
         req.setAdzoneId(123L);
@@ -232,7 +291,12 @@ public class TbService{
         req.setActivityId("119013_2");
         req.setEndTime(StringUtils.parseDateTime("2018-01-24 00:34:05"));
         req.setStartTime(StringUtils.parseDateTime("2018-01-24 00:34:05"));
-        TbkScNewuserOrderGetResponse rsp = client.execute(req, TBConstant.sessionKey);
+        TbkScNewuserOrderGetResponse rsp = null;
+        try {
+            rsp = client.execute(req, TBConstant.sessionKey);
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
         System.out.println(rsp.getBody());
         return rsp;
     }
