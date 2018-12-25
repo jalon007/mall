@@ -17,13 +17,13 @@
     </div>
     <!--内容-->
     <div slot="content" class="floors" >
-        <div class="imgbanner" v-for="(iitem,j) in Goods"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
-          <img v-lazy="iitem.picUrl">
-          <h6 class="good-title" v-html="iitem.name">{{iitem.name}}</h6>
+        <!--<div class="imgbanner" v-for="(iitem,j) in Goods"  v-if="j<1" :key="j"  @click="linkTo(iitem)">
+          <img v-lazy="iitem.pictUrl">
+          <h6 class="good-title" v-html="iitem.title">{{iitem.title}}</h6>
           <h3 class="sub-title ellipsis">{{iitem.brief}}</h3>
           <a class="cover-link"></a>
-        </div>
-        <small-goods :msg="iitem" v-for="(iitem,j) in Goods" v-if="j>0" :key="j+'key'"></small-goods>
+        </div>-->
+        <small-goods :msg="iitem" v-for="(iitem,j) in Goods"  :key="j+'key'"></small-goods>
       </div>
     </div>
   <!--</div>-->

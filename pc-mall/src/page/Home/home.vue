@@ -116,7 +116,8 @@
   </div>
 </template>
 <script>
-  import { homeBanner, homeFloors, loginOut } from '/api/index'
+  import { homeBanner, loginOut } from '/api/index'
+  import { goodsCoupons } from '/api/tb'
   import { getCategory, getNotions } from '/api/goods'
   import YShelf from '/components/shelf'
   import product from '/components/product'
@@ -248,7 +249,7 @@
         })
       },
       _getHomeFloors () {
-        homeFloors().then(res => {
+        goodsCoupons().then(res => {
           this.floorGoodsList = res.data.floorGoodsList
         })
       },

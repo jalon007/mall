@@ -5,35 +5,37 @@
     <!--</div>-->
     <div style="">
       <div class="good-img">
-        <a @click="openProduct(msg.id)">
-          <img v-lazy="msg.picUrl" :alt="msg.name" :key="msg.picUrl">
+        <a @click="openProduct(msg.numIid)">
+          <img v-lazy="big" :alt="msg.title"/>
         </a>
       </div>
       <div class="good-content">
-        <h6 class="good-title" v-html="msg.name">{{msg.name}}</h6>
-        <h3 class="sub-title">{{msg.brief}}</h3>
         <div class="good-price pr">
-          <p><span class="yj">￥{{Number(msg.retailPrice).toFixed(2)}}</span></p>
-          <p><span class="jhjg">￥{{Number(msg.retailPrice).toFixed(2)}}</span></p>
+          <p><span class="prise">￥{{Number(msg.zkFinalPrice).toFixed(2)}}</span></p>
+          <p v-if="msg.volume"><span class="volume">月销{{msg.volume}}件</span></p>
+        </div>
+        <h6 class="good-title" v-html="msg.title">{{msg.title}}</h6>
+        <h3 class="shop-title">{{msg.shopTitle}}</h3>
+
+        <div class="button_lay">
+          <div class="good-button">
+            <!--<a @click="openProduct(msg.numIid)">
+              <y-button text="查看详情" style="margin: 0 5px" class="detailbutton"></y-button>
+            </a>-->
+            <!-- <y-button text="加入购物车"
+                      style="margin: 0 5px"
+                      @btnClick="addCart(msg.id,msg.retailPrice,msg.name,msg.picUrl)"
+                      classStyle="main-btn"
+            ></y-button> -->
+            <y-button text="趣领券"
+                      style="margin: 0 5px"
+                      @btnClick="grap(msg.couponClickUrl)"
+                      classStyle="main-btn"main-btn
+            ></y-button>
+          </div>
         </div>
       </div>
-      <div class="button_lay">
-        <div class="good-button">
-          <a @click="openProduct(msg.id)">
-            <y-button text="查看详情" style="margin: 0 5px" class="detailbutton"></y-button>
-          </a>
-          <!-- <y-button text="加入购物车"
-                    style="margin: 0 5px"
-                    @btnClick="addCart(msg.id,msg.retailPrice,msg.name,msg.picUrl)"
-                    classStyle="main-btn"
-          ></y-button> -->
-          <y-button text="趣领券"
-                    style="margin: 0 5px"
-                    @btnClick="grap()"
-                    classStyle="main-btn"main-btn
-          ></y-button>
-        </div>
-      </div>
+
     </div>
   </div>
 </template>
@@ -49,7 +51,9 @@
       }
     },
     data () {
-      return {}
+      return {
+        big: this.msg.pictUrl
+      }
     },
     methods: {
       ...mapMutations(['ADD_CART', 'ADD_ANIMATION', 'SHOW_CART']),
@@ -59,7 +63,8 @@
       openProduct (id) {
         window.open('//' + window.location.host + '/#/goodsDetails?productId=' + id)
       },
-      grap () {
+      grap (openUrl) {
+        window.open(openUrl)
         this.$notify.info({
           title: 'Thanks',
           message: '暂无优惠券可领取，敬请期待~^v^~'
@@ -103,11 +108,12 @@
   @import "../assets/style/theme";
 
   .good-item {
+    margin: 1.5px;
     position: relative;
     background: #fff;
     width: 200px;
     transition: all .5s;
-    height: 270px;
+    height: 300px;
     padding: 2px;
     &:hover {
       .button_lay{
@@ -130,11 +136,9 @@
       .good-button{
         @include wh(100%,100px);
         display: flex;
-        /*padding-bottom: 17px;*/
         position: relative;
         margin: 0 auto;
-        padding: 15px;
-        top:170px;
+        padding: 15px 55px;
         .detailbutton{
           background: #5e7382;
           color: #ffffff;
@@ -158,34 +162,35 @@
         /*margin: 0 10px;*/
         @include wh(196px);
         display: block;
+
       }
     }
     .good-content {
-      top:-35px;
+      /* top:-35px;*/
       position: relative;
-        @include wh(196px,130px);
-        display: block;
-        /*background: #dcdcdc;*/
-      /*padding-top: 10px;*/
+      @include wh(196px,100px);
+      display: block;
       opacity: 1;
     }
     .good-price {
       /*margin: 15px 0;*/
       height: 30px;
       text-align: left;
-      line-height: 20px;
+      line-height: 30px;
       font-family: Arial;
       font-size: 18px;
       font-weight: 300;
-      .yj{
+      .prise{
+        padding-top: 10px;
+        display: inline;
         color: #d44d44;
-        padding-left: 20px;
+      }
+      .volume{
         font-size: 12px;
-        text-decoration:line-through
       }
       p{
-        /*display: inline;*/
-        padding: 0 10px;
+        display: inline;
+        padding: 0 15px;
       }
     }
     .good-title {
@@ -200,7 +205,7 @@
       text-overflow:ellipsis;
     }
     h3 {
-      text-align: center;
+      text-align: left;
       line-height: 1.2;
       font-size: 12px;
       color: #696969;
