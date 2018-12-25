@@ -15,10 +15,6 @@ spring:
         min-idle: 0
         max-wait: -1ms
 
-  data:
-    mongodb:
-      uri: mongodb://MEDBUser:MEDBUser@192.168.98.75:27017/MedicalExaminationDB
-
 server:
   port: 8082
 

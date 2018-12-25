@@ -32,7 +32,7 @@ import java.util.Map;
  * @package com.qutalk.mall.wx.web
  */
 @RestController
-@RequestMapping("/wx/goods")
+@RequestMapping("/tb/goods")
 public class TbController {
 
     @Autowired
@@ -59,12 +59,12 @@ public class TbController {
         List<Map> categoryList = new ArrayList<>();
         if(couponCates!=null){
             for(CouponCate couponCate:couponCates){
-                TbkDgItemCouponGetResponse r =tbService.getCouponList(couponCate.getAdzoneId());
+                TbkDgItemCouponGetResponse r =tbService.getCouponList(couponCate.getAdzoneId(),couponCate.getAdzoneName());
                 Map<String, Object> catGoods = new HashMap<String, Object>();
                 catGoods.put("id", couponCate.getAdzoneId());
                 catGoods.put("name", couponCate.getAdzoneName());
                 catGoods.put("goodsList", r.getResults());
-               // catGoods.put("childCategory",catL2List);
+                catGoods.put("childCategory",null);
                 categoryList.add(catGoods);
             }
             data.put("floorGoodsList", categoryList);

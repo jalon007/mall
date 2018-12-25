@@ -60,19 +60,15 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.taobao.api</groupId>
-            <artifactId>com.taobao.api</artifactId>
+            <groupId>com.qutalk.mall</groupId>
+            <artifactId>tb-20181220</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/taobao-sdk-java-auto_1457166217151-20181220.jar</systemPath>
+            <systemPath>${project.basedir}/lib/taobao-sdk-java-auto-20181220.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>com.taobao.api</groupId>
-            <artifactId>com.taobao.api</artifactId>
+            <groupId>com.qutalk.mall</groupId>
+            <artifactId>tb-20170928</artifactId>
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/taobao-sdk-java-auto-20170928.jar</systemPath>
@@ -91,6 +87,13 @@
             </resource>
         </resources>
         <plugins>
+            <!--<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

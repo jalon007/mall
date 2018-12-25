@@ -1,8 +1,6 @@
 package com.qutalk.mall.wx.tbService;
 
-import com.qutalk.mall.wx.cache.MongoCache;
 import com.qutalk.mall.wx.config.TBConstant;
-import com.qutalk.mall.wx.cache.bean.CouponGoods;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -44,8 +42,6 @@ import java.util.List;
 public class TbService{
     private static final Logger logger = LoggerFactory.getLogger(TbService.class);
 
-    @Autowired
-    MongoCache mongoCache;
     private final TaobaoClient client=new DefaultTaobaoClient(TBConstant.url, TBConstant.appkey, TBConstant.secret);
 
     public TbkItemGetResponse searchGoods(){
@@ -184,13 +180,13 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkDgItemCouponGetResponse getCouponList (Long adzoneId){
+    public TbkDgItemCouponGetResponse getCouponList (Long adzoneId,String name){
         TbkDgItemCouponGetRequest req = new TbkDgItemCouponGetRequest();
         req.setAdzoneId(adzoneId);
-        req.setPlatform(2L);
-        req.setCat("16");
-        req.setPageSize(20L);
-       // req.setQ("宝宝服");
+        req.setPlatform(1L);
+        // req.setCat("16");
+        req.setPageSize(18L);
+        req.setQ(name);
         req.setPageNo(1L);
         TbkDgItemCouponGetResponse rsp = null;
         try {
@@ -199,7 +195,7 @@ public class TbService{
             e.printStackTrace();
         }
         System.out.println(rsp.getBody());
-        if(rsp.getResults()!=null){
+        /*if(rsp.getResults()!=null){
             CouponGoods couponGoods = new CouponGoods();
             couponGoods.setAdzoneId(req.getAdzoneId());
             for(TbkDgItemCouponGetResponse.TbkCoupon coupon:rsp.getResults()){
@@ -207,7 +203,7 @@ public class TbService{
                 mongoCache.set(couponGoods);
             }
         }
-
+*/
 
         return rsp;
     }

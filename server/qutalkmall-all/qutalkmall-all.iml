@@ -127,6 +127,7 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.0.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.0.9.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.0.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.lettuce:lettuce-core:5.0.4.RELEASE" level="project" />
@@ -138,14 +139,17 @@
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.27.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.27.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.27.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-mongodb:2.0.4.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.6.4" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:bson:3.6.4" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.6.4" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:2.0.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.0.9.RELEASE" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: com.taobao.api:com.taobao.api:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../qutalkmall-wx-api/lib/taobao-sdk-java-auto-20181220.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.taobao.api:com.taobao.apiauto:1.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../qutalkmall-wx-api/lib/taobao-sdk-java-auto-20170928.jar!/" />
         </CLASSES>
