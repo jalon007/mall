@@ -1,7 +1,6 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 // for seo
-var PrerenderSpaPlugin = require('prerender-spa-plugin')
 module.exports = {
   build: {
     env: require('./prod.env'),
@@ -25,15 +24,7 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report,
-    plugins: [
-      new PrerenderSpaPlugin(
-        // 编译后的html需要存放的路径
-        path.join(__dirname, '../dist'),
-        // 列出哪些路由需要预渲染
-        [ '/', '/home', '/goods' ]
-      )
-    ]
+    bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: {
     env: require('./dev.env'),
