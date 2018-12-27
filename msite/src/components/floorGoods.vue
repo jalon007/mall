@@ -91,18 +91,18 @@
       /*margin-top: 20px;*/
     /*}*/
     .title {
-      padding-left: 30px;
+      padding-left: 60px;
       position: relative;
       z-index: 10;
-      height: 45px;
+      height: 80px;
       border-radius: 2px 2px 0 0;
-      line-height: 45px;
+      line-height: 80px;
       color: #333;
       display: flex;
       justify-content: space-between;
       align-items: center;
       h2 {
-        font-size: 18px;
+        font-size: 40px;
         font-weight: bold;
         /*color: #626262;*/
         display: inline-block;
@@ -110,9 +110,9 @@
           content: '';
           position: absolute;
           width: 4px;
-          height: 20px;
+          height: 45px;
           top: 14px;
-          left: 15px;
+          left: 40px;
           background-repeat: repeat-x;
           background: #28ABFF;
         }

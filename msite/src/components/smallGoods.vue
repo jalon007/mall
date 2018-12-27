@@ -108,13 +108,13 @@
   @import "../assets/style/theme";
 
   .good-item {
-    margin: 1.5px;
+    margin: 8px;
     position: relative;
     background: #fff;
-    width: 200px;
+    width: 400px;
     transition: all .5s;
-    height: 300px;
-    padding: 2px;
+    height: 600px;
+    padding: 4px;
     &:hover {
       .button_lay{
         display: flex;
@@ -160,7 +160,7 @@
     .good-img {
       img {
         /*margin: 0 10px;*/
-        @include wh(196px);
+        @include wh(392px);
         display: block;
 
       }
@@ -168,37 +168,37 @@
     .good-content {
       /* top:-35px;*/
       position: relative;
-      @include wh(196px,100px);
+      @include wh(392px,200px);
       display: block;
       opacity: 1;
     }
     .good-price {
       /*margin: 15px 0;*/
-      height: 30px;
+      height: 60px;
       text-align: left;
-      line-height: 30px;
+      line-height: 60px;
       font-family: Arial;
-      font-size: 18px;
-      font-weight: 300;
+      font-size: 35px;
+      font-weight: 500;
       .prise{
-        padding-top: 10px;
+        padding-top: 20px;
         display: inline;
         color: #d44d44;
       }
       .volume{
-        font-size: 12px;
+        font-size: 24px;
       }
       p{
         display: inline;
-        padding: 0 15px;
+        padding: 0 30px;
       }
     }
     .good-title {
       line-height: 1.2;
-      font-size: 16px;
+      font-size: 28px;
       color: #424242;
       margin: 0 auto;
-      padding: 5px 10px;
+      padding: 10px 20px;
       text-align: center;
       overflow: hidden;
       white-space: nowrap;
@@ -207,9 +207,9 @@
     h3 {
       text-align: left;
       line-height: 1.2;
-      font-size: 12px;
+      font-size: 24px;
       color: #696969;
-      padding: 5px 10px;
+      padding: 10px 20px;
     }
 
   }
