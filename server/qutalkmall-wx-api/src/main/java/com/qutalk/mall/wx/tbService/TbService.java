@@ -1,5 +1,8 @@
 package com.qutalk.mall.wx.tbService;
 
+import com.alibaba.fastjson.JSON;
+import com.qutalk.mall.wx.cache.RedisCache;
+import com.qutalk.mall.wx.config.CacheConstant;
 import com.qutalk.mall.wx.config.TBConstant;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
@@ -11,9 +14,11 @@ import com.taobao.api.response.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -43,6 +48,9 @@ public class TbService{
     private static final Logger logger = LoggerFactory.getLogger(TbService.class);
 
     private final TaobaoClient client=new DefaultTaobaoClient(TBConstant.url, TBConstant.appkey, TBConstant.secret);
+
+    @Autowired
+    StringRedisTemplate redisTemplate;
 
     public TbkItemGetResponse searchGoods(){
         TbkItemGetRequest req = new TbkItemGetRequest();
@@ -180,21 +188,34 @@ public class TbService{
      * @return
      * @throws ApiException
      */
-    public TbkDgItemCouponGetResponse getCouponList (Long adzoneId,String name){
-        TbkDgItemCouponGetRequest req = new TbkDgItemCouponGetRequest();
-        req.setAdzoneId(adzoneId);
-        req.setPlatform(1L);
-        // req.setCat("16");
-        req.setPageSize(18L);
-        req.setQ(name);
-        req.setPageNo(1L);
-        TbkDgItemCouponGetResponse rsp = null;
-        try {
-            rsp = client.execute(req);
-        } catch (ApiException e) {
-            e.printStackTrace();
+    public TbkDgItemCouponGetResponse getCouponList (Long adzoneId,String name,String cate,Long pageNo,Long pageSize){
+
+
+        String key = CacheConstant.coupon_key+adzoneId+"_"+pageSize+"_"+pageNo;
+        TbkDgItemCouponGetResponse rsp=null;
+        String cacheValue = this.redisTemplate.opsForValue().get(key);
+        if (!StringUtils.isEmpty(cacheValue)) {
+            rsp = JSON.parseObject(cacheValue, TbkDgItemCouponGetResponse.class);
+        } else {
+            TbkDgItemCouponGetRequest req = new TbkDgItemCouponGetRequest();
+            req.setAdzoneId(adzoneId);
+            req.setPlatform(1L);
+            req.setCat("");
+            req.setPageSize(pageSize);
+            req.setQ(name);
+            req.setPageNo(pageNo);
+            try {
+                rsp = client.execute(req);
+                if(rsp.getResults()!=null&&rsp.getResults().size()>0){
+                    this.redisTemplate.opsForValue().set(key, JSON.toJSONString(rsp), CacheConstant.DAY,
+                            TimeUnit.SECONDS);
+                }
+            } catch (ApiException e) {
+                e.printStackTrace();
+            }
+
         }
-        System.out.println(rsp.getBody());
+
         /*if(rsp.getResults()!=null){
             CouponGoods couponGoods = new CouponGoods();
             couponGoods.setAdzoneId(req.getAdzoneId());
@@ -203,7 +224,7 @@ public class TbService{
                 mongoCache.set(couponGoods);
             }
         }
-*/
+         */
 
         return rsp;
     }

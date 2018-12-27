@@ -59,7 +59,7 @@ public class TbController {
         List<Map> categoryList = new ArrayList<>();
         if(couponCates!=null){
             for(CouponCate couponCate:couponCates){
-                TbkDgItemCouponGetResponse r =tbService.getCouponList(couponCate.getAdzoneId(),couponCate.getAdzoneName());
+                TbkDgItemCouponGetResponse r =tbService.getCouponList(couponCate.getAdzoneId(),couponCate.getAdzoneName(),null,1L,18L);
                 Map<String, Object> catGoods = new HashMap<String, Object>();
                 catGoods.put("id", couponCate.getAdzoneId());
                 catGoods.put("name", couponCate.getAdzoneName());
@@ -69,6 +69,18 @@ public class TbController {
             }
             data.put("floorGoodsList", categoryList);
         }
+
+        return ResponseUtil.ok(data);
+    }
+
+    @GetMapping("couponmore")
+    public Object getCouponMore(Long adzoneId,String name,String cate,Long pageNo,Long pageSize){
+        TbkDgItemCouponGetResponse r =tbService.getCouponList(adzoneId,name,cate,pageNo,pageSize);
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("id", adzoneId);
+        data.put("name", name);
+        data.put("goodsList", r.getResults());
+        data.put("childCategory",null);
 
         return ResponseUtil.ok(data);
     }
