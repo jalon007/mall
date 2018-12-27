@@ -8,7 +8,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
-    productionSourceMap: true,
+    productionSourceMap: false,
     proxyTable: {
       '/wx': {
         target: 'https://www.qutalk.cn'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777
