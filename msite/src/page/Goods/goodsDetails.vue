@@ -1,92 +1,48 @@
 <!--商品详情-->
 <template>
-  <div class="w store-content">
-    <div class="gray-box">
-      <div class="gallery-wrapper">
-        <div class="gallery">
-          <div class="thumb">
-            <div class="big">
-              <img :src="big" :alt="goodInfo.name">
-            </div>
-          </div>
-          <div class="thumbnail">
-            <div>
-            <ul>
-              <li v-for="(item,i) in goodInfo.gallery" :key="i" :class="{on:big===item}" @click="big=item">
-                <img v-lazy="item" :alt="goodInfo.name">
-              </li>
-            </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--右边-->
-      <div class="banner">
-        <div class="sku-custom-title">
-          <h4>{{goodInfo.name}}</h4>
-          <h6>
-            <span>{{goodInfo.brief}}</span>
-            <span class="price">
-              <em>¥</em><i>{{Number(goodInfo.retailPrice).toFixed(2)}}</i></span>
-          </h6>
-        </div>
-        <div class="num">
-          <span class="params-name">数量</span>
-          <buy-num @edit-num="editNum" :limit="Number(100)"></buy-num>
-        </div>
-        <div class="buy">
-          <y-button text="领取优惠券"
-                    @btnClick="grap()"
-                    classStyle="main-btn"
-                    style="width: 145px;height: 50px;line-height: 48px"></y-button>
-          <!--@btnClick="addCart(goodInfo.id,goodInfo.retailPrice,goodInfo.name,goodInfo.picUrl)"-->
-          <!--<y-button text="现在购买"-->
-                    <!--@btnClick="checkout(product.info.id)"-->
-                    <!--style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>-->
-          <!--<y-button text="立即领券"
-                    @btnClick="grap()"
-                    style="width: 145px;height: 50px;line-height: 48px;margin-left: 10px"></y-button>-->
-        </div>
-      </div>
+  <div class="detail">
+    <!--图片播放器-->
+    <div class="slide_area">
+      <img :src="goodInfo.pictUrl">
     </div>
-    <!--产品信息-->
-    <div class="item-info">
-      <y-shelf title="产品信息">
-        <div slot="content">
-          <div class="img-item" v-if="productMsg">
-            <div v-html="productMsg">{{ productMsg }}</div>
-          </div>
-          <div class="no-info" v-else>
-            <img src="/static/images/no-data.png">
-            <br>
-            该商品暂无内容数据
-          </div>
-        </div>
-      </y-shelf>
+    <!--描述信息-->
+    <div class="content_area">
+
+      <div class="good-price pr">
+        <p><span class="prise">￥{{Number(goodInfo.zkFinalPrice).toFixed(2)}}</span></p>
+        <p v-if="goodInfo.volume"><span class="volume">月销{{goodInfo.volume}}件</span></p>
+      </div>
+      <h6 class="good-title" v-html="goodInfo.title">{{goodInfo.title}}</h6>
+      <h3 class="shop-title">{{goodInfo.shopTitle}}</h3>
+
+    </div>
+    <!--店铺信息-->
+    <div class="shop_area"></div>
+    <!--踩你喜欢-->
+    <div class="recommend_area"></div>
+    <!--底部功能栏-->
+    <div class="foot_bar">
+      <y-button text="领取优惠券"
+                @btnClick="grap(msg.couponClickUrl)"
+                classStyle="main-btn"
+                style="width: 145px;height: 50px;line-height: 48px">
+
+      </y-button>
     </div>
   </div>
 </template>
 <script>
-  import { productDet, addCart } from '/api/goods'
   import { mapMutations, mapState } from 'vuex'
   import YShelf from '/components/shelf'
   import BuyNum from '/components/buynum'
   import YButton from '/components/YButton'
-  import { getStore } from '/utils/storage'
   export default {
     data () {
       return {
-        productMsg: {},
-        goodInfo: {},
-        productList: [],
-        specificationList: [],
-        product: {
-          salePrice: 0
-        },
+        goodInfo: this.goodInfo,
         productNum: 1,
         userId: '',
-        big: '',
-        productId: '151'
+        big: ''
       }
     },
     computed: {
@@ -94,57 +50,8 @@
     },
     methods: {
       ...mapMutations(['ADD_CART', 'ADD_ANIMATION', 'SHOW_CART']),
-      _productDet (id) {
-        productDet({params: {id}}).then(res => {
-          let result = res.data
-          this.goodInfo = res.data.info
-          this.productList = res.data.productList
-          this.specificationList = res.data.specificationList
-          this.productMsg = result.info.detail || ''
-          this.big = this.goodInfo.picUrl
-          if (this.productList.size > 0) {
-            this.productId = this.productList.get(0).id
-          }
-        })
-      },
-      addCart (id, price, name, img) {
-        if (!this.showMoveImg) {     // 动画是否在运动
-          if (this.login) { // 登录了 直接存在用户名下
-            addCart({goodsId: id, number: this.productNum, productId: this.productId}).then(res => {
-              // 并不重新请求数据
-              this.ADD_CART({
-                productId: id,
-                salePrice: price,
-                productName: name,
-                productImg: img,
-                productNum: this.productNum
-              })
-            })
-          } else { // 未登录 vuex
-            this.ADD_CART({
-              productId: id,
-              salePrice: price,
-              productName: name,
-              productImg: img,
-              productNum: this.productNum
-            })
-          }
-          // 加入购物车动画
-          var dom = event.target
-          // 获取点击的坐标
-          let elLeft = dom.getBoundingClientRect().left + (dom.offsetWidth / 2)
-          let elTop = dom.getBoundingClientRect().top + (dom.offsetHeight / 2)
-          // 需要触发
-          this.ADD_ANIMATION({moveShow: true, elLeft: elLeft, elTop: elTop, img: img})
-          if (!this.showCart) {
-            this.SHOW_CART({showCart: true})
-          }
-        }
-      },
-      checkout (productId) {
-        this.$router.push({path: '/checkout', query: {productId, num: this.productNum}})
-      },
-      grap () {
+      grap (openUrl) {
+        window.open(openUrl)
         this.$notify.info({
           title: 'Thanks',
           message: '暂无优惠券可领取，敬请期待~^v^~'
@@ -158,161 +65,84 @@
       YShelf, BuyNum, YButton
     },
     created () {
-      let id = this.$route.query.productId
-      this._productDet(id)
-      this.userId = getStore('userId')
+    },
+    mounted () {
+      this.goodInfo = this.$route.query
     }
   }
 </script>
 <style lang="scss" scoped>
   @import "../../assets/style/mixin";
 
-  .store-content {
+  .detail {
     clear: both;
-    width: 1220px;
-    min-height: 600px;
-    padding: 0 0 25px;
+    width: 1250px;
+    height: auto;
     margin: 0 auto;
-  }
-
-  .gray-box {
-    display: flex;
-    padding: 0 60px;
-    margin: 20px 0;
-    .gallery-wrapper {
-      .gallery {
-        float: left;
-        width: 460px;
-        position: relative;
-        .thumb {
-          position: relative;
-          display: table;
-          table-layout: fixed;
-          z-index: 1;
-          width: 420px;
-          height: 420px;
-          margin: 20px auto 0;
-          img {
-            display: block;
-            @include wh(100%)
-          }
-        }
-        .thumbnail {
-          width: 100%;
-          height: 80px;
-          position: relative;
-          ul{
-            text-align: center;
-            margin-left: -16px;
-            white-space: nowrap;
-            position: relative;
-            transition: left .2s cubic-bezier(0,0,.25,1);
-            font-size: 0;
-          }
-          li:first-child {
-            margin-top: 0px;
-          }
-          li {
-            float: left;
-            position: relative;
-            @include wh(80px);
-            /*margin-top: 10px;*/
-            padding: 12px;
-            border: 1px solid #f0f0f0;
-            border: 1px solid rgba(0, 0, 0, .06);
-            border-radius: 5px;
-            cursor: pointer;
-            &.on {
-              padding: 10px;
-              border: 3px solid #ccc;
-              border: 3px solid rgba(0, 0, 0, .2);
-            }
-            img {
-              display: block;
-              @include wh(100%);
-            }
-          }
-        }
-
-      }
-    }
-    // 右边
-    .banner {
-      width: 450px;
-      margin-left: 10px;
-      h4 {
-        font-size: 24px;
-        line-height: 1.25;
-        color: #000;
-        margin-bottom: 13px;
-      }
-      h6 {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #bdbdbd;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .sku-custom-title {
-        overflow: hidden;
-        padding: 8px 8px 18px 10px;
-        position: relative;
-      }
-      .params-name {
-        padding-right: 20px;
-        font-size: 14px;
-        color: #8d8d8d;
-        line-height: 36px;
-      }
-      .num {
-        padding: 29px 0 8px 10px;
-        border-top: 1px solid #ebebeb;
-        display: flex;
-        align-items: center;
-      }
-      .buy {
-        position: relative;
-        border-top: 1px solid #ebebeb;
-        padding: 30px 0 0 10px;
-      }
-    }
-  }
-
-  .item-info {
-
-    .gray-box {
-      padding: 0;
+    .slide_area {
+      position: relative;
       display: block;
-    }
-    .img-item {
-      width: 1220px;
-      // padding: 1vw;
-      text-align: center;
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
+      width: 100%;
+      height: auto;
+      img{
+        @include wh(100%)
       }
     }
   }
 
-  .no-info {
-    padding: 200px 0;
-    text-align: center;
-    font-size: 30px;
-  }
+  .content_area {
+    width: 100%;
+    margin: 0 20px;
 
-  .price {
-    display: block;
-    color: #d44d44;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: right;
-    i {
-      padding-left: 2px;
-      font-size: 24px;
+    position: relative;
+    opacity: 1;
+
+    .good-price {
+      /*margin: 15px 0;*/
+      height: 60px;
+      text-align: left;
+      line-height: 60px;
+      font-family: Arial;
+      font-size: 4rem;
+      .prise{
+        padding-top: 20px;
+        display: inline;
+        color: #d44d44;
+      }
+      .volume{
+        font-size: 24px;
+      }
+      p{
+        display: inline;
+        padding: 0 30px;
+      }
     }
+    .good-title {
+      line-height: 1.2;
+      font-size: 28px;
+      color: #424242;
+      margin: 0 auto;
+      padding: 10px 20px;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow:ellipsis;
+    }
+    h3 {
+      text-align: left;
+      line-height: 1.2;
+      font-size: 24px;
+      color: #696969;
+      padding: 10px 20px;
+    }
+
+  }
+  .foot_bar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 40;
   }
 </style>
