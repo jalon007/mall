@@ -157,6 +157,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.3" level="project" />
     <orderEntry type="module" module-name="qutalkmall-admin-api" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.0.2.RELEASE" level="project" />

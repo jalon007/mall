@@ -8,6 +8,7 @@ package com.qutalk.mall.wx.config;
  */
 public class CacheConstant {
     public final static String coupon_key="coupon_key_";
+    public final static String pptm_key="pptm_key";
 
     public static final Long SECONDS = 1L;
     public static final Long MINUTE = 60 * SECONDS;

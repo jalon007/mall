@@ -2,7 +2,7 @@
   <div>
     <!--<y-header></y-header>-->
     <router-view class="main"></router-view>
-    <y-footer></y-footer>
+    <!--<y-footer></y-footer>-->
     <tabbar></tabbar>
     <!--抛物图片-->
     <transition @after-enter='afterEnter' @before-enter="beforeEnter">

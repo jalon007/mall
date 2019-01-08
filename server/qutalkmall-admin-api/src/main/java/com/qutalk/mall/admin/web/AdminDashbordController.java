@@ -1,10 +1,7 @@
 package com.qutalk.mall.admin.web;
 
 import com.qutalk.mall.core.util.ResponseUtil;
-import com.qutalk.mall.db.service.LitemallGoodsProductService;
-import com.qutalk.mall.db.service.LitemallGoodsService;
-import com.qutalk.mall.db.service.LitemallOrderService;
-import com.qutalk.mall.db.service.LitemallUserService;
+import com.qutalk.mall.db.service.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.qutalk.mall.admin.annotation.LoginAdmin;
@@ -31,13 +28,14 @@ public class AdminDashbordController {
     private LitemallGoodsProductService productService;
     @Autowired
     private LitemallOrderService orderService;
-
+    @Autowired
+    private PPTMService pptmService;
     @GetMapping("")
     public Object info(@LoginAdmin Integer adminId) {
         if (adminId == null) {
             return ResponseUtil.unlogin();
         }
-
+        int pptmTotal = pptmService.count();
         int userTotal = userService.count();
         int goodsTotal = goodsService.count();
         int productTotal = productService.count();
@@ -47,7 +45,7 @@ public class AdminDashbordController {
         data.put("goodsTotal", goodsTotal);
         data.put("productTotal", productTotal);
         data.put("orderTotal", orderTotal);
-
+        data.put("pptmTotal", pptmTotal);
         return ResponseUtil.ok(data);
     }
 

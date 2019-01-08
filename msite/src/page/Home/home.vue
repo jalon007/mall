@@ -38,6 +38,11 @@
         </div>
         <maybe-like :goods="newGoods"></maybe-like>
     </div>
+    <div class="f_b">
+      <div class="mb_hd">
+        <h3 class="mb_title">这是我的底线</h3>
+      </div>
+    </div>
   </div>
     <div class="no-info" v-if="error">
       <div class="no-data">
@@ -299,47 +304,56 @@
     position: relative;
     margin-top: 30px;
     float: left;
-    .mb_hd{
-      width: 100%;
-      height: 60px;
 
+  }
+  .mb_hd{
+    width: 100%;
+    height: 60px;
+
+  }
+  .mb_title{
+    position: relative;
+    width: 300px;
+    height: 45px;
+    font-size: 28px;
+    font-family: 'fzzzh', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    line-height: 45px;
+    padding: 0 50px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    color: #222;
+    /*font-size: 30px;*/
+    /*text-align: center;*/
+    &:before{
+      right: 0px;
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      display: block;
+      background: #222;
+      top: 19px;
     }
-    .mb_title{
-      position: relative;
-      width: 250px;
-      height: 45px;
-      font-size: 28px;
-      font-family: 'fzzzh', sans-serif;
-      font-weight: normal;
-      text-align: center;
-      line-height: 45px;
-      padding: 0 50px;
-      margin: 0 auto 20px;
-      overflow: hidden;
-      color: #222;
-      /*font-size: 30px;*/
-      /*text-align: center;*/
-      &:before{
-        right: 0px;
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 3px;
-        display: block;
-        background: #222;
-        top: 19px;
-      }
-      &:after{
-        left: 0px;
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 3px;
-        display: block;
-        background: #222;
-        top: 19px;
-      }
+    &:after{
+      left: 0px;
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      display: block;
+      background: #222;
+      top: 19px;
     }
+  }
+  .f_b{
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 200px;
+    float: left;
   }
   .banner, .banner span, .banner div {
     font-family: "Microsoft YaHei";

@@ -34,10 +34,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/wx': {
-        target: 'http://localhost:8080'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777
+        target: 'http://localhost:8082'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777
       },
       '/tb': {
-        target: 'http://localhost:8080'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777
+        target: 'http://localhost:8082'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777
       },
       '/wx/*': {
         target: 'http://localhost:8080'  // 请求本地 需要xmall后台项目 默认127.0.0.1:7777

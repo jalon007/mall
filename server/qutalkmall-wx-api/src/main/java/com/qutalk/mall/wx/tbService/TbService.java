@@ -1,9 +1,11 @@
 package com.qutalk.mall.wx.tbService;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.base.Joiner;
 import com.qutalk.mall.wx.cache.RedisCache;
 import com.qutalk.mall.wx.config.CacheConstant;
 import com.qutalk.mall.wx.config.TBConstant;
+import com.qutalk.mall.wx.util.PinPaiTeMaiModel;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -17,6 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -108,7 +113,7 @@ public class TbService{
      */
     public TbkItemInfoGetResponse getItemInfo() {
         TbkItemInfoGetRequest req = new TbkItemInfoGetRequest();
-        req.setNumIids("123,456");
+        req.setNumIids("570733585024");
         req.setPlatform(1L);
         req.setIp("11.22.33.43");
         TbkItemInfoGetResponse rsp = null;
@@ -216,19 +221,32 @@ public class TbService{
 
         }
 
-        /*if(rsp.getResults()!=null){
-            CouponGoods couponGoods = new CouponGoods();
-            couponGoods.setAdzoneId(req.getAdzoneId());
-            for(TbkDgItemCouponGetResponse.TbkCoupon coupon:rsp.getResults()){
-                couponGoods.setTbkCoupon(coupon);
-                mongoCache.set(couponGoods);
-            }
-        }
-         */
-
         return rsp;
     }
+    public void pptm (String name,String url){
+        PinPaiTeMaiModel pptm =new PinPaiTeMaiModel();
+        pptm.setName(name);
+        pptm.setUrl(url);
+        redisTemplate.opsForList().leftPush(CacheConstant.pptm_key,JSON.toJSONString(pptm));
+    }
 
+    public List<PinPaiTeMaiModel> getPptm (Integer start,Integer end){
+
+        List<String>  list=redisTemplate.opsForList().range(CacheConstant.pptm_key,start,end);
+        List<PinPaiTeMaiModel> pptms = new ArrayList<>();
+        if(list!=null){
+            for(String value:list){
+                PinPaiTeMaiModel pptm =  JSON.parseObject(value, PinPaiTeMaiModel.class);
+                pptms.add(pptm);
+            }
+        }
+        return pptms;
+    }
+
+    private String key() {
+
+        return CacheConstant.pptm_key;
+    }
 
     /**
      * taobao.tbk.coupon.get	阿里妈妈推广券信息查询

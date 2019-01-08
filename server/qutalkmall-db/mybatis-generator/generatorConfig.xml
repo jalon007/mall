@@ -157,8 +157,11 @@
         </table>
         <table tableName="litemall_groupon">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>-->
+        </table>
         <table tableName="coupon_cate">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>-->
+        <table tableName="pptm">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>

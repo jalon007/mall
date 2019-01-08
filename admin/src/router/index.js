@@ -79,6 +79,24 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
+    path: '/pptm',
+    component: Layout,
+    redirect: 'noredirect',
+    name: 'pptmManager',
+    meta: {
+      title: '品牌特卖',
+      icon: 'chart'
+    },
+    children: [
+      {
+        path: 'user',
+        component: () => import('@/views/pptm/pptm'),
+        name: 'user',
+        meta: { title: '品牌特卖', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/user',
     component: Layout,
     redirect: 'noredirect',

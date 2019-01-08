@@ -46,6 +46,17 @@
           </div>
         </div>
       </el-col>
+      <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
+        <div class="card-panel" @click="handleSetLineChartData('pptms')">
+          <div class="card-panel-icon-wrapper icon-pptm">
+            <svg-icon icon-class="message" class-name="card-panel-icon" />
+          </div>
+          <div class="card-panel-description">
+            <div class="card-panel-text">特卖数量</div>
+            <count-to :start-val="0" :end-val="pptmTotal" :duration="3600" class="card-panel-num"/>
+          </div>
+        </div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -63,7 +74,8 @@ export default {
       userTotal: 0,
       goodsTotal: 0,
       productTotal: 0,
-      orderTotal: 0
+      orderTotal: 0,
+      pptmTotal: 0
     }
   },
   created() {
@@ -72,6 +84,7 @@ export default {
       this.goodsTotal = response.data.data.goodsTotal
       this.productTotal = response.data.data.productTotal
       this.orderTotal = response.data.data.orderTotal
+      this.pptmTotal = response.data.data.pptmTotal
     })
   },
   methods: {
@@ -124,6 +137,9 @@ export default {
       }
       .icon-shoppingCard {
         background: #34bfa3
+      }
+      .icon-pptm {
+        background: #6469bf
       }
     }
     .icon-people {

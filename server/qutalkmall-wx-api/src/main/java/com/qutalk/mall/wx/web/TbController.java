@@ -1,10 +1,12 @@
 package com.qutalk.mall.wx.web;
 
+import ch.qos.logback.core.rolling.helper.IntegerTokenConverter;
 import com.qutalk.mall.core.util.ResponseUtil;
 import com.qutalk.mall.db.domain.CouponCate;
 import com.qutalk.mall.db.service.CouponCateService;
 import com.qutalk.mall.wx.config.TBConstant;
 import com.qutalk.mall.wx.tbService.TbService;
+import com.qutalk.mall.wx.util.PinPaiTeMaiModel;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -12,12 +14,14 @@ import com.taobao.api.domain.NTbkItem;
 import com.taobao.api.request.TbkItemGetRequest;
 import com.taobao.api.response.TbkDgItemCouponGetResponse;
 import com.taobao.api.response.TbkItemGetResponse;
+import com.taobao.api.response.TbkItemInfoGetResponse;
 import com.taobao.api.response.TbkTpwdCreateResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -72,7 +76,13 @@ public class TbController {
 
         return ResponseUtil.ok(data);
     }
-
+    @GetMapping("goodsDetail")
+    public Object goodsDetail(){
+        TbkItemInfoGetResponse r =tbService.getItemInfo();
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("goodInfo", r.getResults());
+        return ResponseUtil.ok(data);
+    }
     @GetMapping("couponmore")
     public Object getCouponMore(Long adzoneId,String name,String cate,Long pageNo,Long pageSize){
         TbkDgItemCouponGetResponse r =tbService.getCouponList(adzoneId,name,cate,pageNo,pageSize);
@@ -84,6 +94,29 @@ public class TbController {
 
         return ResponseUtil.ok(data);
     }
+
+    @GetMapping("pptm")
+    public Object pptm(String name,String url){
+        tbService.pptm(name,url);
+        return ResponseUtil.ok();
+    }
+
+    @GetMapping("getpptm")
+    public Object getpptm(@RequestParam(defaultValue = "1") Integer page,
+                                          @RequestParam(defaultValue = "20") Integer size){
+        Integer start =0;
+        Integer end = size-1;
+        if(page>1){
+           start= (page-1)*size;
+           end =page*size -1;
+        }
+        List<PinPaiTeMaiModel> pptms =tbService.getPptm(start,end);
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put("pptmList",pptms);
+        return ResponseUtil.ok(data);
+    }
+
+
     @GetMapping("pwd")
     public Object getTbpwd(){
         TbkTpwdCreateResponse r =tbService.getTbpwd();
